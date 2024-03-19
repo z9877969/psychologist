@@ -11,6 +11,77 @@
 @media screen and (min-width: 1444px) {
   .section {
     padding: 80px 0px;
+    background:
+      url('../../images/background/back-right-side-contur.png') 1135px -270px,
+      url('../../images/background/back-right-side.png') 1147px -280px;
+    background-repeat: no-repeat;
+  }
+}
+
+.consultationInfo {
+  background:
+    url('../../images/background/back-contur-mob.png') 5px 13px,
+    url('../../images/background/back-mob.png') 13px 22px;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .consultationInfo {
+    background:
+      url('../../images/background/back-contur-mob@2x.png') 18px 18px,
+      url('../../images/background/back-mob@2x.png') 27px 26px;
+    background-repeat: no-repeat;
+    background-size:
+      256px 270px,
+      240px 261px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .consultationInfo {
+    background:
+      url('../../images/background/back-contur-mob.png') 5px 13px,
+      url('../../images/background/back-mob.png') 13px 22px;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 375px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 375px) and (min-resolution: 192dpi),
+  screen and (min-width: 375px) and (min-resolution: 2dppx) {
+  .consultationInfo {
+    background:
+      url('../../images/background/back-contur-mob@2x.png') 5px 13px,
+      url('../../images/background/back-mob@2x.png') 13px 22px;
+    background-repeat: no-repeat;
+    background-size:
+      316px 330px,
+      300px 321px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .consultationInfo {
+    background:
+      url('../../images/background/back-contur-tab.png') 25px 25px,
+      url('../../images/background/back-tab.png') 40px 42px;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 768px) and (min-resolution: 192dpi),
+  screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .consultationInfo {
+    background:
+      url('../../images/background/back-contur-tab@2x.png') 25px 25px,
+      url('../../images/background/back-tab@2x.png') 40px 42px;
+    background-repeat: no-repeat;
+    background-size:
+      614px 663px,
+      587px 646px;
   }
 }
 
@@ -21,6 +92,24 @@
     justify-content: space-between;
     gap: 24px;
     margin-left: -120px;
+    background:
+      url('../../images/background/back-contur-desc.png') 65px 27px,
+      url('../../images/background/back-desc.png') 80px 54px;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 1444px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 1444px) and (min-resolution: 192dpi),
+  screen and (min-width: 1444px) and (min-resolution: 2dppx) {
+  .consultationInfo {
+    background:
+      url('../../images/background/back-contur-desc@2x.png') 65px 27px,
+      url('../../images/background/back-desc@2x.png') 80px 54px;
+    background-repeat: no-repeat;
+    background-size:
+      614px 681px,
+      587px 654px;
   }
 }
 
