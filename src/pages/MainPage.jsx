@@ -1,9 +1,10 @@
-import { ModuleTemplate } from 'modules/_template';
+import { Consultation, ModuleTemplate } from 'modules/_template';
 
 const MainPage = () => {
   return (
     <>
       <ModuleTemplate />
+      <Consultation />
     </>
   );
 };
