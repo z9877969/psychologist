@@ -8,7 +8,6 @@ const Picture = ({
   alt = '',
   width = '',
   height = '',
-  ...rest
 }) => {
   return (
     <picture>

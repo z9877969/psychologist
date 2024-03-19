@@ -2,7 +2,6 @@ import { Container } from 'shared/components';
 import s from './BlogSection.module.scss';
 import blogData from '../../data/blogData.json';
 import BlogItem from '../BlogItems/BlogItem';
-import { Link } from 'react-router-dom';
 import Button from '../../../../shared/components/Button/Button';
 
 const BlogSection = () => {
