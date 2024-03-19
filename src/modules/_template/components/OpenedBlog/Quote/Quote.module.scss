@@ -1,0 +1,38 @@
+.wraperQuote {
+}
+
+.wrapContent {
+}
+.content {
+  color: var(--primary-green-dark, #1e5b2a);
+  text-align: center;
+  font-family: 'Open Sans';
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.36px; /* 136.364% */
+}
+.accent {
+  color: var(--primary-orange, #eb6d0a);
+  text-align: center;
+  font-family: 'Open Sans';
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.36px; /* 136.364% */
+}
+.wrapAuthor {
+}
+.author {
+  color: var(--typography-black, #2c2727);
+  text-align: center;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.333; /* 133.333% */
+}
+
+.textEl {
+  color: var(--primary-green-dark, #1e5b2a);
+  font-family: Orienta;
+  font-size: 78px;
+  line-height: 0.6923; /* 69.231% */
+}
