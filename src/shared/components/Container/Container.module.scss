@@ -8,11 +8,11 @@
 
   @include media(tablet) {
     width: $tablet;
-    padding: 0 32px;
+    padding: 0 40px;
   }
 
   @include media(desktop) {
     width: $desktop;
-    padding: 0 64px;
+    padding: 0 120px;
   }
 }
