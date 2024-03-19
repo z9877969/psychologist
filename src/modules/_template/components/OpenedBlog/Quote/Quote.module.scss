@@ -4,12 +4,14 @@
 .wrapContent {
 }
 .content {
+  width: 227px;
+  height: 300px;
   color: var(--primary-green-dark, #1e5b2a);
   text-align: center;
   font-family: 'Open Sans';
   font-size: 22px;
   font-style: italic;
-  line-height: 1.36px; /* 136.364% */
+  line-height: 1.36; /* 136.364% */
 }
 .accent {
   color: var(--primary-orange, #eb6d0a);
