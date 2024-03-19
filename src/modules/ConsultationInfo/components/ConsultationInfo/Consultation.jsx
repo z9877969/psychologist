@@ -1,6 +1,5 @@
 import { Container } from 'shared/components';
 import s from './Consultation.module.scss';
-import { problems } from 'modules/_template/data';
 import {
   consultationDesc,
   consultationDesc2x,
@@ -8,7 +7,8 @@ import {
   consultationMob2x,
   consultationTab,
   consultationTab2x,
-} from 'modules/_template/images/consultation';
+} from 'modules/ConsultationInfo/images/consultation';
+import { problems } from 'modules/ConsultationInfo/data';
 
 const Problems = ({ arrey }) => {
   return (
