@@ -13,9 +13,11 @@
     "test": "echo 'test finished successfully'"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "formik": "^2.4.5",
     "modern-normalize": "^2.0.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
     "react-select": "^5.8.0",
