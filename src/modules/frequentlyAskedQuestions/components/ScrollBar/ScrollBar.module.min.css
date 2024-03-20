@@ -1,1 +1,0 @@
-.scrollBar{max-height:544px;overflow-y:auto;padding-right:16px}.scrollBar::-webkit-scrollbar{width:8px}.scrollBar::-webkit-scrollbar-track{background-color:#dfdfdf;border-radius:100px}.scrollBar::-webkit-scrollbar-thumb{border-radius:100px;background-color:#6ca24a}@media screen and (min-width: 768px){.scrollBar{max-height:460px;padding-right:24px}}
