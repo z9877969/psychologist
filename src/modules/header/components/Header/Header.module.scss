@@ -1,3 +1,18 @@
-.header {
-  background-color: $dark;
+header {
+  position: sticky;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  background-color: #ffffff; /* Колір фону */
+  @include media(desktop) {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
