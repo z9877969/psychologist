@@ -24,6 +24,7 @@ const ContentList = ({ articles }) => {
               />
             );
           default:
+            // eslint-disable-next-line no-console
             console.error('Unknown block type:', item.block);
             return null;
         }
