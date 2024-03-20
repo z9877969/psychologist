@@ -1,5 +1,4 @@
 import { ModuleTemplate } from 'modules/_template';
-
 const MainPage = () => {
   return (
     <>
