@@ -1,17 +1,17 @@
-import s from './ParagraphAboutMe.module.scss';
+import s from './Paragraph.module.scss';
 
-export const ParagraphAboutMe = ({ articles: { content } }) => {
+export const Paragraph = ({ content }) => {
   return (
-    <div className={s.wrapParagraphAboutMe}>
-      <p className={s.contentAboutMe}> {content}</p>
+    <div className={s.wrapFirstParagraph}>
+      <p className={s.firstContent}> {content}</p>
     </div>
   );
 };
 
-// export const ParagraphAboutMe = () => {
+// export const FirstParagraph = () => {
 //   return (
-//     <div className={s.wrapParagraphAboutMe}>
-//       <p className={s.contentAboutMe}>
+//     <div className={s.wrapFirstParagraph}>
+//       <p className={s.firstContent}>
 //         У сучасному динамічному світі економіки, розвиток підприємств у різних
 //         галузях значною мірою залежить від здатності керівництва зацікавити
 //         персонал у досягненні корпоративних цілей. Мотивація персоналу стає
