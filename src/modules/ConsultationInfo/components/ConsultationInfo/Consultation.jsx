@@ -50,7 +50,7 @@ const Consultation = () => {
             </picture>
           </div>
           <div className={s.content}>
-            <p className={s.title}>Проблеми, з якими я працюю</p>
+            <h2 className={s.title}>Проблеми, з якими я працюю</h2>
             <p className={s.text}>
               Під час зустрічі ви зможете розповісти, що спонукало вас
               звернутися, а я поділюся з вами своїм баченням нашої майбутньої
