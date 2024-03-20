@@ -7,12 +7,3 @@ export const PrimaryTitle = ({ content }) => {
     </div>
   );
 };
-// export const Title = () => {
-//   return (
-//     <div className={s.wraperTitle}>
-//       <h1>
-//         Ефективні психологічні методи мотивування персоналу у сучасному бізнесі
-//       </h1>
-//     </div>
-//   );
-// };

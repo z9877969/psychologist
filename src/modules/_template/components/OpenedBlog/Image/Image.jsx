@@ -7,15 +7,3 @@ export const Image = ({ content }) => {
     </div>
   );
 };
-
-// export const Image = () => {
-//   return (
-//     <div className={s.wrapImage}>
-//       <img
-//         className={s.img}
-//         src="http://some.cloude.com/path/to/image.jpg"
-//         alt="Image"
-//       />
-//     </div>
-//   );
-// };
