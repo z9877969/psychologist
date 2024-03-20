@@ -1,13 +1,11 @@
 import { Container } from 'shared/components';
-import CertificatesList from '../CertificateList/CertificateList';
 import SectionHeader from '../SectionHeader/SectionHeader';
+import CertificatesList from '../CertificateList/CertificateList';
 import Slider from '../Slider/Slider';
-
-import s from './ModuleTemplate.module.scss';
 
 const SectionEducation = () => {
   return (
-    <section className={s.section}>
+    <section className="s.section">
       <Container>
         <SectionHeader />
         <CertificatesList />

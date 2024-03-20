@@ -1,11 +1,11 @@
-import Certificate from './Certificate';
+import Certificate from '../Certificate/Certificate';
 import s from './CertificatesList.module.scss';
 const certificatesData = [
   {
     title: '1st certificate',
     description: '1st decsr',
-    imageUrl: 'path-to-image1.png',
-    imageSet: 'path-to-image1.png 1x, path-to-image1@2x.png 2x',
+    imageUrl: '../images/img-cert-mob-min.jpg',
+    imageSet: '../images/img-cert-mob-min.jpg',
   },
   {
     title: '2nd certificate',

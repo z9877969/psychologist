@@ -1,0 +1,42 @@
+[
+  {
+    "id": "id-1",
+    "url": "/",
+    "urlMobile": "../images/cert_1_mob.jpg",
+    "urlMobile2x": "../images/cert_1_mob 2x.jpg",
+    "urlTablet": "../images/cert_1_tab.jpg",
+    "urlTablet2x": "../images/cert_1_tab 2x.jpg",
+    "urlDesktop": "../images/cert_1_desk.jpg",
+    "urlDesktop2x": "../images/cert_1_desk 2x.jpg",
+    "text": "Розлади настрою в практиці психолога, спектр, категорії, розуміння, втручання",
+    "alt": "Сертифікат1",
+    "height": "351"
+  },
+
+  {
+    "id": "id-2",
+    "url": "/",
+    "urlMobile": "../images/cert_1_mob.jpg",
+    "urlMobile2x": "../images/cert_1_mob 2x.jpg",
+    "urlTablet": "../images/cert_2_tab.jpg",
+    "urlTablet2x": "../images/cert_2_tab 2x.jpg",
+    "urlDesktop": "../images/cert_2_desk.jpg",
+    "urlDesktop2x": "../images/cert_2_desk 2x.jpg",
+    "text": "Профілактика та психокорекція бойової психічної травми",
+    "alt": "Сертифікат2",
+    "height": "351"
+  },
+  {
+    "id": "id-3",
+    "url": "/",
+    "urlMobile": "../images/cert_1_mob.jpg",
+    "urlMobile2x": "../images/cert_1_mob 2x.jpg",
+    "urlTablet": "../images/cert_1_tab.jpg",
+    "urlTablet2x": "../images/cert_1_tab 2x.jpg",
+    "urlDesktop": "../images/cert_1_desk.jpg",
+    "urlDesktop2x": "../images/cert_1_desk 2x.jpg",
+    "text": "Розлади настрою в практиці психолога, спектр, категорії, розуміння, втручання",
+    "alt": "Сертифікат3",
+    "height": "351"
+  }
+]
