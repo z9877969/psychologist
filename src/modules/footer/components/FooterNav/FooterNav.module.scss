@@ -17,9 +17,45 @@
     .link {
       color: rgb(255, 255, 255);
       display: block;
+      position: relative;
+      &:hover::after,
+      &:focus::after {
+        content: '';
+        display: block;
+        height: 1px;
+        bottom: -3px;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+      }
     }
     .subTitle {
       display: none;
     }
+  }
+}
+@include media(tablet) {
+  .nav {
+    flex-direction: row;
+    gap: 81px;
+    align-items: start;
+    .list {
+      align-items: start;
+      gap: 24px;
+      .logo {
+      }
+      .subTitle {
+        display: block;
+        padding: 8px 0;
+        font-size: 22px;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+  }
+}
+@include media(desktop) {
+  .nav {
+    gap: 252px;
   }
 }

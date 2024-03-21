@@ -22,16 +22,18 @@ const FrequentlyAskedQuestions = () => {
       <Container>
         <div className={s.container}>
           <div className={s.imgContainer}>
-            <Picture
-              urlMobile={imgMobail}
-              urlMobile2x={imgMobail}
-              urlTablet={imgTablet}
-              urlTablet2x={imgTablet}
-              urlDesktop={imgDesk}
-              urlDesktop2x={imgDesk}
-              width={getSrc()[0]}
-              height={getSrc()[1]}
-            />
+            <div>
+              <Picture
+                urlMobile={imgMobail}
+                urlMobile2x={imgMobail}
+                urlTablet={imgTablet}
+                urlTablet2x={imgTablet}
+                urlDesktop={imgDesk}
+                urlDesktop2x={imgDesk}
+                width={getSrc()[0]}
+                height={getSrc()[1]}
+              />
+            </div>
           </div>
 
           <div>

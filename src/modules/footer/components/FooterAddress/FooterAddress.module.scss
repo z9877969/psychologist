@@ -1,0 +1,46 @@
+.address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  .subTitle {
+    display: none;
+  }
+  .tell {
+    color: #fff;
+    position: relative;
+    &:hover::after,
+    &:focus::after {
+      content: '';
+      display: block;
+      height: 1px;
+      bottom: -3px;
+      width: 100%;
+      background-color: #fff;
+      position: absolute;
+    }
+  }
+  .list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    .icon {
+      fill: #fff;
+    }
+  }
+}
+@include media(tablet) {
+  .address {
+    gap: 20px;
+    align-items: start;
+    .subTitle {
+      display: block;
+      color: #fff;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      padding: 8px 0;
+    }
+  }
+}
