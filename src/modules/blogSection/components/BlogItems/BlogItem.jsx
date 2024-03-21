@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import s from './BlogItem.module.scss';
-import Picture from '../../../../shared/components/Picture/Picture';
+import Picture from 'shared/components/Picture/Picture';
 
 const BlogItem = ({ blog }) => {
   const location = useLocation();
@@ -22,7 +22,6 @@ const BlogItem = ({ blog }) => {
           alt={blog.alt}
           width={imgWidth}
           height={blog.height}
-          data={blog}
         />
       </div>
 
