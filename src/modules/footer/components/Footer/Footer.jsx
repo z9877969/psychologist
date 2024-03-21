@@ -1,10 +1,12 @@
-import { Container } from 'shared/components';
+import FooterBottom from '../FooterBottom/FooterBottom';
+import FooterTop from '../FooterTop/FooterTop';
 import s from './Footer.module.scss';
 
 const Footer = () => {
   return (
     <footer className={s.footer}>
-      <Container>Footer</Container>
+      <FooterTop />
+      <FooterBottom />
     </footer>
   );
 };
