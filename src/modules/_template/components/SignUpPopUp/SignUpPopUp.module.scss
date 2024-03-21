@@ -6,6 +6,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 32px; /* 133.333% */
+
+  margin-bottom: 24px;
 }
 
 .field_text {
@@ -24,16 +26,27 @@
   background: var(--background-white, #fff);
 
   height: 40px;
-  padding: 0px 16px;
+  padding: 16px 16px;
   align-items: center;
   gap: 8px;
   align-self: stretch;
+
+  margin: 4px 0 30px 0;
+}
+
+.input:hover {
+  border: 1px solid var(--typography-grey-light, #979797);
+}
+
+.error {
+  border: 1px solid #961c1c;
 }
 
 .textarea {
   resize: none;
   width: 428px;
   height: 168px;
+  margin-bottom: 38px;
 }
 
 .button {
@@ -55,4 +68,13 @@
   font-style: normal;
   font-weight: 600;
   line-height: 20px; /* 142.857% */
+}
+
+.wrapper {
+  display: flex;
+}
+
+.w {
+  display: flex;
+  gap: 24px;
 }
