@@ -50,15 +50,17 @@
     @include font(16, 24);
     letter-spacing: -0.02em;
     display: inline-block;
+    cursor: pointer;
 
     transition:
-      transform 250ms linear,
-      color 250ms linear;
-    cursor: pointer;
+      // transform 250ms linear,
+      // color 250ms linear,
+      font-weight 250ms linear;
   }
   &:hover .link {
-    transform: scale(1.04);
-    color: #1e1f1f;
+    // transform: scale(1.04);
+    // color: #1e1f1f;
+    font-weight: 600;
   }
   &::after {
     content: '';
