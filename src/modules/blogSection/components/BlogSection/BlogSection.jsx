@@ -2,7 +2,7 @@ import { Container } from 'shared/components';
 import s from './BlogSection.module.scss';
 import blogData from '../../data/blogData.json';
 import BlogItem from '../BlogItems/BlogItem';
-import Button from '../../../../shared/components/Button/Button';
+import Button from 'shared/components/Button/Button';
 
 const BlogSection = () => {
   const data = blogData.slice(0, 3);
@@ -25,9 +25,6 @@ const BlogSection = () => {
           })}
         </ul>
         <Button to="/blog">Переглянути більше статтей</Button>
-        {/* <Link className={s.link} to="/blog">
-          Переглянути більше статтей
-        </Link> */}
       </Container>
     </section>
   );
