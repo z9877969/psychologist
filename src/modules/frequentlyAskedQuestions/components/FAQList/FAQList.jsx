@@ -4,18 +4,19 @@ import FAQItem from '../FAQItem/FAQItem';
 import { useState } from 'react';
 
 const FAQList = () => {
-  const [indexActive, setIndex] = useState(-1);
+  const [indexActive, setIndex] = useState('');
   const toggleIndex = (id) => {
-    if (indexActive === parseInt(id)) {
-      setIndex(-1);
-    } else setIndex(parseInt(id));
+    if (indexActive === id) {
+      setIndex('');
+    } else setIndex(id);
   };
+
   return (
     <ul className={s.list}>
-      {text.map((item, i) => (
-        <li key={i}>
+      {text.map((item) => (
+        <li key={item.id}>
           <FAQItem
-            id={i}
+            id={item.id}
             title={item.title}
             text={item.text}
             indexActive={indexActive}

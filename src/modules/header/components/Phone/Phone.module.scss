@@ -1,9 +1,9 @@
 @keyframes changeImage {
   0% {
-    background-image: url('../../image/icon.png'); /* Початкове зображення */
+    background-image: url('../../image/phone.svg'); /* Початкове зображення */
   }
   100% {
-    background-image: url('../../image/icon_call.png'); /* Зображення, на яке потрібно змінити */
+    background-image: url('../../image/phone_call.svg'); /* Зображення, на яке потрібно змінити */
   }
 }
 
