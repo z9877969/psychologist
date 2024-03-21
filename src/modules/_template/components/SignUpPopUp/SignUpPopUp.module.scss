@@ -1,0 +1,58 @@
+.title {
+  color: var(--typography-black, #2c2727);
+  /* 1440/h2-semibold */
+  font-family: 'Open Sans';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
+}
+
+.field_text {
+  color: var(--typography-grey-dark, #414343);
+  /* 1440/h5-regular */
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid var(--primary-grey-light-light, #dfdfdf);
+  background: var(--background-white, #fff);
+
+  height: 40px;
+  padding: 0px 16px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.textarea {
+  resize: none;
+  width: 428px;
+  height: 168px;
+}
+
+.button {
+  display: flex;
+  width: 242px;
+  height: 48px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  border-radius: 100px;
+  background: var(--primary-green-dark, #1e5b2a);
+
+  color: var(--typography-white, #fff);
+  /* 1440/h5-semibold */
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
+}
