@@ -14,12 +14,16 @@ import articles from '../modules/_template/data/articles.json';
 import lastArticles from '../modules/_template/data/lastArticles.json';
 import LastArticlesList from 'modules/_template/components/OpenedBlog/LastArticlesList/LastArticlesList';
 import { Container } from 'shared/components';
+import { NavLink } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
 const BlogPage = () => {
   return (
     <Container>
       <>
+        <NavLink style={{ marginBottom: '40px' }} to="/blog">
+          Повернутися до всіх статтей
+        </NavLink>
         <div>
           <ContentList articles={articles} />
         </div>

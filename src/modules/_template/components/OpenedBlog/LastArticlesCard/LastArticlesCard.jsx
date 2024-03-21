@@ -1,6 +1,14 @@
+import { NavLink } from 'react-router-dom';
 import s from './LastArticlesCard.module.scss';
 
-export const LastArticleCard = ({ image, date, author, title, content }) => {
+export const LastArticleCard = ({
+  key,
+  image,
+  date,
+  author,
+  title,
+  content,
+}) => {
   return (
     <div className={s.wrapCard}>
       <div className={s.wrapImage}>
@@ -14,9 +22,8 @@ export const LastArticleCard = ({ image, date, author, title, content }) => {
         <p className={s.titleArticle}>{title}</p>
         <p className={s.content}>{content}</p>
       </div>
-      <button type="button" className={s.btnCard}>
-        Читати більше
-      </button>
+      <NavLink to={`/blog/${key}`}>Читати більше</NavLink>
+      {/* <button type="button" className={s.btnCard}></button> */}
     </div>
   );
 };

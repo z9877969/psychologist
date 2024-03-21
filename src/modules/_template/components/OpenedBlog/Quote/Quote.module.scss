@@ -1,4 +1,10 @@
 .wraperQuote {
+  display: flex;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding-top: 40px;
+
+  justify-content: space-between;
 }
 
 .wrapContent {
@@ -22,6 +28,7 @@
   line-height: 1.36px; /* 136.364% */
 }
 .wrapAuthor {
+  padding-bottom: 40px;
 }
 .author {
   color: var(--typography-black, #2c2727);
@@ -37,4 +44,8 @@
   font-family: Orienta;
   font-size: 78px;
   line-height: 0.6923; /* 69.231% */
+}
+.wrapEl {
+  display: flex;
+  align-items: flex-end;
 }
