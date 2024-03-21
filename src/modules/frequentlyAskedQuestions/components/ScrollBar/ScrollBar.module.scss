@@ -14,7 +14,7 @@
     background-color: rgb(108, 162, 74);
   }
 }
-@media screen and (min-width: 768px) {
+@include media(tablet) {
   .scrollBar {
     max-height: 460px;
     padding-right: 24px;
