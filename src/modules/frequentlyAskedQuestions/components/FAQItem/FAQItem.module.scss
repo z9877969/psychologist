@@ -1,5 +1,5 @@
 .item {
-  width: 300px;
+  width: 321px;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -31,8 +31,7 @@
     font-size: 30px;
     transition: transform 250ms linear;
   }
-  .testIcon {
-  }
+
   .text {
     color: rgb(65, 67, 67);
     font-size: 14px;
@@ -41,13 +40,13 @@
     letter-spacing: 0%;
   }
 }
-@media screen and (min-width: 768px) {
+@include media(tablet) {
   .item {
-    width: 600px;
+    width: 658px;
     padding: 18px 16px;
   }
 }
-@media screen and (min-width: 1440px) {
+@include media(desktop) {
   .item {
     width: 558px;
   }
