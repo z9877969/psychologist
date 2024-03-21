@@ -1,0 +1,22 @@
+.scrollBar {
+  max-height: 544px;
+  overflow-y: auto;
+  padding-right: 16px;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgb(223, 223, 223);
+    border-radius: 100px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: rgb(108, 162, 74);
+  }
+}
+@media screen and (min-width: 768px) {
+  .scrollBar {
+    max-height: 460px;
+    padding-right: 24px;
+  }
+}
