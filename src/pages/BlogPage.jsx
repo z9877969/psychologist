@@ -13,19 +13,21 @@ import ContentList from 'modules/_template/components/OpenedBlog/ContentList/Con
 import articles from '../modules/_template/data/articles.json';
 import lastArticles from '../modules/_template/data/lastArticles.json';
 import LastArticlesList from 'modules/_template/components/OpenedBlog/LastArticlesList/LastArticlesList';
+import { Container } from 'shared/components';
 // import { Link } from 'react-router-dom';
 
 const BlogPage = () => {
   return (
-    // <Link ></Link>
-    <>
-      <div>
-        <ContentList articles={articles} />
-      </div>
-      <div>
-        <LastArticlesList lastArticles={lastArticles} />
-      </div>
-    </>
+    <Container>
+      <>
+        <div>
+          <ContentList articles={articles} />
+        </div>
+        <div>
+          <LastArticlesList lastArticles={lastArticles} />
+        </div>
+      </>
+    </Container>
   );
 };
 

@@ -1,11 +1,12 @@
 import { LastArticleCard } from '../LastArticlesCard/LastArticlesCard';
+import s from './LastArticlesList.module.scss';
 
 const LastArticlesList = ({ lastArticles }) => {
   return (
-    <div>
-      <>
-        <h4>Останні статті</h4>
-      </>
+    <div className={s.wraperLastArticles}>
+      <div className={s.wrapTitle}>
+        <h4 className={s.titleArticles}>Останні статті</h4>
+      </div>
 
       {lastArticles.map((item, index) => {
         switch (item.block) {
@@ -14,7 +15,7 @@ const LastArticlesList = ({ lastArticles }) => {
               <LastArticleCard
                 key={index}
                 image={item.image}
-                date={item.data}
+                date={item.date}
                 author={item.author}
                 title={item.title}
                 content={item.content}
@@ -27,16 +28,11 @@ const LastArticlesList = ({ lastArticles }) => {
             return null;
         }
       })}
-      <button type="button">Переглянути більше статтей</button>
+      <button className={s.button} type="button">
+        Переглянути більше статтей
+      </button>
     </div>
   );
 };
 
 export default LastArticlesList;
-
-// "block": "article",
-//     "image": "",
-//     "date": "16.01.2024",
-//     "author": "Ірина Прудько ",
-//     "title": "Ефективні психологічні методи мотивування персоналу у сучасному бізнесі. ",
-//     "content": "У су
