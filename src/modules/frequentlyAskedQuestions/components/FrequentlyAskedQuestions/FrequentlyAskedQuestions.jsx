@@ -5,7 +5,7 @@ import imgTablet from '../../img/photoFAQtablet.jpg';
 import imgDesk from '../../img/photoFAQdesk.jpg';
 import ScrollBar from '../ScrollBar/ScrollBar';
 import FAQList from '../FAQList/FAQList';
-import Picture from 'shared/components/PIcture/Picture';
+import { Picture } from 'shared/components';
 
 const getSrc = () => {
   const width = parseInt(

@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    .logo {
+      font-size: 32px;
+      font-family: $secondary-font-family;
+      color: rgb(235, 109, 10);
+    }
+    .link {
+      color: rgb(255, 255, 255);
+      display: block;
+    }
+    .subTitle {
+      display: none;
+    }
+  }
+}
