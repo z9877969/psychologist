@@ -1,23 +1,17 @@
 .thumb {
   margin: 0 auto;
-}
 
-@media screen and (min-width: 375px) {
-  .thumb {
+  @include media(mobile) {
     width: 343px;
     height: 343px;
   }
-}
 
-@media screen and (min-width: 768px) {
-  .thumb {
+  @include media(tablet) {
     width: 688px;
     height: 688px;
   }
-}
 
-@media screen and (min-width: 1444px) {
-  .thumb {
+  @include media(desktop) {
     min-width: 708px;
     height: 708px;
   }
