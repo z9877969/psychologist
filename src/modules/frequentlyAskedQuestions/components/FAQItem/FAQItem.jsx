@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import s from './FAQItem.module.scss';
 import { sprite } from 'shared/icons';
+import clsx from 'clsx';
 sprite;
 const FAQItem = ({ text, title, id, toggleIndex, indexActive }) => {
   const [isActive, setActive] = useState(false);
@@ -10,8 +11,8 @@ const FAQItem = ({ text, title, id, toggleIndex, indexActive }) => {
       return;
     } else setActive(false);
   }, [indexActive, id]);
-  const dinamicItem = isActive ? [s.item, s.activeItem].join(' ') : s.item;
-  const dinamicBtn = isActive ? [s.btn, s.activeBtn].join(' ') : s.btn;
+  const dinamicItem = clsx(s.item, isActive && s.activeItem);
+  const dinamicBtn = clsx(s.btn, isActive && s.activeBtn);
   const dinamikTitle = isActive ? s.activeTitle : s.title;
   return (
     <div className={dinamicItem}>
