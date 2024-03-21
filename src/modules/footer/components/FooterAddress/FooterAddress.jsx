@@ -1,5 +1,6 @@
 import { sprite } from 'shared/icons';
 import s from './FooterAddress.module.scss';
+import InstagramIcon from '../InstagramIcon/InstagramIcon';
 
 const FooterAddress = () => {
   return (
@@ -28,14 +29,7 @@ const FooterAddress = () => {
           </a>
         </li>
         <li>
-          <a
-            target="_blank"
-            href="https://www.instagram.com/ira_voytovych?igsh=Z3NnZzJ5b2ZyazRo&utm_source=qr"
-          >
-            <svg className={`${s.icon} ${s.instagram}`} width={32} height={32}>
-              <use xlinkHref={`${sprite}#icon-instagram-great`}></use>
-            </svg>
-          </a>
+          <InstagramIcon />
         </li>
         <li>
           <a
