@@ -9,7 +9,7 @@ const FAQItem = ({ text, title, id, toggleIndex, indexActive }) => {
       setActive(true);
       return;
     } else setActive(false);
-  }, [indexActive]);
+  }, [indexActive, id]);
   const dinamicItem = isActive ? [s.item, s.activeItem].join(' ') : s.item;
   const dinamicBtn = isActive ? [s.btn, s.activeBtn].join(' ') : s.btn;
   const dinamikTitle = isActive ? s.activeTitle : s.title;
