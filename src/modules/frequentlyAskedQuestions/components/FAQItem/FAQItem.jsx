@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import s from './FAQItem.module.scss';
 import { sprite } from 'shared/icons';
 import clsx from 'clsx';
-sprite;
+
 const FAQItem = ({ text, title, id, toggleIndex, indexActive }) => {
   const [isActive, setActive] = useState(false);
   useEffect(() => {

@@ -9,16 +9,10 @@
   }
   .tell {
     color: #fff;
-    position: relative;
-    &:hover::after,
-    &:focus::after {
-      content: '';
-      display: block;
-      height: 1px;
-      bottom: -3px;
-      width: 100%;
-      background-color: #fff;
-      position: absolute;
+    transition: font-weight 250ms linear;
+    &:hover,
+    &:focus {
+      font-weight: 600;
     }
   }
   .list {
@@ -27,6 +21,34 @@
     gap: 12px;
     .icon {
       fill: #fff;
+      transition: fill 250ms linear;
+    }
+    .telegram:hover,
+    .telegram:focus {
+      fill: #2aabee;
+    }
+    .facebook {
+      display: inline-block;
+      height: 32px;
+      border-radius: 8px;
+      width: 32px;
+      transition: background-color 250ms linear;
+      &:hover,
+      &:focus {
+        height: 32px;
+        border-radius: 8px;
+        width: 32px;
+        background-color: #3d5a98;
+      }
+    }
+    .instagram {
+    }
+    .youtybe {
+      transition: fill 250ms linear;
+      &:hover,
+      &:focus {
+        fill: #ff0000;
+      }
     }
   }
 }

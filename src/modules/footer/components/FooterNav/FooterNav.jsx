@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import s from './FooterNav.module.scss';
 
 const FooterNav = () => {
@@ -10,17 +11,17 @@ const FooterNav = () => {
           </a>
         </li>
         <li>
-          <a href="" className={s.link}>
+          <a href="/" className={s.link}>
             Головна
           </a>
         </li>
         <li>
-          <a href="" className={s.link}>
+          <a href="#about" className={s.link}>
             Про мене
           </a>
         </li>
         <li>
-          <a href="" className={s.link}>
+          <a href="#services" className={s.link}>
             Послуги
           </a>
         </li>
@@ -30,17 +31,17 @@ const FooterNav = () => {
           <p className={s.subTitle}>Інше</p>
         </li>
         <li>
-          <a href="" className={s.link}>
+          <a href="#reviews" className={s.link}>
             Відгуки
           </a>
         </li>
         <li>
-          <a href="" className={s.link}>
+          <Link to="/blog" className={s.link}>
             Блог
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="" className={s.link}>
+          <a href="#faq" className={s.link}>
             FAQ
           </a>
         </li>

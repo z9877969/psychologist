@@ -18,7 +18,7 @@ const getSrc = () => {
 
 const FrequentlyAskedQuestions = () => {
   return (
-    <section className={s.section}>
+    <section id="faq" className={s.section}>
       <Container>
         <div className={s.container}>
           <div className={s.imgContainer}>
