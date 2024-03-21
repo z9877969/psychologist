@@ -12,7 +12,7 @@
 import ContentList from 'modules/_template/components/OpenedBlog/ContentList/ContentList';
 import articles from '../modules/_template/data/articles.json';
 import lastArticles from '../modules/_template/data/lastArticles.json';
-import LastArticlesList from 'modules/_template/components/LastArticlesList/LastArticlesList';
+import LastArticlesList from 'modules/_template/components/OpenedBlog/LastArticlesList/LastArticlesList';
 // import { Link } from 'react-router-dom';
 
 const BlogPage = () => {
