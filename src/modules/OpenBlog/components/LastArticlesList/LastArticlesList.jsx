@@ -1,18 +1,20 @@
 import Button from 'shared/components/Button/Button';
 import { LastArticleCard } from '../LastArticlesCard/LastArticlesCard';
 import s from './LastArticlesList.module.scss';
+import lastArticles from '../modules/OpenBlog/data/lastArticles.json';
 
-const LastArticlesList = ({ lastArticles }) => {
+const LastArticlesList = () => {
+  const data = lastArticles.slice(0, 3);
   return (
     <div className={s.wraperLastArticles}>
       <div className={s.wrapTitle}>
         <h4 className={s.titleArticles}>Останні статті</h4>
       </div>
       <ul className={s.list}>
-        {lastArticles.map((article) => {
+        {data.map((blog) => {
           return (
-            <li key={article.id} className={s.item}>
-              <LastArticleCard article={article} />
+            <li key={blog.id} className={s.item}>
+              <LastArticleCard article={blog} />
             </li>
           );
         })}

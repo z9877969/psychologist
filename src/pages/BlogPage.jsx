@@ -3,8 +3,8 @@
 
 import ContentList from 'modules/OpenBlog/components/ContentList/ContentList';
 import articles from '../modules/OpenBlog/data/articles.json';
-import lastArticles from '../modules/OpenBlog/data/lastArticles.json';
-import LastArticlesList from 'modules/OpenBlog/components/LastArticlesList/LastArticlesList';
+
+// import LastArticlesList from 'modules/OpenBlog/components/LastArticlesList/LastArticlesList';
 import { Container } from 'shared/components';
 import { NavLink } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
@@ -19,9 +19,9 @@ const BlogPage = () => {
         <div>
           <ContentList articles={articles} />
         </div>
-        <div>
-          <LastArticlesList lastArticles={lastArticles} />
-        </div>
+        {/* <div>
+          <LastArticlesList />
+        </div> */}
       </>
     </Container>
   );
