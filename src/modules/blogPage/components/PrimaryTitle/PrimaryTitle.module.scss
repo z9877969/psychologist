@@ -1,0 +1,16 @@
+.cartion {
+  color: var(--primary-green-dark, #1e5b2a);
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.21; /* 121.429% */
+
+  margin-bottom: 40px;
+
+  @include media(tablet) {
+    margin-bottom: 60px;
+  }
+  @include media(desktop) {
+    margin-bottom: 40px;
+  }
+}
