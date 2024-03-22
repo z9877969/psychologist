@@ -7,7 +7,9 @@
   align-items: center;
   width: 100%;
   color: #ffffff;
-  transition: background-color 250ms linear;
+  transition:
+    background-color 250ms linear,
+    font-weight 250ms linear;
   @include font(14, 20);
   font-weight: 600;
   outline: transparent;
@@ -17,12 +19,14 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   @include media(desktop) {
     width: 242px;
     &:hover,
     &:focus {
       background-color: #467927;
       color: #ffffff;
+      font-weight: 700;
     }
   }
 }

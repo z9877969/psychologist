@@ -1,33 +1,37 @@
 import { Container } from 'shared/components';
 import s from './BlogSection.module.scss';
 import blogData from '../../data/blogData.json';
-import BlogItem from '../BlogItems/BlogItem';
-import Button from '../../../../shared/components/Button/Button';
+import Button from 'shared/components/Button/Button';
+import BlogTitle from 'shared/components/BlogTitle/BlogTitle';
+import * as images from '../../img';
+import BlogList from 'shared/components/BlogList/BlogList';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import clsx from 'clsx';
 
 const BlogSection = () => {
+  const { blogId } = useParams();
+  const [isBlogPage] = useState(blogId ? true : false);
+
   const data = blogData.slice(0, 3);
 
   return (
     <section className={s.section}>
       <Container>
-        <h2 className={s.title}>Блог</h2>
-        <p className={s.description}>
-          Розмірковую над темами, які мене зацікавили. Запрошую читачів разом зі
-          мною досліджувати ключові поняття психології
-        </p>
-        <ul className={s.list}>
-          {data.map((blog) => {
-            return (
-              <li key={blog.id} className={s.item}>
-                <BlogItem blog={blog} />
-              </li>
-            );
-          })}
-        </ul>
+        <div className={clsx(isBlogPage ? s.blogPageWrapper : s.titleWrapper)}>
+          {isBlogPage ? (
+            <h2 className={s.blogPageTitle}>Останні статті</h2>
+          ) : (
+            <BlogTitle className={s.title} />
+          )}
+        </div>
+        <BlogList
+          data={data}
+          images={images}
+          className={clsx(isBlogPage ? s.blogList : s.list)}
+          classItem={clsx(isBlogPage ? s.blogItem : s.item)}
+        />
         <Button to="/blog">Переглянути більше статтей</Button>
-        {/* <Link className={s.link} to="/blog">
-          Переглянути більше статтей
-        </Link> */}
       </Container>
     </section>
   );

@@ -1,0 +1,66 @@
+.address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  .subTitle {
+    display: none;
+  }
+  .tell {
+    color: #fff;
+    transition: font-weight 250ms linear;
+    &:hover,
+    &:focus {
+      font-weight: 600;
+    }
+  }
+  .list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    .icon {
+      fill: #fff;
+      transition: fill 250ms linear;
+    }
+    .telegram:hover,
+    .telegram:focus {
+      fill: #2aabee;
+    }
+    .facebook {
+      display: inline-block;
+      height: 32px;
+      border-radius: 8px;
+      width: 32px;
+      transition: background-color 250ms linear;
+      &:hover,
+      &:focus {
+        height: 32px;
+        border-radius: 8px;
+        width: 32px;
+        background-color: #3d5a98;
+      }
+    }
+    .youtybe {
+      transition: fill 250ms linear;
+      &:hover,
+      &:focus {
+        fill: #ff0000;
+      }
+    }
+  }
+}
+@include media(tablet) {
+  .address {
+    gap: 20px;
+    align-items: start;
+    .subTitle {
+      display: block;
+      color: #fff;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      padding: 8px 0;
+    }
+  }
+}

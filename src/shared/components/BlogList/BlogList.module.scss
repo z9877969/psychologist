@@ -1,0 +1,12 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 24px;
+
+  @include media(tablet) {
+    flex-direction: row;
+  }
+  @include media(desktop) {
+  }
+}

@@ -24,3 +24,6 @@ dist-ssr
 
 # notes
 _trash/
+
+# Local Netlify folder
+.netlify
