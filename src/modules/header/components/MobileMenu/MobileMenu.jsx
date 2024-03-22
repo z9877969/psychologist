@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import s from './MobileMenu.module.scss';
-const MobileMenu = ({ isOpen }) => {
+const MobileMenu = ({ isOpen, onClose }) => {
   return (
     <div>
       {isOpen && (
@@ -8,32 +8,44 @@ const MobileMenu = ({ isOpen }) => {
           <nav className={s.navigation}>
             <ul className={s.navigationList}>
               <li className={s.headerListItem}>
-                <NavLink className={s.headerListLink} to="/">
+                <NavLink className={s.headerListLink} to="/" onClick={onClose}>
                   Головна
                 </NavLink>
               </li>
               <li className={s.headerListItem}>
-                <a className={s.headerListLink} href="#about">
+                <a className={s.headerListLink} href="#about" onClick={onClose}>
                   Про мене
                 </a>
               </li>
               <li className={s.headerListItem}>
-                <a className={s.headerListLink} href="#services">
+                <a
+                  className={s.headerListLink}
+                  href="#services"
+                  onClick={onClose}
+                >
                   Послуги
                 </a>
               </li>
               <li className={s.headerListItem}>
-                <a className={s.headerListLink} href="#reviews">
+                <a
+                  className={s.headerListLink}
+                  href="#reviews"
+                  onClick={onClose}
+                >
                   Відгуки
                 </a>
               </li>
               <li className={s.headerListItem}>
-                <NavLink className={s.headerListLink} to="/blog">
+                <NavLink
+                  className={s.headerListLink}
+                  to="/blog"
+                  onClick={onClose}
+                >
                   Блог
                 </NavLink>
               </li>
               <li className={s.headerListItem}>
-                <a className={s.headerListLink} href="#faq">
+                <a className={s.headerListLink} href="#faq" onClick={onClose}>
                   FAQ
                 </a>
               </li>
