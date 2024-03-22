@@ -6,7 +6,7 @@ const Education = () => {
   return (
     <Section>
       <Container>
-        <h1>Ha звязку</h1>
+        <h1>Освіта</h1>
         <EducationSwiper />
       </Container>
     </Section>
