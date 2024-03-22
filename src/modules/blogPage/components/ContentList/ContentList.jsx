@@ -21,7 +21,19 @@ const ContentList = ({ articles }) => {
             previousWasParagraph = true;
             break;
           case 'image':
-            component = <Image key={index} content={item.content} />;
+            component = (
+              <Image
+                key={index}
+                urlMobile={item.content.urlMobile}
+                urlMobile2x={item.content.urlMobile2x}
+                urlTablet={item.content.urlTablet}
+                urlTablet2x={item.content.urlTablet2x}
+                urlDesktop={item.content.urlDesktop}
+                urlDesktop2x={item.content.urlDesktop2x}
+                alt={item.content.alt}
+                height={item.content.height}
+              />
+            );
             previousWasParagraph = false;
             break;
           case 'quote':

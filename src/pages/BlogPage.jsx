@@ -1,5 +1,5 @@
 import articles from '../modules/blogPage/data/articles.json';
-import { BackToArticlesBtn } from 'modules/blogPage/components/BackToArticlesBtn/BackToArticlesBtn';
+import BackToArticlesBtn from '../modules/blogPage/components/BackToArticlesBtn/BackToArticlesBtn';
 import ContentList from 'modules/blogPage/components/ContentList/ContentList';
 import { Container } from 'shared/components';
 
