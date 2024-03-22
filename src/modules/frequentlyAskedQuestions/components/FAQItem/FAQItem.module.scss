@@ -8,6 +8,7 @@
   gap: 8px;
   border: 1px solid #dfdfdf;
   border-radius: 8px;
+  transition: border 250ms linear;
   .titleContainer {
     display: flex;
     align-items: center;
@@ -21,6 +22,7 @@
     line-height: 20px;
     letter-spacing: 0%;
     color: #414343;
+    transition: color 250ms linear;
   }
   .btn {
     background-color: transparent;
