@@ -1,6 +1,5 @@
 import { BookConsultation } from 'modules/BookConsultation';
 import { Consultation } from 'modules/Consultation';
-import { ModuleTemplate } from 'modules/_template';
 import { BlogSection } from 'modules/blogSection';
 import { FrequentlyAskedQuestions } from 'modules/frequentlyAskedQuestions';
 import Hero from 'modules/hero/components/Hero/Hero';
@@ -10,9 +9,10 @@ const MainPage = () => {
     <>
       <Hero />
       <BlogSection />
-      <ModuleTemplate />
+      {/* <ModuleTemplate /> */}
       <Consultation />
       <BookConsultation />
+      <BlogSection />
       <FrequentlyAskedQuestions />
     </>
   );
