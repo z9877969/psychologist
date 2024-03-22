@@ -6,9 +6,9 @@ import { FrequentlyAskedQuestions } from 'modules/frequentlyAskedQuestions';
 const MainPage = () => {
   return (
     <>
-      <BlogSection />
       <Consultation />
       <BookConsultation />
+      <BlogSection />
       <FrequentlyAskedQuestions />
     </>
   );
