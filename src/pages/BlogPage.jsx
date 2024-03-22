@@ -19,9 +19,6 @@ const BlogPage = () => {
         <div>
           <ContentList articles={articles} />
         </div>
-        {/* <div>
-          <LastArticlesList />
-        </div> */}
       </>
     </Container>
   );
