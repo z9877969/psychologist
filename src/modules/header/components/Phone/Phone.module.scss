@@ -1,9 +1,12 @@
 @keyframes changeImage {
   0% {
-    background-image: url('../../image/phone.svg'); /* Початкове зображення */
+    background-image: url('../../image/phone.svg');
+  }
+  50% {
+    background-image: url('../../image/phone_call.svg');
   }
   100% {
-    background-image: url('../../image/phone_call.svg'); /* Зображення, на яке потрібно змінити */
+    background-image: url('../../image/icon_call2.svg');
   }
 }
 
@@ -11,7 +14,7 @@
   width: 28px;
   height: 28px;
   background-repeat: no-repeat;
-  animation: changeImage 2s infinite;
+  animation: changeImage 1.5s infinite;
   @include media(desktop) {
     width: 24px;
     height: 24px;
