@@ -14,12 +14,12 @@
   {
     "block": "image",
     "content": {
-      "urlMobile": "./src/modules/OpenBlog/img/mobile.jpg",
-      "urlMobile2x": "./src/modules/OpenBlog/img/mobile@2x.jpg",
-      "urlTablet": "./src/modules/OpenBlog/img/tablet.jpg",
-      "urlTablet2x": "./src/modules/OpenBlog/tablet@2x.jpg",
-      "urlDesktop": "./src/modules/OpenBlog/desctop.jpg",
-      "urlDesktop2x": "./src/modules/OpenBlog/desctop@2x.jpg",
+      "urlMobile": "./src/modules/blogPage/img/mobile.jpg",
+      "urlMobile2x": "./src/modules/blogPage/img/mobile@2x.jpg",
+      "urlTablet": "./src/modules/blogPage/img/tablet.jpg",
+      "urlTablet2x": "./src/modules/blogPage/tablet@2x.jpg",
+      "urlDesktop": "./src/modules/blogPage/desctop.jpg",
+      "urlDesktop2x": "./src/modules/blogPage/desctop@2x.jpg",
       "alt": "На прийомі в Ірина Прудько",
       "height": "344"
     }
