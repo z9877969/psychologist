@@ -1,11 +1,7 @@
 import s from './BlogList.module.scss';
 
-const BlogList = () => {
-  return (
-    <>
-      <h2 className={s.title}>BlogList</h2>
-    </>
-  );
+const BlogList = ({ className = '', children }) => {
+  return <ul className={`${s.list} ${className}`}>{children}</ul>;
 };
 
 export default BlogList;

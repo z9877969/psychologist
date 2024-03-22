@@ -1,10 +1,19 @@
 import s from './BlogListPagination.module.scss';
 
-const BlogListPagination = () => {
+const BlogListPagination = ({ page, totalPages, onChange }) => {
   return (
-    <>
-      <h2 className={s.title}>BlogListPagination</h2>
-    </>
+    <ul className={s.list}>
+      {Array.from({ length: totalPages }, (_, i) => (
+        <li key={i}>
+          <button
+            className={`${s.button} ${page === i + 1 ? s.current : ''}`}
+            onClick={() => onChange(i + 1)}
+          >
+            {i + 1}
+          </button>
+        </li>
+      ))}
+    </ul>
   );
 };
 

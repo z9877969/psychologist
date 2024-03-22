@@ -1,7 +1,35 @@
-.title {
-  text-align: center;
-  font-family: $secondary-font-family;
-  font-size: 40px;
-  padding: 60px 0;
-  color: $green;
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  // margin: 0 auto;
+  justify-content: center;
+}
+
+.back {
+  margin-right: 8px;
+}
+
+.next {
+  margin-left: 8px;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // font-size: 16px;
+  font-weight: 600;
+  // line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+  color: #414343;
+
+  @include font(16, 24);
+}
+
+.current {
+  border-radius: 50%;
+  background-color: #1e5b2a;
+  color: #fff;
 }
