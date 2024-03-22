@@ -1,0 +1,28 @@
+.thumb {
+  margin: 0 auto;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+@media screen and (min-width: 375px) {
+  .thumb {
+    width: 343px;
+    height: 344px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .thumb {
+    width: 556px;
+    height: 688px;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 1444px) {
+  .thumb {
+    min-width: 556px;
+    height: 708px;
+    margin-bottom: 24px;
+  }
+}

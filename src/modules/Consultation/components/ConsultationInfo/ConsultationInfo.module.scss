@@ -1,0 +1,50 @@
+.consultationInfo {
+  background:
+    url('../../images/bg-svg/countur.svg') 5px 13px,
+    url('../../images/bg-svg/fill.svg') 13px 22px;
+  background-repeat: no-repeat;
+  background-size:
+    256px 270px,
+    240px 261px;
+}
+
+@media screen and (min-width: 375px) {
+  .consultationInfo {
+    background:
+      url('../../images/bg-svg/countur.svg') 5px 13px,
+      url('../../images/bg-svg/fill.svg') 13px 22px;
+    background-repeat: no-repeat;
+    background-size:
+      316px 330px,
+      300px 321px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .consultationInfo {
+    background:
+      url('../../images/bg-svg/countur.svg') 25px 25px,
+      url('../../images/bg-svg/fill.svg') 40px 42px;
+    background-repeat: no-repeat;
+    background-size:
+      614px 663px,
+      587px 646px;
+  }
+}
+
+@media screen and (min-width: 1444px) {
+  .consultationInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-left: -120px;
+    background:
+      url('../../images/bg-svg/countur.svg') 65px 27px,
+      url('../../images/bg-svg/fill.svg') 80px 54px;
+    background-repeat: no-repeat;
+    background-size:
+      614px 681px,
+      587px 654px;
+  }
+}
