@@ -1,0 +1,9 @@
+.description {
+  @include font(16, 24);
+  color: #414343;
+  letter-spacing: -0.02em;
+
+  @include media(tablet) {
+    width: 690px;
+  }
+}

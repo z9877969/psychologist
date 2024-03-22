@@ -7,10 +7,10 @@ import { FrequentlyAskedQuestions } from 'modules/frequentlyAskedQuestions';
 const MainPage = () => {
   return (
     <>
-      <BlogSection />
       <ModuleTemplate />
       <Consultation />
       <BookConsultation />
+      <BlogSection />
       <FrequentlyAskedQuestions />
     </>
   );
