@@ -1,26 +1,52 @@
 [
   {
-    "block": "article",
-    "image": "http://some.cloude.com/path/to/image.jpg",
+    "id": "id-1",
+    "author": "Ірина Прудько",
     "date": "16.01.2024",
-    "author": "Ірина Прудько ",
-    "title": "Ефективні психологічні методи мотивування персоналу у сучасному бізнесі. ",
-    "content": "У сучасному динамічному світі економіки, розвиток підприємств у різних галузях значною мірою залежить від здатності ..."
+    "title": "Ефективні психологічні методи мотивування персоналу у сучасному бізнесі",
+    "url": "/",
+    "text": "У сучасному динамічному світі економіки, розвиток підприємств у різних галузях значною мірою залежить від здатності ...",
+    "urlMobile": "./src/modules/blogSection/img/blog-mobile.jpg",
+    "urlMobile2x": "./src/modules/blogSection/img/blog-mobile@2x.jpg",
+    "urlTablet": "./src/modules/blogSection/img/blog-tablet1.jpg",
+    "urlTablet2x": "./src/modules/blogSection/img/blog-tablet1@2x.jpg",
+    "urlDesktop": "./src/modules/blogSection/img/blog-desktop1.jpg",
+    "urlDesktop2x": "./src/modules/blogSection/img/blog-desktop1@2x.jpg",
+    "alt": "На прийомі в Ірина Прудько",
+    "height": "200"
   },
+
   {
-    "block": "article",
-    "image": "http://some.cloude.com/path/to/image.jpg",
+    "id": "id-2",
+    "author": "Ірина Прудько",
     "date": "18.02.2024",
-    "author": "Ірина Прудько ",
-    "title": "'Ви отримуєте те, що систематично винагороджуєте': неочевидні наслідки відсутності ... ",
-    "content": "Стратегія мотивації співробітників в бізнесі часто нагадує мистецтво, де кожен штрих має значення. Очевидно проста ... "
+    "title": "\"Ви отримуєте те, що систематично винагороджуєте\": неочевидні наслідки відсутності ...",
+    "url": "/",
+    "text": "Стратегія мотивації співробітників в бізнесі часто нагадує мистецтво, де кожен штрих має значення. Очевидно проста ...",
+    "urlMobile": "./src/modules/blogSection/img/blog-mobile.jpg",
+    "urlMobile2x": "./src/modules/blogSection/img/blog-mobile@2x.jpg",
+    "urlTablet": "./src/modules/blogSection/img/blog-tablet2.jpg",
+    "urlTablet2x": "./src/modules/blogSection/img/blog-tablet2@2x.jpg",
+    "urlDesktop": "./src/modules/blogSection/img/blog-desktop2.jpg",
+    "urlDesktop2x": "./src/modules/blogSection/img/blog-desktop2@2x.jpg",
+    "alt": "На прийомі в Ірина Прудько",
+    "height": "200"
   },
+
   {
-    "block": "article",
-    "image": "http://some.cloude.com/path/to/image.jpg",
+    "id": "id-3",
+    "author": "Ірина Прудько",
     "date": "20.03.2024",
-    "author": "Ірина Прудько ",
     "title": "Розуміння Ієрархії потреб за Абрахамом Маслоу – ключ до мотивації та ефективності ...",
-    "content": "Управління компанією - це не лише про цифри та стратегії, але й про ефективне керування людськими ресурсами. Ключ ..."
+    "url": "/",
+    "text": "Управління компанією - це не лише про цифри та стратегії, але й про ефективне керування людськими ресурсами. Ключ ...",
+    "urlMobile": "./src/modules/blogSection/img/blog-mobile.jpg",
+    "urlMobile2x": "./src/modules/blogSection/img/blog-mobile@2x.jpg",
+    "urlTablet": "./src/modules/blogSection/img/blog-tablet1.jpg",
+    "urlTablet2x": "./src/modules/blogSection/img/blog-tablet1@2x.jpg",
+    "urlDesktop": "./src/modules/blogSection/img/blog-desktop3.jpg",
+    "urlDesktop2x": "./src/modules/blogSection/img/blog-desktop3@2x.jpg",
+    "alt": "На прийомі в Ірина Прудько",
+    "height": "200"
   }
 ]
