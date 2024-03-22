@@ -32,7 +32,6 @@ export const Image = ({
           height={height}
         />
       </div>
-      {/* <img className={s.img} src={content} alt="Image" /> */}
     </div>
   );
 };

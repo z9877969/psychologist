@@ -7,6 +7,13 @@
   font-size: 28px;
   font-weight: 600;
   line-height: 1.21; /* 121.429% */
-  margin-top: 16px;
+
   margin-bottom: 40px;
+
+  @include media(tablet) {
+    margin-bottom: 60px;
+  }
+  @include media(desktop) {
+    margin-bottom: 40px;
+  }
 }
