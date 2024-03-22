@@ -1,0 +1,67 @@
+.hero {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.heroWrap {
+  background:
+    url('../../image/Vectormob2.svg') 5px 13px,
+    url('../../image/Vectormob.svg') 13px 22px;
+  background-repeat: no-repeat;
+  background-size:
+    256px 270px,
+    240px 261px;
+}
+
+@media screen and (min-width: 375px) {
+  .heroWrap {
+    background:
+      url('../../image/Vectormob2.svg') 5px 13px,
+      url('../../image/Vectormob.svg') 13px 22px;
+    background-repeat: no-repeat;
+    background-size:
+      316px 330px,
+      300px 321px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .heroWrap {
+    background:
+      url('../../image/Vectortab2.svg') 25px 25px,
+      url('../../image/Vectortab.svg') 40px 42px;
+    background-repeat: no-repeat;
+    background-size:
+      614px 663px,
+      587px 646px;
+  }
+  .buttonBox {
+    display: flex;
+    gap: 24px;
+  }
+  .hero {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1444px) {
+  .heroWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-left: -120px;
+    background:
+      url('../../image/Vectordesk2.svg') 65px 27px,
+      url('../../image/Vectordesk.svg') 80px 54px;
+    background-repeat: no-repeat;
+    background-size:
+      614px 681px,
+      587px 654px;
+  }
+  .hero {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
