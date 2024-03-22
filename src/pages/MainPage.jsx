@@ -1,6 +1,7 @@
 import { Consultation } from 'modules/Consultation';
 import { ModuleTemplate } from 'modules/_template';
 import { Blog } from 'modules/blogSection';
+import { Testimonials } from 'modules/testimonials';
 
 const MainPage = () => {
   return (
@@ -8,6 +9,7 @@ const MainPage = () => {
       <Blog />
       <ModuleTemplate />
       <Consultation />
+      <Testimonials />
     </>
   );
 };

@@ -1,0 +1,30 @@
+@import '../../../../shared/styles/breakpoints';
+@import '../../../../shared/styles/colors';
+@import '../../../../shared/styles/mixins';
+@import '../../../../shared/styles/variables';
+
+.navbtn {
+  display: none;
+}
+
+@include media(tablet) {
+  .navbtn {
+    display: block;
+    .icon,
+    .iconButton:disabled {
+      width: 48px;
+      height: 48px;
+      &.disabled svg {
+        fill: $light-grey;
+      }
+    }
+    svg {
+      fill: $dark-green;
+    }
+    .iconButton {
+      &:first-child {
+        margin-right: 58px;
+      }
+    }
+  }
+}
