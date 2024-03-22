@@ -2,16 +2,14 @@ import Picture from 'shared/components/Picture/Picture';
 import s from './Image.module.scss';
 
 export const Image = ({
-  content: {
-    urlMobile,
-    urlMobile2x,
-    urlTablet,
-    urlTablet2x,
-    urlDesktop,
-    urlDesktop2x,
-    alt,
-    height,
-  },
+  urlMobile,
+  urlMobile2x,
+  urlTablet,
+  urlTablet2x,
+  urlDesktop,
+  urlDesktop2x,
+  alt,
+  height,
 }) => {
   let imgWidth = '311';
   if (document.body.clientWidth > 767)

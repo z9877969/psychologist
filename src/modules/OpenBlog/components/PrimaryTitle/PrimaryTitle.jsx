@@ -1,9 +1,5 @@
 import s from './PrimaryTitle.module.scss';
 
 export const PrimaryTitle = ({ content }) => {
-  return (
-    <div className={s.wraperTitle}>
-      <p className={s.cartion}>{content}</p>
-    </div>
-  );
+  return <h1 className={s.cartion}>{content}</h1>;
 };
