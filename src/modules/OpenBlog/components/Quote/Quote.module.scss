@@ -1,9 +1,13 @@
 .wraperQuote {
   display: flex;
+  flex-direction: column;
   margin-top: 32px;
   margin-bottom: 32px;
-  padding-top: 40px;
-
+  padding: 40px 0 40px 0;
+}
+.quote {
+  display: flex;
+  margin-bottom: 16px;
   justify-content: space-between;
 }
 
@@ -11,13 +15,21 @@
 }
 .content {
   width: 227px;
-  height: 300px;
+
   color: var(--primary-green-dark, #1e5b2a);
   text-align: center;
   font-family: 'Open Sans';
   font-size: 22px;
   font-style: italic;
   line-height: 1.36; /* 136.364% */
+  @include media(tablet) {
+    width: 572px;
+  }
+  @include media(desktop) {
+    width: 720px;
+    font-size: 24px;
+    line-height: 1.33;
+  }
 }
 .accent {
   color: var(--primary-orange, #eb6d0a);
@@ -28,7 +40,6 @@
   line-height: 1.36px; /* 136.364% */
 }
 .wrapAuthor {
-  padding-bottom: 40px;
 }
 .author {
   color: var(--typography-black, #2c2727);
@@ -37,6 +48,13 @@
   font-size: 18px;
   font-style: italic;
   line-height: 1.333; /* 133.333% */
+  @include media(tablet) {
+    font-size: 22px;
+  }
+  @include media(desktop) {
+    font-size: 24px;
+    line-height: 1.33;
+  }
 }
 
 .textEl {

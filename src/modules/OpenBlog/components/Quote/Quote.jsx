@@ -2,8 +2,8 @@ import s from './Quote.module.scss';
 
 export const Quote = ({ content, accent, author }) => {
   return (
-    <>
-      <div className={s.wraperQuote}>
+    <section className={s.wraperQuote}>
+      <div className={s.quote}>
         <p className={s.textEl}>“</p>
         <div className={s.wrapContent}>
           <p className={s.content}>
@@ -18,6 +18,6 @@ export const Quote = ({ content, accent, author }) => {
       <div className={s.wrapAuthor}>
         <p className={s.author}>{author}</p>
       </div>
-    </>
+    </section>
   );
 };
