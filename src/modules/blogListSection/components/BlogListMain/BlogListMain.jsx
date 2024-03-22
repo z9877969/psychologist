@@ -28,7 +28,7 @@ const BlogListMain = () => {
         setArticles(result.data);
         setTotalPages(result.totalPages);
       } catch (err) {
-      } finally {
+        alert(err);
       }
     }
 

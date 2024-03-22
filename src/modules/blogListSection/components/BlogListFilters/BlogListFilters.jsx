@@ -12,7 +12,7 @@ const BlogListFilters = ({ category = '', onSelect, onSearch }) => {
         const result = await blogAPI.fetchCategories();
         setCategories([{ id: 0, name: 'Оберіть тему' }, ...result]);
       } catch (err) {
-      } finally {
+        alert(err);
       }
     }
 
