@@ -5,6 +5,8 @@ import { Container } from 'shared/components';
 import { NavLink } from 'react-router-dom';
 import { sprite } from 'shared/icons';
 
+import { BlogSection } from 'modules/blogSection';
+
 const BlogPage = () => {
   return (
     <Container>
@@ -21,6 +23,9 @@ const BlogPage = () => {
       </div>
       <div>
         <ContentList articles={articles} />
+      </div>
+      <div>
+        <BlogSection />
       </div>
     </Container>
   );
