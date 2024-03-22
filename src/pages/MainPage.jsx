@@ -1,15 +1,17 @@
+import { BookConsultation } from 'modules/BookConsultation';
 import { Consultation } from 'modules/Consultation';
-import { ModuleTemplate } from 'modules/_template';
-import { Blog } from 'modules/blogSection';
+import { BlogSection } from 'modules/blogSection';
+import { FrequentlyAskedQuestions } from 'modules/frequentlyAskedQuestions';
 import { Testimonials } from 'modules/testimonials';
 
 const MainPage = () => {
   return (
     <>
-      <Blog />
-      <ModuleTemplate />
       <Consultation />
       <Testimonials />
+      <BookConsultation />
+      <BlogSection />
+      <FrequentlyAskedQuestions />
     </>
   );
 };

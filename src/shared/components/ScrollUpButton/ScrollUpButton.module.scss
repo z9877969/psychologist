@@ -1,0 +1,65 @@
+.wrapper {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: $mobile;
+
+  @include media(tablet) {
+    width: $tablet;
+  }
+  @include media(desktop) {
+    width: $desktop;
+  }
+  .button {
+    width: 48px;
+    height: 48px;
+    background-color: #eb6d0a;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 112px;
+
+    z-index: 11111;
+    transform: translate(311px, 60px);
+
+    opacity: 0;
+    transition:
+      transform 500ms linear,
+      opacity 500ms linear,
+      background-color 250ms linear;
+
+    @include media(tablet) {
+      bottom: 96px;
+      transform: translate(680px, 70px);
+    }
+    @include media(desktop) {
+      width: 56px;
+      height: 56px;
+      transform: translate(1264px, 70px);
+    }
+    &:hover {
+      background-color: #cf600a;
+      .svg {
+        transform: scale(1.25);
+      }
+    }
+    .svg {
+      background-color: transparent;
+      fill: transparent;
+      transition: transform 250ms linear;
+    }
+  }
+  .isOpen {
+    transform: translate(311px, 0);
+    opacity: 1;
+    @include media(tablet) {
+      transform: translate(680px, 0);
+    }
+    @include media(desktop) {
+      transform: translate(1264px, 0);
+    }
+  }
+}

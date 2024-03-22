@@ -1,0 +1,15 @@
+.consultationContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  @include media(tablet) {
+    gap: 24px;
+  }
+
+  @include media(desktop) {
+    flex-direction: row;
+    margin-right: -120px;
+  }
+}
