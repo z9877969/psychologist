@@ -1,21 +1,20 @@
+import { useCallback } from 'react';
+import { useModal } from 'context/ModalProvider';
+import s from './Content.module.scss';
 import Button from 'shared/components/BigButton/BigButton';
 import ContentText from '../ContentText/ContentText';
-import s from './Content.module.scss';
 import ContentTitle from '../ContentTitle/ContentTitle';
-import { ModalProvider, useModal } from 'context/ModalProvider';
 
 const Content = () => {
   const showModal = useModal();
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     showModal(
-      <ModalProvider>
-        <div style={{ backgroundColor: 'green', padding: 50 }}>
-          <p style={{ color: 'white', padding: 100 }}>SomeComponent</p>
-        </div>
-      </ModalProvider>
+      <div style={{ backgroundColor: 'green', padding: 50 }}>
+        <p style={{ color: 'white', padding: 100 }}>SomeComponent</p>
+      </div>
     );
-  };
+  }, [showModal]);
 
   return (
     <div className={s.content}>
