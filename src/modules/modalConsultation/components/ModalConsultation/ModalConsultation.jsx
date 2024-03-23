@@ -1,0 +1,35 @@
+import { Container } from 'shared/components';
+import s from './ModalConsultation.module.scss';
+import MyPicture from '../MyPicture/MyPicture';
+import { sprite } from 'shared/icons';
+import FormConsultation from '../FormConsultation/FormConsultation';
+
+const ModalConsultation = () => {
+  return (
+    <div className={s.modal}>
+      <Container>
+        <div className={s.container}>
+          <div className={s.imgContainer}>
+            <MyPicture />
+            <button className={s.btnClose}>
+              <svg className={s.icon} width={28} height={28}>
+                <use xlinkHref={`${sprite}#icon-cross`}></use>
+              </svg>
+            </button>
+          </div>
+          <div className={s.formContainer}>
+            <h2 className={s.title}>Записатися на консультацію</h2>
+            <button className={s.btnSecond}>
+              <svg className={s.icon} width={28} height={28}>
+                <use xlinkHref={`${sprite}#icon-cross`}></use>
+              </svg>
+            </button>
+            <FormConsultation />
+          </div>
+        </div>
+      </Container>
+    </div>
+  );
+};
+
+export default ModalConsultation;
