@@ -52,7 +52,7 @@ function TestimonialsContainer() {
           paginationDots={paginationDots}
           changePage={changePage}
         />
-        <ButtonGroup />
+        <ButtonGroup testimonials={testimonials} />
       </Section>
     </Container>
   );
