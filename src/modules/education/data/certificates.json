@@ -1,32 +1,40 @@
 [
   {
     "id": "id-1",
-    "urlMobile": "./src/modules/education/img/cetrificate-mobile-1.jpg",
-    "urlMobile2x": "./src/modules/education/img/cetrificate-mobile-1-@2x.jpg",
-    "urlTablet": "./src/modules/education/img/cetrificate-tablet-1.jpg",
-    "urlTablet2x": "./src/modules/education/img/cetrificate-tablet-1-@2x.jpg",
-    "urlDesktop": "./src/modules/education/img/cetrificate-desktop-1.jpg",
-    "urlDesktop2x": "./src/modules/education/img/cetrificate-desktop-1-@2x.jpg",
-    "alt": "Сертифікат Ірини Прудько"
+    "urlMobile": "certifMob1",
+    "urlMobile2x": "certifMob1x",
+
+    "urlTablet": "certifTab1",
+    "urlTablet2x": "certifTab1x",
+
+    "urlDesktop": "certifDesk1",
+    "urlDesktop2x": "certifDesk1x",
+    "alt": "Сертифікат Ірини Прудько",
+    "width": "229",
+    "height": "351"
   },
   {
     "id": "id-2",
-    "urlMobile": "./src/modules/education/img/cetrificate-mobile-2.jpg",
-    "urlMobile2x": "./src/modules/education/img/cetrificate-mobile-2-@2x.jpg",
-    "urlTablet": "./src/modules/education/img/cetrificate-tablet-2.jpg",
-    "urlTablet2x": "./src/modules/education/img/cetrificate-tablet-2-@2x.jpg",
-    "urlDesktop": "./src/modules/education/img/cetrificate-desktop-2.jpg",
-    "urlDesktop2x": "./src/modules/education/img/cetrificate-desktop-2-@2x.jpg",
-    "alt": "Сертифікат Ірини Прудько"
+    "urlMobile": "certifMob2",
+    "urlMobile2x": "certifMob2x",
+    "urlTablet": "certifTab2",
+    "urlTablet2x": "certifTab2x",
+    "urlDesktop": "certifDesk2",
+    "urlDesktop2x": "certifDesk2x",
+    "alt": "Сертифікат Ірини Прудько",
+    "width": "229",
+    "height": "351"
   },
   {
     "id": "id-3",
-    "urlMobile": "./src/modules/education/img/cetrificate-mobile-3.jpg",
-    "urlMobile2x": "./src/modules/education/img/cetrificate-mobile-3-@2x.jpg",
-    "urlTablet": "./src/modules/education/img/cetrificate-tablet-3.jpg",
-    "urlTablet2x": "./src/modules/education/img/cetrificate-tablet-3-@2x.jpg",
-    "urlDesktop": "./src/modules/education/img/cetrificate-desktop-3.jpg",
-    "urlDesktop2x": "./src/modules/education/img/cetrificate-desktop-3-@2x.jpg",
-    "alt": "Сертифікат Ірини Прудько"
+    "urlMobile": "certifMob3",
+    "urlMobile2x": "certifMob3x",
+    "urlTablet": "certifTab3",
+    "urlTablet2x": "certifTab3x",
+    "urlDesktop": "certifDesk3",
+    "urlDesktop2x": "certifDesk3x",
+    "alt": "Сертифікат Ірини Прудько",
+    "width": "229",
+    "height": "351"
   }
 ]
