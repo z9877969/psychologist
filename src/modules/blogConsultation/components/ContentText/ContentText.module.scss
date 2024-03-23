@@ -1,0 +1,18 @@
+.textWrapper {
+  margin-bottom: 32px;
+}
+
+.text {
+  color: #414343;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+
+  &:nth-child(2n - 1) {
+    margin-bottom: 8px;
+
+    @include media(desktop) {
+      margin-bottom: 16px;
+    }
+  }
+}
