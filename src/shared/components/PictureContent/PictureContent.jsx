@@ -7,7 +7,7 @@ import {
   consultationTab2x,
 } from 'modules/Consultation/images/consultation';
 import s from './PictureContent.module.scss';
-import Picture from '../Picture/Picture';
+import Picture from '../../../modules/Consultation/components/Picture/Picture';
 
 const PictureContent = () => {
   return (
