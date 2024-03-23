@@ -17,7 +17,9 @@ const FeedbackSchema = Yup.object().shape({
 
 const FormConsultation = () => {
   const handleSubmit = (values) => {
-    console.log(values);
+    alert(
+      `name: ${values.name} phone: ${values.phone} message: ${values.message} `
+    );
   };
 
   return (

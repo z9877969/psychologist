@@ -7,7 +7,7 @@ import { useCallback } from 'react';
 
 const ModalConsultation = () => {
   const setModal = useModal();
-  const closeModal = useCallback(() => setModal(), []);
+  const closeModal = useCallback(() => setModal(), [setModal]);
   return (
     <div className={s.modal}>
       <div className={s.container}>
