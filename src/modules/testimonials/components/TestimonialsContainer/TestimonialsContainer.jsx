@@ -1,25 +1,21 @@
-import { useState, useEffect } from 'react';
-import { Container, Section } from '../../../../shared/components';
+import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { Container, Section } from 'shared/components';
 import TestimonialCard from '../TestimonialCard/TestimonialCard';
 import NavigationButtons from '../NavigationButtons/NavigationButtons';
 import PaginationDots from '../PaginationDots/PaginationDots';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
-import testimonials from '../../data/index';
+import testimonials from '../../data/';
 import s from './TestimonialsContainer.module.scss';
+import { sprite } from 'shared/icons';
 
 function TestimonialsContainer() {
   const [currentPage, setCurrentPage] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const itemsPerPage = windowWidth <= 767.98 ? 1 : 2;
+  const isMobile = useMediaQuery({ query: '(max-width: 767.98px)' });
+  const itemsPerPage = isMobile ? 1 : 2;
   const maxPage = Math.ceil(testimonials.length / itemsPerPage) - 1;
-  const paginationDots = windowWidth <= 767.98 ? 8 : 4;
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const paginationDots = isMobile ? 8 : 4;
 
   const testimonialsToShow = testimonials.slice(
     currentPage * itemsPerPage,
@@ -43,6 +39,7 @@ function TestimonialsContainer() {
             maxPage={maxPage}
             paginationDots={paginationDots}
             changePage={changePage}
+            sprite={sprite}
           />
         </div>
         <div className={s.cardsContainer}>

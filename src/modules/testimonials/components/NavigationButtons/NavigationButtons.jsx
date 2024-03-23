@@ -1,20 +1,22 @@
 import s from './NavigationButtons.module.scss';
-import { sprite } from '../../../../shared/icons/index';
 
 const NavigationButtons = ({
   currentPage,
   maxPage,
   paginationDots,
   changePage,
+  sprite,
 }) => {
   const disablePrev = currentPage === 0;
   const disableNext = currentPage >= Math.min(maxPage, paginationDots - 1);
 
-  const renderIcon = (id) => (
-    <svg className={s.icon}>
-      <use xlinkHref={`${sprite}#${id}`}></use>
-    </svg>
-  );
+  const renderIcon = (id) => {
+    return (
+      <svg className={s.icon}>
+        <use xlinkHref={`${sprite}#${id}`}></use>
+      </svg>
+    );
+  };
 
   return (
     <div className={s.navbtn}>

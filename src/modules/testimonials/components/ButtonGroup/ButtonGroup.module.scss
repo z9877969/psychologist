@@ -1,34 +1,29 @@
-@import '../../../../shared/styles/breakpoints';
-@import '../../../../shared/styles/colors';
-@import '../../../../shared/styles/mixins';
-@import '../../../../shared/styles/variables';
-
 .btnGroup {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  .btn {
-    display: flex;
-    height: 48px;
-    padding: 8px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    align-self: stretch;
-    @include font(14, 20.02);
-    border-radius: 100px;
-    background: $light-green;
-    color: $white;
-    font-family: 'Open Sans';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.43;
-    &:hover,
-    &:focus {
-      background: $dark-green;
-    }
+}
+.btn {
+  display: flex;
+  height: 48px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  @include font(14, 20.02);
+  border-radius: 100px;
+  background: $light-green;
+  color: $white;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.43;
+  &:hover,
+  &:focus {
+    background: $dark-green;
   }
 }
 
@@ -37,9 +32,9 @@
     flex-direction: row;
     justify-content: center;
     gap: 24px;
-    .btn {
-      padding: 8px 16px;
-      width: 332px;
-    }
+  }
+  .btn {
+    padding: 8px 16px;
+    width: 332px;
   }
 }

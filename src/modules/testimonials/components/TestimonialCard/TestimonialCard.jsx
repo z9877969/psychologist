@@ -1,5 +1,5 @@
 import s from './TestimonialCard.module.scss';
-import { formatAge } from '../../utils/formAge';
+import { formatAge } from '../../utils/formatAge';
 
 function TestimonialCard({ testimonial }) {
   return (
