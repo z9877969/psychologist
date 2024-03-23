@@ -13,12 +13,18 @@ const FAQItem = ({ text, title, id, toggleIndex, indexActive }) => {
   }, [indexActive, id]);
   const dinamicItem = clsx(s.item, isActive && s.activeItem);
   const dinamicBtn = clsx(s.btn, isActive && s.activeBtn);
-  const dinamikTitle = isActive ? s.activeTitle : s.title;
+  const dinamikTitle = clsx(s.title, isActive && s.activeTitle);
+
+  const handleClick = (e) => {
+    e.stopPropagation();
+    toggleIndex(id);
+  };
+
   return (
     <div className={dinamicItem}>
       <div className={s.titleContainer}>
         <h3 className={dinamikTitle}>{title}</h3>
-        <button className={dinamicBtn} onClick={() => toggleIndex(id)}>
+        <button className={dinamicBtn} onClick={handleClick}>
           <svg width={24} height={24} style={{ stroke: '#000' }}>
             <use xlinkHref={`${sprite}#icon-plus`}></use>
           </svg>
