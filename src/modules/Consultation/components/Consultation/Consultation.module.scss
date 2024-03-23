@@ -1,15 +1,11 @@
 .section {
   padding: 40px 0;
-}
 
-@media screen and (min-width: 768px) {
-  .section {
+  @include media(tablet) {
     padding: 60px 0px;
   }
-}
 
-@media screen and (min-width: 1444px) {
-  .section {
+  @include media(desktop) {
     padding: 80px 0px;
   }
 }
