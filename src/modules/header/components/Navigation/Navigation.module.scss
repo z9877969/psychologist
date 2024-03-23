@@ -19,7 +19,7 @@
     letter-spacing: -0.32px;
     color: $primary-text-color;
     position: relative;
-    transition: color 250ms linear;
+    transition: color 0.3s ease-in-out;
   }
 
   .headerListLink:hover,
@@ -39,7 +39,7 @@
     background-color: #1e5b2a;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 250ms linear;
+    transition: transform 0.3s ease-in-out;
   }
   .headerListLink:focus::after,
   .headerListLink:active::after {
