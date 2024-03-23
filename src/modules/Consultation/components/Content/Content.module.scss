@@ -1,8 +1,5 @@
 .content {
-}
-
-@media screen and (min-width: 1444px) {
-  .content {
+  @include media(desktop) {
     width: 558px;
   }
 }
