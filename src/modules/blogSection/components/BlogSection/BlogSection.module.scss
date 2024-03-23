@@ -3,24 +3,50 @@
   padding-bottom: 40px;
 }
 
+
+/*.title {
+  @include font(30, 36);
+  color: #2c2727;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+
+  @include media(tablet) {
+    @include font(40, 48);
+  }
+  @include media(desktop) {
+    @include font(48, 56);
+    margin-bottom: 16px;
+  }
+}
+
+.description {
+  @include font(16, 24);
+  color: #414343;
+  letter-spacing: -0.02em; */
+
 .titleWrapper {
+
   margin-bottom: 16px;
   @include media(tablet) {
     margin-bottom: 32px;
   }
 }
+
 .list {
   margin-bottom: 16px;
   @include media(tablet) {
     margin-bottom: 32px;
   }
 }
+
 .blogList {
   margin-bottom: 24px;
   @include media(desktop) {
     margin-bottom: 40px;
   }
 }
+
 .item {
   @include media(to-tablet) {
     &:not(:first-child) {

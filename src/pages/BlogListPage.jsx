@@ -1,9 +1,11 @@
+
+import BlogListMain from 'modules/blogListSection/components/BlogListMain/BlogListMain';
 import { BlogConsultation } from 'modules/blogConsultation';
 
 const BlogListPage = () => {
   return (
     <>
-      <h1>BlogListPage</h1>
+      <BlogListMain />
       <BlogConsultation />
     </>
   );
