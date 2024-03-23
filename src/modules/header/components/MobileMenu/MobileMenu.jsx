@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import s from './MobileMenu.module.scss';
+import Backdrop from '../Backdrop/Backdrop';
+
 const MobileMenu = ({ isOpen, onClose }) => {
   return (
-    <div>
+    <div className={s.mainBox}>
       {isOpen && (
         <div className={`${s.mobileMenuContainer} ${isOpen ? s.open : ''}`}>
           <nav className={s.navigation}>
@@ -53,6 +55,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
           </nav>
         </div>
       )}
+      <Backdrop show={isOpen} onClick={onClose} />
     </div>
   );
 };

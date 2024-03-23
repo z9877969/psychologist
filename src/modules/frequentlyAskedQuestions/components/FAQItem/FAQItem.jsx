@@ -13,7 +13,7 @@ const FAQItem = ({ text, title, id, toggleIndex, indexActive }) => {
   }, [indexActive, id]);
   const dinamicItem = clsx(s.item, isActive && s.activeItem);
   const dinamicBtn = clsx(s.btn, isActive && s.activeBtn);
-  const dinamikTitle = isActive ? s.activeTitle : s.title;
+  const dinamikTitle = clsx(s.title, isActive && s.activeTitle);
   return (
     <div className={dinamicItem}>
       <div className={s.titleContainer}>
