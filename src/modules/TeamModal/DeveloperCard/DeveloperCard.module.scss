@@ -1,0 +1,49 @@
+.link {
+  display: flex;
+  flex-direction: row;
+}
+.card {
+  width: 267px;
+  margin-bottom: 24px;
+}
+
+.container {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-right: 24px;
+}
+
+.photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.icon {
+  position: absolute;
+  left: 60px;
+  bottom: 0px;
+  width: 20px;
+  height: 20px;
+}
+
+.details {
+  width: 121px;
+}
+.name {
+  color: var(--typography-black, #2c2727);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.position {
+  color: var(--typography-grey-dark, #414343);
+  line-height: 1.5;
+  letter-spacing: -0.02;
+}
+@include media(tablet) {
+}
+
+@include media(desktop) {
+}
