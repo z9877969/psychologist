@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  @include media(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+  }
+
+  @include media(desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-bottom: 32px;
+  }
+}
+
+.form {
+  position: relative;
+  max-width: 100%;
+}
+
+.input {
+  outline: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  padding: 0 48px 0 16px;
+  border-radius: 16px;
+  border: 1px solid #dfdfdf;
+  background: #fff;
+
+  &:hover,
+  &:focus {
+    border-color: #979797;
+  }
+
+  @include media(tablet) {
+    width: 332px;
+    height: 40px;
+    // @include font(40, 48);
+  }
+
+  @include media(desktop) {
+    width: 588px;
+    height: 56px;
+    // @include font(48, 56);
+    // margin-bottom: 16px;
+  }
+}
+
+.button {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #414343;
+
+  &:hover,
+  &:focus {
+    stroke: #1e5b2a;
+  }
+
+  @include media(tablet) {
+    top: 16px;
+  }
+}

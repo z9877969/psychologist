@@ -1,0 +1,5 @@
+.content {
+  @include media(desktop) {
+    width: 558px;
+  }
+}

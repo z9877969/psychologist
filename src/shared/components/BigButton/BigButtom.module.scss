@@ -16,7 +16,15 @@
     background-color: #043e0f;
   }
 
+  @include media(mobile) {
+    width: 343px;
+  }
+
   @include media(tablet) {
     width: 332px;
+  }
+
+  @include media(desktop) {
+    width: 242px;
   }
 }
