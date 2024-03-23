@@ -32,8 +32,6 @@
   }
 }
 @include media(tablet) {
-  .footer {
-  }
   .container {
     flex-direction: row;
     justify-content: space-between;

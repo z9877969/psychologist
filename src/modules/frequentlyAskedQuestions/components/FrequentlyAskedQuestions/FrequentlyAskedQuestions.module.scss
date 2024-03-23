@@ -51,10 +51,9 @@
   .container {
     flex-direction: row;
     justify-content: start;
-
-    .title {
-      font-size: 48px;
-      margin-bottom: 32px;
-    }
+  }
+  .title {
+    font-size: 48px;
+    margin-bottom: 32px;
   }
 }

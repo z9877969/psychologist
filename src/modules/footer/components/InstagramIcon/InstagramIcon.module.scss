@@ -1,8 +1,4 @@
 .instagram {
-  .gradientPath {
-    fill: #fff;
-    transition: all 250ms linear;
-  }
   &:hover .gradientPath,
   &:focus .gradientPath {
     animation: fillAnimation 250ms linear forwards;
@@ -57,4 +53,8 @@
       fill: #fff;
     }
   }
+}
+.gradientPath {
+  fill: #fff;
+  transition: all 250ms linear;
 }
