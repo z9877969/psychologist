@@ -25,7 +25,7 @@ const FrequentlyAskedQuestions = () => {
       <Container>
         <div className={s.container}>
           <div className={s.imgContainer}>
-            <div>
+            <div className={s.img}>
               <Picture
                 urlMobile={imgMobail}
                 urlMobile2x={imgMobail2x}
