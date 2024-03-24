@@ -4,16 +4,13 @@ import s from './Content.module.scss';
 import Button from 'shared/components/BigButton/BigButton';
 import ContentText from '../ContentText/ContentText';
 import ContentTitle from '../ContentTitle/ContentTitle';
+import { ModalConsultation } from 'modules/modalConsultation';
 
 const Content = () => {
   const showModal = useModal();
 
   const handleClick = useCallback(() => {
-    showModal(
-      <div style={{ backgroundColor: 'green', padding: 50 }}>
-        <p style={{ color: 'white', padding: 100 }}>SomeComponent</p>
-      </div>
-    );
+    showModal(<ModalConsultation />);
   }, [showModal]);
 
   return (
