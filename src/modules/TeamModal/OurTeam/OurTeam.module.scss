@@ -1,0 +1,46 @@
+.closeButton {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.closeButton .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  width: 1042px;
+  background-color: white;
+  padding: 80px;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-bottom: 32px;
+}
+
+.cardsContainer {
+  width: 850px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+@include media(tablet) {
+}
+
+@include media(desktop) {
+}

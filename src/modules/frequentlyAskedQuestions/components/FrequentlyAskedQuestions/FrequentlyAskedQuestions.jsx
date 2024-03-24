@@ -10,15 +10,6 @@ import ScrollBar from '../ScrollBar/ScrollBar';
 import FAQList from '../FAQList/FAQList';
 import { Picture } from 'shared/components';
 
-const getSrc = () => {
-  const width = parseInt(
-    getComputedStyle(document.querySelector('body')).width
-  );
-  if (width < 768) return [343, 343];
-  if (width < 1440) return [688, 532];
-  return [708, 708];
-};
-
 const FrequentlyAskedQuestions = () => {
   return (
     <section id="faq" className={s.section}>
@@ -33,8 +24,6 @@ const FrequentlyAskedQuestions = () => {
                 urlTablet2x={imgTablet2x}
                 urlDesktop={imgDesk}
                 urlDesktop2x={imgDesk2x}
-                width={getSrc()[0]}
-                height={getSrc()[1]}
               />
             </div>
           </div>
