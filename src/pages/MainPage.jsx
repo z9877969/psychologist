@@ -1,16 +1,22 @@
-import { ModuleTemplate } from 'modules/_template';
 import About from 'modules/aboutSection/components/About/About';
-import { Blog } from 'modules/blogSection';
 import VideoSection from 'modules/videoSection/components/VideoSection/VideoSection';
+import { BookConsultation } from 'modules/BookConsultation';
+import { Consultation } from 'modules/Consultation';
+import { BlogSection } from 'modules/blogSection';
+import { FrequentlyAskedQuestions } from 'modules/frequentlyAskedQuestions';
+import { Testimonials } from 'modules/testimonials';
 
 const MainPage = () => {
   return (
     <>
       <VideoSection />
       <About />
-      <Blog />
+      <Consultation />
+      <Testimonials />
+      <BookConsultation />
+      <BlogSection />
+      <FrequentlyAskedQuestions />
 
-      <ModuleTemplate />
     </>
   );
 };

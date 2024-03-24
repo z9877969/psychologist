@@ -1,0 +1,28 @@
+.navbtn {
+  display: none;
+}
+
+@include media(tablet) {
+  .navbtn {
+    display: block;
+  }
+
+  .icon,
+  .iconButton:disabled {
+    width: 48px;
+    height: 48px;
+  }
+
+  .icon.disabled svg,
+  .iconButton:disabled svg {
+    fill: $light-grey;
+  }
+
+  .navbtn svg {
+    fill: $dark-green;
+  }
+
+  .iconButton:first-child {
+    margin-right: 58px;
+  }
+}

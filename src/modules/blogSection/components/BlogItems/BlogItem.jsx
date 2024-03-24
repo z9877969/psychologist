@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import s from './BlogItem.module.scss';
-import Picture from '../../../../shared/components/PIcture/Picture';
+import Picture from 'shared/components/Picture/Picture';
 
-const BlogItem = ({ blog }) => {
+const BlogItem = ({ blog, images }) => {
   const location = useLocation();
 
   let imgWidth = '311';
@@ -13,16 +13,15 @@ const BlogItem = ({ blog }) => {
     <div className={s.wrapper}>
       <div className={s.pictureWrapper}>
         <Picture
-          urlDesktop={blog.urlDesktop}
-          urlDesktop2x={blog.urlDesktop2x}
-          urlTablet={blog.urlTablet}
-          urlTablet2x={blog.urlTablet2x}
-          urlMobile={blog.urlTablet2x}
-          urlMobile2x={blog.urlMobile2x}
+          urlDesktop={images[blog.urlDesktop]}
+          urlDesktop2x={images[blog.urlDesktop2x]}
+          urlTablet={images[blog.urlTablet]}
+          urlTablet2x={images[blog.urlTablet2x]}
+          urlMobile={images[blog.urlMobile]}
+          urlMobile2x={images[blog.urlMobile2x]}
           alt={blog.alt}
           width={imgWidth}
           height={blog.height}
-          data={blog}
         />
       </div>
 

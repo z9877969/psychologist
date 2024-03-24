@@ -1,0 +1,11 @@
+.contentsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include media(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px;
+  }
+}

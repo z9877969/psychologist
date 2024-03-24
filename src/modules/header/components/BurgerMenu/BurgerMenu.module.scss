@@ -1,0 +1,23 @@
+.burgerMenu {
+  display: block;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+@include media(desktop) {
+  .burgerMenu {
+    display: none;
+  }
+}
+.iconClose {
+  stroke: #979797;
+}
+.closeIconBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+}
