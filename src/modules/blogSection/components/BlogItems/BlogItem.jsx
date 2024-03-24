@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import s from './BlogItem.module.scss';
-import Picture from 'shared/components/Picture/Picture';
+import { Picture } from 'shared/components';
 
 const BlogItem = ({ blog, images }) => {
   const location = useLocation();
