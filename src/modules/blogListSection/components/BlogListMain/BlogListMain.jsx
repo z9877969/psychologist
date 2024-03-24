@@ -1,13 +1,23 @@
-import { Container } from 'shared/components';
-import s from './BlogListMain.module.scss';
-import BlogListHeader from '../../../../shared/components/BlogListHeader/BlogListHeader';
-import BlogListFilters from '../BlogListFilters/BlogListFilters';
-import BlogList from '../BlogList/BlogList';
-import BlogListPagination from '../BlogListPagination/BlogListPagination';
-import BlogItem from 'modules/blogSection/components/BlogItems/BlogItem';
 import { useEffect, useState } from 'react';
+import { Container, Section, BlogListHeader } from 'shared/components';
 import { blogAPI } from 'shared/helpers/blogAPI';
-import Section from 'shared/components/Section/Section';
+import {
+  BlogListFilters,
+  BlogList,
+  BlogListPagination,
+} from 'modules/blogListSection';
+import { BlogItem } from 'modules/blogSection';
+import * as images from '../../../blogSection/img';
+import s from './BlogListMain.module.scss';
+import { useMediaQuery } from 'hooks/index';
+
+import '../BlogListFilters/theme-select.scss';
+
+const PAGINATION_LIMITS = {
+  isDesktop: 9,
+  isTablet: 6,
+  isMobile: 3,
+};
 
 const BlogListMain = () => {
   const [page, setPage] = useState(1);
@@ -15,6 +25,20 @@ const BlogListMain = () => {
   const [articles, setArticles] = useState([]);
   const [category, setCategory] = useState('');
   const [query, setQuery] = useState('');
+  const media = useMediaQuery();
+  const [currentMedia, setCurrentMedia] = useState(
+    media.isDesktop ? 'isDesktop' : media.isTablet ? 'isTablet' : 'isMobile'
+  );
+
+  useEffect(() => {
+    if (media[currentMedia]) return;
+
+    setCurrentMedia(
+      media.isDesktop ? 'isDesktop' : media.isTablet ? 'isTablet' : 'isMobile'
+    );
+
+    setPage(1);
+  }, [media, currentMedia]);
 
   useEffect(() => {
     async function getArticles() {
@@ -23,7 +47,7 @@ const BlogListMain = () => {
           page,
           category,
           query,
-          limit: 6,
+          limit: PAGINATION_LIMITS[currentMedia],
         });
         setArticles(result.data);
         setTotalPages(result.totalPages);
@@ -33,33 +57,32 @@ const BlogListMain = () => {
     }
 
     getArticles();
-  }, [page, category, query]);
+  }, [page, category, query, currentMedia]);
 
   return (
     <Section className={s.section}>
       <Container>
         <BlogListHeader />
         <BlogListFilters
-          category={category}
           onSelect={setCategory}
           onSearch={setQuery}
+          onChange={setPage}
         />
 
-        {articles.length && (
+        {articles.length > 0 && (
           <BlogList>
             {articles.map((art) => (
-              <BlogItem key={art.id} blog={art} />
+              <BlogItem key={art.id} blog={art} images={images} />
             ))}
           </BlogList>
         )}
 
-        {totalPages > 1 && (
-          <BlogListPagination
-            page={page}
-            totalPages={totalPages}
-            onChange={setPage}
-          />
-        )}
+        <BlogListPagination
+          page={page}
+          totalPages={totalPages}
+          onChange={setPage}
+          media={media}
+        />
       </Container>
     </Section>
   );

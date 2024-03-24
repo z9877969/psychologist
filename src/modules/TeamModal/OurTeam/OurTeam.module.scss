@@ -1,7 +1,25 @@
+.container {
+  position: relative;
+  width: 343px;
+  max-height: 448px;
+  background-color: white;
+  padding: 24px 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 1.4;
+  width: 271px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
 .closeButton {
   position: absolute;
-  right: 40px;
-  top: 40px;
+  right: 16px;
+  top: 24px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -18,29 +36,44 @@
   align-items: center;
 }
 
-.container {
-  position: relative;
-  width: 1042px;
-  background-color: white;
-  padding: 80px;
-  border-radius: 8px;
-}
-
-.title {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.33;
-  margin-bottom: 32px;
-}
-
 .cardsContainer {
-  width: 850px;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 8px 0;
+  max-height: 328px;
 }
 @include media(tablet) {
+  .container {
+    width: 689px;
+    max-height: 534px;
+    padding: 40px;
+  }
+  .title {
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 32px;
+    width: 609px;
+  }
+  .closeButton {
+    right: 40px;
+    top: 40px;
+  }
+  .cardsContainer {
+    gap: 24px;
+    max-height: 392px;
+  }
 }
 
 @include media(desktop) {
+  .container {
+    width: 1040px;
+    max-height: 616px;
+    padding: 80px;
+  }
+  .title {
+    font-size: 24px;
+    line-height: 1.33;
+    margin-bottom: 32px;
+    width: 880px;
+  }
 }
