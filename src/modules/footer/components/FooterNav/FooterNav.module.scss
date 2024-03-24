@@ -15,6 +15,9 @@
   font-size: 32px;
   font-family: $secondary-font-family;
   color: rgb(235, 109, 10);
+  &:hover {
+    color: rgb(235, 109, 10);
+  }
 }
 .link {
   color: rgb(255, 255, 255);
@@ -22,6 +25,7 @@
   position: relative;
   &:hover,
   &:focus {
+    color: rgb(255, 255, 255);
     font-weight: 500;
   }
   &::after {
@@ -34,7 +38,7 @@
     background-color: #fff;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 250ms linear;
+    transition: transform $animation-duration $animation-time-function;
   }
   &:focus::after,
   &:hover::after {

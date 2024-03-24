@@ -1,4 +1,4 @@
-import Picture from 'shared/components/Picture/Picture';
+import { Picture } from 'shared/components';
 import s from './Image.module.scss';
 
 export const Image = ({

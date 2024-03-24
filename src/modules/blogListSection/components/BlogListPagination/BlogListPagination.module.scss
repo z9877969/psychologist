@@ -1,29 +1,51 @@
 .list {
   display: flex;
   flex-wrap: wrap;
-  // margin: 0 auto;
   justify-content: center;
 }
 
-.back {
+.arrowItemPrev {
+  width: 40px;
+  height: 40px;
   margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.next {
-  margin-left: 8px;
-}
-
-.button {
+.arrowItemNext {
   width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  // font-size: 16px;
-  font-weight: 600;
-  // line-height: 24px; /* 150% */
-  letter-spacing: -0.32px;
+  margin-left: 8px;
+}
+.arrowLink {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.arrowLinkDisabled {
+  cursor: auto;
+  fill: #979797;
+}
+
+.listItem {
+  width: 40px;
+  height: 40px;
   color: #414343;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageLink {
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  color: inherit;
 
   @include font(16, 24);
 }

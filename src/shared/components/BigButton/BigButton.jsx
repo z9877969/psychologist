@@ -1,4 +1,4 @@
-import s from './BigButtom.module.scss';
+import s from './BigButton.module.scss';
 
 const Button = ({ children, ...props }) => {
   return (
