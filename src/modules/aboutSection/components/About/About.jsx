@@ -1,9 +1,8 @@
 import s from './About.module.scss';
-import { Container } from 'shared/components';
+import { Container, Picture } from 'shared/components';
 
 import * as images from '../../img';
 import aboutData from '../../data/aboutData.json';
-import Picture from 'shared/components/PIcture/Picture';
 
 export default function About() {
   return (
