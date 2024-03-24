@@ -4,14 +4,14 @@ import { sprite } from 'shared/icons';
 
 const DeveloperCard = ({ developer }) => {
   const { name, position, photo, linkedin } = developer;
-
+  const photoSrc = photo || 'https://via.placeholder.com/80';
   return (
     <div className={s.card}>
       <Link to={linkedin} target="_blank" className={s.link}>
         <div className={s.container}>
-          <img className={s.photo} src={photo} alt={name} />
+          <img className={s.photo} src={photoSrc} alt={name} />
           <svg className={s.icon}>
-            <use xlinkHref={`${sprite}#icon-arrows-right`}></use>
+            <use xlinkHref={`${sprite}#icon-linkedin`}></use>
           </svg>
         </div>
 
