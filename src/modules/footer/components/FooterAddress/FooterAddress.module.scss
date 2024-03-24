@@ -10,9 +10,10 @@
 }
 .tell {
   color: #fff;
-  transition: font-weight 250ms linear;
+  transition: font-weight $animation-duration $animation-time-function;
   &:hover,
   &:focus {
+    color: #fff;
     font-weight: 600;
   }
 }
@@ -23,7 +24,7 @@
 }
 .icon {
   fill: #fff;
-  transition: fill 250ms linear;
+  transition: fill $animation-duration $animation-time-function;
 }
 .telegram:hover,
 .telegram:focus {
@@ -34,7 +35,7 @@
   height: 32px;
   border-radius: 8px;
   width: 32px;
-  transition: background-color 250ms linear;
+  transition: background-color $animation-duration $animation-time-function;
   &:hover,
   &:focus {
     height: 32px;
@@ -44,7 +45,7 @@
   }
 }
 .youtybe {
-  transition: fill 250ms linear;
+  transition: fill $animation-duration $animation-time-function;
   &:hover,
   &:focus {
     fill: #ff0000;
