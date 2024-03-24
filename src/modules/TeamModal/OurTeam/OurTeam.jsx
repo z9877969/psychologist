@@ -12,12 +12,12 @@ const OurTeam = ({ onClose }) => {
         <div>
           <button className={s.closeButton} onClick={onClose}>
             <svg className={s.icon}>
-              <use xlinkHref={`${sprite}#icon-arrows-right`}></use>
+              <use xlinkHref={`${sprite}#icon-cross`}></use>
             </svg>
           </button>
         </div>
 
-        <h2 className={s.title}>Наша команда</h2>
+        <h2 className={s.title}>Команда, яка створила сайт</h2>
 
         <ScrollBar>
           <div className={s.cardsContainer}>

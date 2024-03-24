@@ -36,6 +36,7 @@
   width: 100%;
   padding: 0 8px;
   outline: transparent;
+  transition: border $animation-duration $animation-time-function;
   &:hover,
   &:focus {
     border-color: #979797;
@@ -50,6 +51,7 @@
   padding: 10px 8px;
   outline: transparent;
   resize: none;
+  transition: border $animation-duration $animation-time-function;
   &:hover,
   &:focus {
     border-color: #979797;
@@ -65,7 +67,7 @@
   color: #fff;
   width: 100%;
   height: 48px;
-  transition: background-color 250ms linear;
+  transition: background-color $animation-duration $animation-time-function;
   &:hover,
   &:focus {
     background-color: #043e0f;

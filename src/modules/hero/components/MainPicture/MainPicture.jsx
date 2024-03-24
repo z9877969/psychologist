@@ -1,4 +1,4 @@
-import Picture from 'modules/Consultation/components/Picture/Picture';
+import { Picture } from 'shared/components';
 import {
   mainImageDesc,
   mainImageDesc2x,
@@ -13,14 +13,14 @@ const MainPicture = () => {
   return (
     <div className={s.thumb}>
       <Picture
-        mob={mainImageMob}
-        mob2x={mainImageMob2x}
-        tab={mainImageTab}
-        tab2x={mainImageTab2x}
-        desc={mainImageDesc}
-        desc2x={mainImageDesc2x}
+        urlMobile={mainImageMob}
+        urlMobile2x={mainImageMob2x}
+        urlTablet={mainImageTab}
+        urlTablet2x={mainImageTab2x}
+        urlDesktop={mainImageDesc}
+        urlDesktop2x={mainImageDesc2x}
         alt="psyshologist avatar"
-        width={270}
+        width={'270'}
       />
     </div>
   );

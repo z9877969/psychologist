@@ -1,5 +1,4 @@
-
-import BlogListMain from 'modules/blogListSection/components/BlogListMain/BlogListMain';
+import { BlogListMain } from 'modules/blogListSection';
 import { BlogConsultation } from 'modules/blogConsultation';
 
 const BlogListPage = () => {

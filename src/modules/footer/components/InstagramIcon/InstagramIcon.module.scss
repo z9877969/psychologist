@@ -1,15 +1,15 @@
 .instagram {
   &:hover .gradientPath,
   &:focus .gradientPath {
-    animation: fillAnimation 250ms linear forwards;
+    animation: fillAnimation 300ms linear forwards;
   }
   &:not(:hover) .gradientPath {
-    animation: blurAnimation 250ms linear forwards;
+    animation: blurAnimation 300ms linear forwards;
   }
 }
 .gradientPath {
   fill: #fff;
-  transition: all 250ms linear;
+  transition: all $animation-duration $animation-time-function;
 }
 @keyframes fillAnimation {
   0% {

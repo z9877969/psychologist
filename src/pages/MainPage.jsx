@@ -1,3 +1,5 @@
+import About from 'modules/aboutSection/components/About/About';
+import VideoSection from 'modules/videoSection/components/VideoSection/VideoSection';
 import { BookConsultation } from 'modules/BookConsultation';
 import { Consultation } from 'modules/Consultation';
 import { BlogSection } from 'modules/blogSection';
@@ -10,6 +12,8 @@ const MainPage = () => {
     <>
       <Hero />
       <BlogSection />
+      <VideoSection />
+      <About />
       <Consultation />
       <Testimonials />
       <BookConsultation />
