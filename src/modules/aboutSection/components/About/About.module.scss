@@ -1,0 +1,128 @@
+.section {
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @include media(tablet) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include media(desktop) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-right: -120px;
+  }
+}
+
+.title {
+  color: #2c2727;
+  font-family: $main-font-family;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px; /* 120% */
+  letter-spacing: -0.6px;
+
+  @include media(tablet) {
+    font-family: $main-font-family;
+    font-size: 40px;
+    line-height: 48px; /* 120% */
+    letter-spacing: -0.8px;
+  }
+
+  @include media(desktop) {
+    font-size: 48px;
+
+    line-height: 56px; /* 116.667% */
+    letter-spacing: -0.96px;
+    width: 588px;
+  }
+}
+
+.accent {
+  color: #eb6d0a;
+  font-family: $main-font-family;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -0.6px;
+
+  @include media(tablet) {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.8px;
+  }
+
+  @include media(desktop) {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.96px;
+  }
+}
+
+.topText {
+  margin-top: 16px;
+  margin-bottom: 8px;
+
+  color: #414343;
+
+  font-family: $main-font-family;
+  font-size: 16px;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+
+  //   тут не треба tablet/desktop
+  @include media(desktop) {
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.bottomText {
+  margin-bottom: 16px;
+
+  color: #414343;
+  font-family: $main-font-family;
+  font-size: 16px;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+
+  @include media(tablet) {
+    margin-bottom: 24px;
+  }
+}
+
+.pictureWrapper {
+  min-width: 343px;
+  min-height: 343px;
+
+  @include media(tablet) {
+    min-width: 688px;
+    min-height: 688px;
+  }
+
+  @include media(desktop) {
+    min-width: 708px;
+    min-height: 708px;
+  }
+}
+
+.textWrapper {
+  @include media(desktop) {
+    width: 588px;
+    margin-right: 24px;
+  }
+}
+
+.aboutWrapper {
+  @include media(desktop) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.container {
+  @include media(desktop) {
+    padding-right: 0;
+  }
+}
