@@ -1,10 +1,10 @@
-import Button from 'shared/components/Button/Button';
+import s from './ButtonSmall.module.scss';
 
 const ButtonSmall = () => {
   return (
-    <div>
-      <Button>Послуги</Button>
-    </div>
+    <a className={s.link} href="#services">
+      Послуги
+    </a>
   );
 };
 
