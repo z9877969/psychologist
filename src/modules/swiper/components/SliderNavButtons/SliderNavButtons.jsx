@@ -8,7 +8,10 @@ export const SliderNavButtons = ({ swiperRef }) => {
   };
 
   return (
-    <div className="swiper-nav-btns">
+    <div
+      className="swiper-nav-btns"
+      style={{ position: 'absolute', top: '-40px', right: '0' }}
+    >
       <button onClick={handlePrev}>Prev</button>
       <button onClick={handleNext}>Next</button>
     </div>

@@ -2,39 +2,30 @@ import Container from 'shared/components/Container/Container';
 import Section from 'shared/components/Section/Section';
 import * as images from '../../img';
 import certifData from '../../data/certificates.json';
-import SliderCertif from '../SliderCertif/SliderCertif';
-import { useRef } from 'react';
-import SliderBar from '../SliderBar/SliderBar';
+import { SwiperContainer } from 'modules/swiper';
+import { Picture } from 'shared/components';
 
 const EducationSection = () => {
-  const swiperRef = useRef(null);
+  const data = certifData.map((item) => {
+    return {
+      ...item,
+      ulrMobile: images[item.ulrMobile],
+      urlMobile2x: images[item.urlMobile2x],
+      urlTablet: images[item.urlTablet],
+      urlTablet2x: images[item.urlTablet2x],
+      urlDesktop: images[item.urlDesktop],
+      urlDesktop2x: images[item.urlDesktop2x],
+    };
+  });
   return (
     <Section>
       <Container>
-        <SliderBar swiperRef={swiperRef} />
-        <SliderCertif
-          dataCertif={certifData}
-          images={images}
-          swiperRef={swiperRef}
-        />
+        <h1>Освіта</h1>
+        <p>lorem</p>
+        <SwiperContainer data={data} component={Picture} />
       </Container>
     </Section>
   );
 };
 
 export default EducationSection;
-
-// function Fu() {
-//   const swiperRef = useRef(null);
-
-//   return (
-//     <>
-//       <SliderBar swiperRef={swiperRef} />
-//       <SliderSwiper
-//         dataJson={dataJson}
-//         component={(props) => <SomeComponent {...props} />}
-//         swiperRef={swiperRef}
-//       />
-//     </>
-//   );
-// }

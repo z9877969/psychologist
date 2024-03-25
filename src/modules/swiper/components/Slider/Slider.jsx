@@ -2,10 +2,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import '/node_modules/swiper/swiper-bundle.min.css';
 // import { Picture } from 'shared/components';
 import { useEffect, useRef } from 'react';
-import PictureCertif from '../PicturesCertif/PictureCertif';
+
 // import { Navigation, Pagination } from 'swiper/modules';
 
-export default function SliderCertif({ images, dataCertif, swiperRef }) {
+export default function Slider({ data, component: Component, swiperRef }) {
   const swiperInstance = useRef(null);
 
   useEffect(() => {
@@ -37,9 +37,9 @@ export default function SliderCertif({ images, dataCertif, swiperRef }) {
         },
       }}
     >
-      {dataCertif.map((item) => (
+      {data.map((item) => (
         <SwiperSlide key={item.id} style={{ width: '100%' }}>
-          <PictureCertif images={images} item={item} />
+          <Component {...item} />
         </SwiperSlide>
       ))}
     </Swiper>
