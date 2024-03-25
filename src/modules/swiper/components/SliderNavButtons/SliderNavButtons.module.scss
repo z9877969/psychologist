@@ -1,0 +1,23 @@
+.button {
+  background-color: blue; /* Default button color */
+  color: rgb(158, 12, 12);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.button:hover {
+  background-color: darkblue; /* Button color on hover */
+}
+
+.button:disabled {
+  background-color: lightgray; /* Button color when disabled */
+  cursor: not-allowed;
+}
+
+.buttonprevdisabled,
+.buttonnextdisabled {
+  opacity: 0.5; /* Adjust opacity for disabled buttons */
+}
