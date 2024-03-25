@@ -11,5 +11,11 @@
   .textContent {
     font-size: 18px;
     line-height: 1.33;
+    margin-bottom: 24px;
+  }
+}
+@include media(desktop) {
+  .textContent {
+    margin-bottom: 32px;
   }
 }

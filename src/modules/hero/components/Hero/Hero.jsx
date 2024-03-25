@@ -5,6 +5,7 @@ import TextContent from '../TextContent/TextContent';
 import ButtonBig from '../ButtonBig/ButtonBig';
 import ButtonSmall from '../ButtonSmall/ButtonSmall';
 import s from './Hero.module.scss';
+
 const Hero = () => {
   return (
     <section className={s.hero}>
