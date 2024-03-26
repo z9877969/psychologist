@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 export default function useMedia() {
@@ -5,9 +6,13 @@ export default function useMedia() {
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
-  return {
-    isDesktop,
-    isTablet: isTablet && !isDesktop,
-    isMobile: !isTablet && !isDesktop,
-  };
+  const media = useMemo(() => {
+    return {
+      isDesktop,
+      isTablet: isTablet && !isDesktop,
+      isMobile: !isTablet && !isDesktop,
+    };
+  }, [isTablet, isDesktop]);
+
+  return media;
 }
