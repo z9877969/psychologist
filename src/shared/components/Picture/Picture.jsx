@@ -8,6 +8,7 @@ const Picture = ({
   alt = '',
   width = '',
   height = '',
+  ...props
 }) => {
   return (
     <picture>
@@ -27,6 +28,8 @@ const Picture = ({
         alt={alt}
         width={width}
         height={height}
+        loading="lazy"
+        {...props}
       />
     </picture>
   );

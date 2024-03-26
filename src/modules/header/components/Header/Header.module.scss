@@ -1,14 +1,9 @@
 header {
   position: sticky;
-
+  z-index: 100;
   width: 100%;
-  z-index: 2;
   top: 0;
-  background-color: #ffffff; /* Колір фону */
-  @include media(desktop) {
-    padding-left: 120px;
-    padding-right: 120px;
-  }
+  background-color: #ffffff;
 }
 .headerSrolled {
   border-bottom: 1px solid #1e5b2a;

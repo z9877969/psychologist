@@ -12,6 +12,7 @@
   &::-webkit-scrollbar-thumb {
     border-radius: 100px;
     background-color: rgb(108, 162, 74);
+    height: 80%;
   }
 }
 @include media(tablet) {

@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "name": "personality_psychology",
+    "title": "Психологія особистості"
+  },
+  {
+    "id": 2,
+    "name": "psychology_of_organizations",
+    "title": "Психологія організацій"
+  },
+
+  { "id": 3, "name": "psychodiagnosis", "title": "Психодіагностика" },
+
+  {
+    "id": 4,
+    "name": "child-parent_relations",
+    "title": "Дитячо-батьківські стосунки"
+  },
+  {
+    "id": 5,
+    "name": "psychology_of_family_relations",
+    "title": "Психологія сімейних стосунків"
+  },
+
+  {
+    "id": 0,
+    "name": "",
+    "title": "Всі теми"
+  }
+]

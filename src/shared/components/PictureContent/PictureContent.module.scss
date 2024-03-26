@@ -1,0 +1,21 @@
+.thumb {
+  margin: 0 auto;
+  margin-bottom: 16px;
+  position: relative;
+
+  @include media(mobile) {
+    width: 343px;
+    height: 344px;
+  }
+
+  @include media(tablet) {
+    width: 556px;
+    height: 688px;
+    margin-bottom: 24px;
+  }
+
+  @include media(desktop) {
+    min-width: 556px;
+    height: 708px;
+  }
+}

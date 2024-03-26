@@ -1,60 +1,59 @@
 .section {
   padding: 40px 0;
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    .imgContainer {
-      flex-shrink: 0;
-      margin: 0;
-      padding: 0;
-    }
-    .title {
-      font-size: 30px;
-      font-weight: 600;
-      line-height: 36px;
-      letter-spacing: -2%;
-      color: #2c2727;
-      margin-bottom: 16px;
-    }
-  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.imgContainer {
+  width: 100%;
+}
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -2%;
+  color: #2c2727;
+  margin-bottom: 16px;
 }
 @include media(tablet) {
   .section {
     padding: 60px 0;
-    .container {
-      gap: 24px;
-      .title {
-        font-size: 40px;
-        margin-top: 24px;
-      }
-    }
+  }
+  .container {
+    gap: 24px;
+  }
+  .title {
+    font-size: 40px;
+    margin-top: 24px;
   }
 }
+
 @include media(desktop) {
   .section {
     padding: 80px 0;
-    .container {
-      flex-direction: row;
-      justify-content: start;
-      .imgContainer {
-        position: relative;
-        width: 588px;
-        height: 708px;
-        & > div {
-          position: absolute;
-          height: 708px;
-          width: 708px;
-          top: 0;
-          left: -120px;
-        }
-      }
-      .title {
-        font-size: 48px;
-        margin-bottom: 32px;
-      }
-    }
+  }
+  .imgContainer {
+    position: relative;
+    width: 588px;
+    height: 708px;
+  }
+  .img {
+    position: absolute;
+    height: 708px;
+    width: 708px;
+    top: 0;
+    left: -120px;
+  }
+  .container {
+    flex-direction: row;
+    justify-content: start;
+  }
+  .title {
+    font-size: 48px;
+    margin-bottom: 32px;
   }
 }

@@ -1,0 +1,21 @@
+.tittle {
+  color: var(#2c2727);
+  font-family: $main-font-family;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.09;
+  margin-bottom: 8px;
+}
+@include media(tablet) {
+  .tittle {
+    font-size: 60px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+}
+@include media(desktop) {
+  .tittle {
+    font-size: 64px;
+  }
+}
