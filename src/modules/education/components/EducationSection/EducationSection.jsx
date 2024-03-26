@@ -2,7 +2,7 @@ import Container from 'shared/components/Container/Container';
 import Section from 'shared/components/Section/Section';
 import * as images from '../../img';
 import certifData from '../../data/certificates.json';
-import { SwiperContainer } from 'modules/swiper';
+import { SwiperContainer } from 'shared/components/Swiper';
 import { Picture } from 'shared/components';
 
 const EducationSection = () => {
