@@ -1,4 +1,3 @@
-import { Container } from 'shared/components';
 import s from './BlogSection.module.scss';
 import blogData from '../../data/blogData.json';
 import Button from 'shared/components/Button/Button';
@@ -17,22 +16,20 @@ const BlogSection = () => {
 
   return (
     <section className={s.section}>
-      <Container>
-        <div className={clsx(isBlogPage ? s.blogPageWrapper : s.titleWrapper)}>
-          {isBlogPage ? (
-            <h2 className={s.blogPageTitle}>Останні статті</h2>
-          ) : (
-            <BlogTitle className={s.title} />
-          )}
-        </div>
-        <BlogList
-          data={data}
-          images={images}
-          className={clsx(isBlogPage ? s.blogList : s.list)}
-          classItem={clsx(isBlogPage ? s.blogItem : s.item)}
-        />
-        <Button to="/blog">Переглянути більше статтей</Button>
-      </Container>
+      <div className={clsx(isBlogPage ? s.blogPageWrapper : s.titleWrapper)}>
+        {isBlogPage ? (
+          <h2 className={s.blogPageTitle}>Останні статті</h2>
+        ) : (
+          <BlogTitle className={s.title} />
+        )}
+      </div>
+      <BlogList
+        data={data}
+        images={images}
+        className={clsx(isBlogPage ? s.blogList : s.list)}
+        classItem={clsx(isBlogPage ? s.blogItem : s.item)}
+      />
+      <Button to="/blog">Переглянути більше статтей</Button>
     </section>
   );
 };
