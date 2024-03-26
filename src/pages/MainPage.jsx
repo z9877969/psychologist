@@ -12,10 +12,10 @@ const MainPage = () => {
   return (
     <>
       <Hero />
-      <Education />
       <BlogSection />
       <VideoSection />
       <About />
+      <Education />
       <Consultation />
       <Testimonials />
       <BookConsultation />
