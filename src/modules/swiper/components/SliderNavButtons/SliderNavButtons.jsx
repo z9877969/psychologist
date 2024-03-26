@@ -1,10 +1,24 @@
 import { sprite } from 'shared/icons';
 import s from './SliderNavButtons.module.scss';
 import clsx from 'clsx';
+import { useEffect, useState } from 'react';
 
 export const SliderNavButtons = ({ swiperRef }) => {
-  const hasPrevSlide = true;
-  const hasNextSlides = true;
+  const [hasPrevSlide, setHasPrevSlide] = useState(false);
+  const [hasNextSlide, setHasNextSlide] = useState(false);
+
+  useEffect(() => {
+    const swiper = swiperRef.current;
+    if (swiper) {
+      swiper.on('slideChange', () => {
+        setHasPrevSlide(!swiper.isBeginning);
+        setHasNextSlide(!swiper.isEnd);
+      });
+
+      setHasPrevSlide(!swiper.isBeginning);
+      setHasNextSlide(!swiper.isEnd);
+    }
+  }, [swiperRef]);
 
   const renderIcon = (iconId, isActive) => {
     return (
@@ -28,11 +42,19 @@ export const SliderNavButtons = ({ swiperRef }) => {
 
   return (
     <div className={s.swiper_nav_btns}>
-      <button onClick={() => handleSlide('prev')} className={s.button_arrow}>
+      <button
+        onClick={() => handleSlide('prev')}
+        className={clsx(s.button_arrow, !hasPrevSlide && s.button_disabled)}
+        disabled={!hasPrevSlide}
+      >
         {renderIcon('icon-arrows-left', hasPrevSlide)}
       </button>
-      <button onClick={() => handleSlide('next')} className={s.button_arrow}>
-        {renderIcon('icon-arrows-right', hasNextSlides)}
+      <button
+        onClick={() => handleSlide('next')}
+        className={clsx(s.button_arrow, !hasNextSlide && s.button_disabled)}
+        disabled={!hasNextSlide}
+      >
+        {renderIcon('icon-arrows-right', hasNextSlide)}
       </button>
     </div>
   );

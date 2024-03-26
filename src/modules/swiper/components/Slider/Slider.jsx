@@ -1,8 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '/node_modules/swiper/swiper-bundle.min.css';
-// import { Picture } from 'shared/components';
 import { useEffect, useRef } from 'react';
-
 // import { Navigation, Pagination } from 'swiper/modules';
 
 export default function Slider({ data, component: Component, swiperRef }) {
