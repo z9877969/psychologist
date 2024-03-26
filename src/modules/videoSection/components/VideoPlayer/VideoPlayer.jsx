@@ -1,6 +1,6 @@
 import ReactPlayer from 'react-player';
-import imagePreview from '../img/presentation.jpg';
-import s from '../components/VideoSection/VideoSection.module.scss';
+import imagePreview from '../../img/presentation.jpg';
+import s from './VideoPlayer.module.scss';
 
 export default function VideoPlayer() {
   return (
