@@ -3,6 +3,7 @@ import VideoSection from 'modules/videoSection/components/VideoSection/VideoSect
 import { BookConsultation } from 'modules/BookConsultation';
 import { Consultation } from 'modules/Consultation';
 import { BlogSection } from 'modules/blogSection';
+import Education from 'modules/education/components/EducationSection/EducationSection';
 import { FrequentlyAskedQuestions } from 'modules/frequentlyAskedQuestions';
 import { Testimonials } from 'modules/testimonials';
 import { Hero } from 'modules/hero';
@@ -14,6 +15,7 @@ const MainPage = () => {
       <BlogSection />
       <VideoSection />
       <About />
+      <Education />
       <Consultation />
       <Testimonials />
       <BookConsultation />
