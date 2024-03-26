@@ -6,32 +6,32 @@ export const SliderNavButtons = ({ swiperRef }) => {
   const hasPrevSlide = true;
   const hasNextSlides = true;
 
-  const renderIcon = (id, isActive) => {
+  const renderIcon = (iconId, isActive) => {
     return (
       <svg
         className={clsx(s.svg, !isActive && s.buttonDisab)}
         width="48"
         height="48"
       >
-        <use href={`${sprite}#${id}`}></use>
+        <use href={`${sprite}#${iconId}`}></use>
       </svg>
     );
   };
 
-  const handlePrev = () => {
-    swiperRef.current && swiperRef.current.slidePrev();
-  };
-
-  const handleNext = () => {
-    swiperRef.current && swiperRef.current.slideNext();
+  const handleSlide = (direction) => {
+    if (swiperRef.current) {
+      direction === 'prev'
+        ? swiperRef.current.slidePrev()
+        : swiperRef.current.slideNext();
+    }
   };
 
   return (
     <div className={s.swiper_nav_btns}>
-      <button onClick={handlePrev} className={s.button_arrow}>
+      <button onClick={() => handleSlide('prev')} className={s.button_arrow}>
         {renderIcon('icon-arrows-left', hasPrevSlide)}
       </button>
-      <button onClick={handleNext} className={s.button_arrow}>
+      <button onClick={() => handleSlide('next')} className={s.button_arrow}>
         {renderIcon('icon-arrows-right', hasNextSlides)}
       </button>
     </div>
