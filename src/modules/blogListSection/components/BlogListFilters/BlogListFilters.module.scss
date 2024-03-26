@@ -91,6 +91,8 @@
   width: 100%;
   height: 48px;
 
+  transition: stroke #{$animation-duration} #{$animation-time-function};
+
   @include media(tablet) {
     width: 332px;
     height: 40px;
