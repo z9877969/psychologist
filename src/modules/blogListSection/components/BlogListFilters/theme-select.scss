@@ -1,4 +1,4 @@
-@import '../../../../shared/styles/variables';
+// @import '../../../../shared/styles/variables';
 
 .theme-select-container {
   width: 100%;
@@ -33,6 +33,11 @@
       border-color: #979797;
     }
   }
+}
+
+.theme-select-container .theme-select__control--is-focused {
+  border-color: #979797;
+  transition: border-color #{$animation-duration} #{$animation-time-function};
 }
 
 .theme-select__control .theme-select__placeholder {

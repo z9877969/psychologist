@@ -12,6 +12,7 @@ import s from './BlogListMain.module.scss';
 import { useMediaQuery } from 'hooks/index';
 
 import '../BlogListFilters/theme-select.scss';
+import { useSearchParams } from 'react-router-dom';
 
 const PAGINATION_LIMITS = {
   isDesktop: 9,
@@ -20,11 +21,13 @@ const PAGINATION_LIMITS = {
 };
 
 const BlogListMain = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
   const [articles, setArticles] = useState([]);
-  const [category, setCategory] = useState('');
-  const [query, setQuery] = useState('');
+  const [category, setCategory] = useState(searchParams.get('category') || '');
+  const [query, setQuery] = useState(searchParams.get('query') || '');
   const media = useMediaQuery();
   const [currentMedia, setCurrentMedia] = useState(
     media.isDesktop ? 'isDesktop' : media.isTablet ? 'isTablet' : 'isMobile'
@@ -59,15 +62,23 @@ const BlogListMain = () => {
     getArticles();
   }, [page, category, query, currentMedia]);
 
+  function handleChangeFilters(select = '', search = '') {
+    setCategory(select);
+    setQuery(search);
+    setPage(1);
+
+    const newSearchParams = {};
+    if (select !== '') newSearchParams.category = select;
+    if (search !== '') newSearchParams.query = search;
+
+    setSearchParams(newSearchParams);
+  }
+
   return (
     <Section className={s.section}>
       <Container>
         <BlogListHeader />
-        <BlogListFilters
-          onSelect={setCategory}
-          onSearch={setQuery}
-          onChange={setPage}
-        />
+        <BlogListFilters onChange={handleChangeFilters} />
 
         {articles.length > 0 && (
           <BlogList>
