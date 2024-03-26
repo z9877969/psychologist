@@ -4,7 +4,7 @@ import s from './VideoPlayer.module.scss';
 
 export default function VideoPlayer() {
   return (
-    <div className={s.playerWrapper} style={{ borderRadius: '16px' }}>
+    <div className={s.playerWrapper}>
       <ReactPlayer
         url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
         light={imagePreview}
