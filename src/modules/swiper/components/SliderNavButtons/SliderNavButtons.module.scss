@@ -1,23 +1,39 @@
-.button {
-  background-color: blue; /* Default button color */
-  color: rgb(158, 12, 12);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
+.button_arrow {
+  line-height: 0;
+  border-radius: 8px;
+  .svg {
+    fill: #1e5b2a;
+  }
+  .buttonDisab {
+    fill: #979797;
+  }
+  &:hover {
+    background-color: rgba(223, 233, 225, 0.2);
+  }
+  &:active {
+    background-color: rgba(223, 233, 225, 0.4);
+  }
 }
 
-.button:hover {
-  background-color: darkblue; /* Button color on hover */
-}
+.swiper_nav_btns {
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  display: flex;
+  column-gap: 68px;
 
-.button:disabled {
-  background-color: lightgray; /* Button color when disabled */
-  cursor: not-allowed;
-}
-
-.buttonprevdisabled,
-.buttonnextdisabled {
-  opacity: 0.5; /* Adjust opacity for disabled buttons */
+  transform: translateX(-50%);
+  @include media(tablet) {
+    left: unset;
+    bottom: unset;
+    transform: translateX(0);
+    top: -50px;
+    right: 0px;
+    column-gap: 58px;
+  }
+  @include media(desktop) {
+    column-gap: 84px;
+    right: 0px;
+    top: -50px;
+  }
 }
