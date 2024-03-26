@@ -11,6 +11,7 @@
 .tell {
   color: #fff;
   transition: font-weight $animation-duration $animation-time-function;
+  font-style: normal;
   &:hover,
   &:focus {
     color: #fff;
