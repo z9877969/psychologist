@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { SliderNavButtons } from '../SliderNavButtons/SliderNavButtons';
 import Slider from '../Slider/Slider';
+import s from './SwiperContainer.module.scss';
 
 export default function SwiperContainer({
   data,
@@ -11,7 +12,7 @@ export default function SwiperContainer({
   const swiperRef = useRef(null);
 
   return (
-    <div className={'wrapper'} style={{ position: 'relative' }}>
+    <div className={s.wrapper}>
       <SliderNavButtons swiperRef={swiperRef} className="buttonsClassName" />
       <Slider
         data={data}

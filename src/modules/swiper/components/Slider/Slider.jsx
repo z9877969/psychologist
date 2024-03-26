@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '/node_modules/swiper/swiper-bundle.min.css';
 import { useEffect, useRef } from 'react';
-// import { Navigation, Pagination } from 'swiper/modules';
 
 export default function Slider({ data, component: Component, swiperRef }) {
   const swiperInstance = useRef(null);
@@ -13,13 +12,8 @@ export default function Slider({ data, component: Component, swiperRef }) {
   return (
     <Swiper
       onSwiper={(swiper) => (swiperRef.current = swiper)}
-      // modules={[Navigation, Pagination]}
       spaceBetween={50}
       slidesPerView={2}
-      // navigation
-      // keyboard={{
-      //   enabled: true,
-      // }}
       breakpoints={{
         320: {
           slidesPerView: 1,
