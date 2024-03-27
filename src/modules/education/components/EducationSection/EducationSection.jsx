@@ -9,7 +9,7 @@ const EducationSection = () => {
   const data = certifData.map((item) => {
     return {
       ...item,
-      ulrMobile: images[item.ulrMobile],
+      urlMobile: images[item.urlMobile],
       urlMobile2x: images[item.urlMobile2x],
       urlTablet: images[item.urlTablet],
       urlTablet2x: images[item.urlTablet2x],

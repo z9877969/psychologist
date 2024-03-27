@@ -3,7 +3,7 @@ import s from './SliderNavButtons.module.scss';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
-export const SliderNavButtons = ({ swiperRef }) => {
+export const SliderNavButtons = ({ swiperRef, className }) => {
   const [hasPrevSlide, setHasPrevSlide] = useState(false);
   const [hasNextSlide, setHasNextSlide] = useState(false);
 
@@ -41,7 +41,7 @@ export const SliderNavButtons = ({ swiperRef }) => {
   };
 
   return (
-    <div className={s.swiper_nav_btns}>
+    <div className={clsx(s.swiper_nav_btns, className)}>
       <button
         onClick={() => handleSlide('prev')}
         className={clsx(s.button_arrow, !hasPrevSlide && s.button_disabled)}
