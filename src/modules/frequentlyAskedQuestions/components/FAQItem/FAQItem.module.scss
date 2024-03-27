@@ -47,6 +47,11 @@
   line-height: 20px;
   letter-spacing: 0%;
 }
+@include media(mobile) {
+  .item {
+    width: 321px;
+  }
+}
 @include media(tablet) {
   .item {
     width: 658px;
