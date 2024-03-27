@@ -1,17 +1,17 @@
 import {
-  Button,
-  BlogList,
+  BlogListHeader,
   Container,
   Section,
-  BlogListHeader,
+  Button,
+  BlogList,
 } from 'shared/components';
 import { useEffect, useState } from 'react';
-import { blogAPI } from 'shared/helpers/blogAPI';
 import { useMediaQuery } from 'hooks/index';
+import { blogAPI } from 'shared/helpers/blogAPI';
 
-import s from './BlogSection.module.scss';
+import s from './BlogLastArticles.module.scss';
 
-const BlogSection = () => {
+const BlogLastArticles = () => {
   const [articles, setArticles] = useState([]);
   const media = useMediaQuery();
 
@@ -28,20 +28,13 @@ const BlogSection = () => {
     getLastArticles();
   }, []);
 
-  const visibleArticles = media.isDesktop
-    ? articles
-    : media.isTablet
-      ? articles.slice(0, 2)
-      : articles.slice(0, 1);
-
-  const header = 'Блог';
-  const text =
-    'Розмірковую над темами, які мене зацікавили. Запрошую читачів разом зі мною досліджувати ключові поняття психології';
+  const header = 'Останні статті';
+  const visibleArticles = media.isDesktop ? articles : articles.slice(0, 2);
 
   return (
     <Section className={s.section}>
       <Container>
-        <BlogListHeader header={header} text={text} />
+        <BlogListHeader header={header} />
         <BlogList articles={visibleArticles} />
         <Button to="/blog">Переглянути більше статтей</Button>
       </Container>
@@ -49,4 +42,4 @@ const BlogSection = () => {
   );
 };
 
-export default BlogSection;
+export default BlogLastArticles;
