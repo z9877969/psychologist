@@ -4,6 +4,7 @@ import * as images from '../../img';
 import certifData from '../../data/certificates.json';
 import { SwiperContainer } from 'shared/components/Swiper';
 import SlideCertif from '../SlideCertif/SliderCertif';
+import s from './EducationSection.module.scss';
 
 const EducationSection = () => {
   const data = certifData.map((item) => {
@@ -20,8 +21,13 @@ const EducationSection = () => {
   return (
     <Section>
       <Container>
-        <h1>Освіта</h1>
-        <p>lorem</p>
+        <h2 className={s.title}>Освіта і сертифікати</h2>
+        <p className={s.text}>
+          Активно продовжую професійне навчання, зокрема у напрямку
+          психоконсультування. Мій підхід інтегрує елементи
+          когнітивно-поведінкової терапії, основи психоаналізу та техніки
+          позитивної психології
+        </p>
         <SwiperContainer data={data} component={SlideCertif} />
       </Container>
     </Section>

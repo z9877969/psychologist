@@ -1,0 +1,25 @@
+// .sliderText {
+
+//   @include media(tablet) {
+//     margin-bottom: 24px;
+//   }
+
+//   @include media(desktop) {
+//     margin-bottom: 32px;
+//     width: 690px;
+//   }
+// }
+
+.sliderText {
+  color: $typography-black;
+  font-family: $main-font-family;
+  font-weight: 600px;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: -0.6px;
+  margin-bottom: 16px;
+  @include media(desktop) {
+    margin-bottom: 24px;
+  }
+}
