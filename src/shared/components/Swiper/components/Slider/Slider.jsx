@@ -13,6 +13,7 @@ export default function Slider({ data, component: Component, swiperRef }) {
     <Swiper
       onSwiper={(swiper) => (swiperRef.current = swiper)}
       spaceBetween={50}
+      // ref={swiperRef}
       slidesPerView={2}
       breakpoints={{
         320: {
