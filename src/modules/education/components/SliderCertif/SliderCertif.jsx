@@ -1,9 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '/node_modules/swiper/swiper-bundle.min.css';
-// import { Picture } from 'shared/components';
 import { useEffect, useRef } from 'react';
-import PictureCertif from '../PicturesCertif/PictureCertif';
+import PictureCertif from '../SlideCertif/SliderCertif';
 import { Navigation, Pagination } from 'swiper/modules';
+// import s from './SliderCertif.module.scss';
 
 export default function SliderCertif({ images, dataCertif, swiperRef }) {
   const swiperInstance = useRef(null);
@@ -38,7 +38,7 @@ export default function SliderCertif({ images, dataCertif, swiperRef }) {
       }}
     >
       {dataCertif.map((item) => (
-        <SwiperSlide key={item.id} style={{ width: '100%' }}>
+        <SwiperSlide key={item.id}>
           <PictureCertif images={images} item={item} />
         </SwiperSlide>
       ))}

@@ -12,6 +12,7 @@ import { useMediaQuery } from 'hooks/index';
 
 import '../BlogListFilters/theme-select.scss';
 import { useSearchParams } from 'react-router-dom';
+import { scrollOnOpenPage } from 'shared/helpers/scroll';
 
 const PAGINATION_LIMITS = {
   isDesktop: 9,
@@ -60,6 +61,10 @@ const BlogListMain = () => {
 
     getArticles();
   }, [page, category, query, currentMedia]);
+
+  useEffect(() => {
+    scrollOnOpenPage('smooth');
+  }, [page]);
 
   function handleChangeFilters(select = '', search = '') {
     setCategory(select);

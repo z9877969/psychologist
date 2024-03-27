@@ -29,6 +29,9 @@ const ScrollUpButton = () => {
         <svg className={s.svg} width="24" height="24">
           <use xlinkHref={`${sprite}#icon-scroll-arrow`}></use>
         </svg>
+        <svg className={clsx(s.svgSecond)} width="24" height="24">
+          <use xlinkHref={`${sprite}#icon-scroll-up-second`}></use>
+        </svg>
       </button>
     </div>
   );

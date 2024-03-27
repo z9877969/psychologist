@@ -38,17 +38,20 @@
 }
 .numberForDesk {
   color: #2c2727;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.32px;
 }
+.numberForDesk:hover,
+.numberForDesk:focus {
+  font-weight: 600;
+}
+
 @include media(to-desktop) {
   .numberForDesk {
     display: none;
-  }
-  .numberStyle {
-    font-family: 'Open Sans';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: -0.32px;
   }
 }
