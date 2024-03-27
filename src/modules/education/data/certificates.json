@@ -1,0 +1,41 @@
+[
+  {
+    "id": "id-1",
+    "urlMobile": "certifMob1",
+    "urlMobile2x": "certifMob1x",
+    "urlTablet": "certifTab1",
+    "urlTablet2x": "certifTab1x",
+    "urlDesktop": "certifDesk1",
+    "urlDesktop2x": "certifDesk1x",
+    "alt": "Сертифікат Ірини Прудько",
+    "width": "229",
+    "height": "351",
+    "text": "“Розлади настрою в практиці психолога, спектр, категорії, розуміння, втручання”"
+  },
+  {
+    "id": "id-2",
+    "urlMobile": "certifMob2",
+    "urlMobile2x": "certifMob2x",
+    "urlTablet": "certifTab2",
+    "urlTablet2x": "certifTab2x",
+    "urlDesktop": "certifDesk2",
+    "urlDesktop2x": "certifDesk2x",
+    "alt": "Сертифікат Ірини Прудько",
+    "width": "229",
+    "height": "351",
+    "text": "“Профілактика та психокорекція бойової психічної травми”"
+  },
+  {
+    "id": "id-3",
+    "urlMobile": "certifMob3",
+    "urlMobile2x": "certifMob3x",
+    "urlTablet": "certifTab3",
+    "urlTablet2x": "certifTab3x",
+    "urlDesktop": "certifDesk3",
+    "urlDesktop2x": "certifDesk3x",
+    "alt": "Сертифікат Ірини Прудько",
+    "width": "229",
+    "height": "351",
+    "text": "“Розлади настрою в практиці психолога, спектр, категорії, розуміння, втручання”"
+  }
+]

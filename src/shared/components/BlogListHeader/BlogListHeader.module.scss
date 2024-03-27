@@ -1,26 +1,27 @@
 .title {
-  @include font(30, 36);
   color: #2c2727;
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 8px;
+  @include font(30, 36);
 
   @include media(tablet) {
     @include font(40, 48);
   }
+
   @include media(desktop) {
-    @include font(48, 56);
     margin-bottom: 16px;
+
+    @include font(48, 56);
   }
 }
 
 .description {
-  @include font(16, 24);
   color: #414343;
   letter-spacing: -0.02em;
-  margin-bottom: 16px;
+  @include font(16, 24);
+
   @include media(tablet) {
-    margin-bottom: 32px;
     width: 690px;
   }
 }

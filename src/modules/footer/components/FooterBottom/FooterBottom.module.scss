@@ -22,6 +22,11 @@
   line-height: 24px;
   letter-spacing: -0.32px;
   position: relative;
+  transition: font-weight $animation-duration $animation-time-function;
+  &:hover {
+    color: rgba(255, 255, 255);
+    font-weight: 600;
+  }
   &::after {
     content: '';
     display: block;

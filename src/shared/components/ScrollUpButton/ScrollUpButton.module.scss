@@ -13,7 +13,7 @@
   .button {
     width: 48px;
     height: 48px;
-    background-color: #eb6d0a;
+    background-color: $primary-orange;
     border: none;
     border-radius: 50%;
     display: flex;
@@ -27,9 +27,8 @@
 
     opacity: 0;
     transition:
-      transform 500ms linear,
-      opacity 500ms linear,
-      background-color 250ms linear;
+      transform 500ms $animation-time-function,
+      opacity 500ms $animation-time-function;
 
     @include media(tablet) {
       bottom: 96px;
@@ -40,16 +39,23 @@
       height: 56px;
       transform: translate(1264px, 70px);
     }
-    &:hover {
-      background-color: #cf600a;
-      .svg {
-        transform: scale(1.25);
-      }
-    }
     .svg {
-      background-color: transparent;
       fill: transparent;
-      transition: transform 250ms linear;
+      position: absolute;
+    }
+
+    .svgSecond {
+      stroke: $white;
+      fill: transparent;
+      position: absolute;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity $animation-duration $animation-time-function;
+    }
+    &:hover {
+      .svgSecond {
+        opacity: 1;
+      }
     }
   }
   .isOpen {

@@ -1,3 +1,10 @@
-.wrapParagraph {
-  margin-bottom: 8px;
+.wrapParagraph:last-child {
+  margin-bottom: 0;
+}
+
+.wrapImage {
+  border-radius: 8px;
+  background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
