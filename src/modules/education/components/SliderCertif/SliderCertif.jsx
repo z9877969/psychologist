@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import '/node_modules/swiper/swiper-bundle.min.css';
 // import { Picture } from 'shared/components';
 import { useEffect, useRef } from 'react';
-import PictureCertif from '../PicturesCertif/PictureCertif';
+import PictureCertif from '../SlideCertif/SliderCertif';
 import { Navigation, Pagination } from 'swiper/modules';
 
 export default function SliderCertif({ images, dataCertif, swiperRef }) {
