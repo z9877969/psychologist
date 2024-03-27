@@ -25,7 +25,9 @@ const Navigation = () => {
           </a>
         </li>
         <li className={s.headerListItem}>
-          <NavLink className={s.headerListLink} to="/blog"></NavLink>
+          <NavLink className={s.headerListLink} to="/blog">
+            Блог
+          </NavLink>
         </li>
         <li className={s.headerListItem}>
           <a className={s.headerListLink} href="#faq">
