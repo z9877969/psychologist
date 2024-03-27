@@ -1,8 +1,3 @@
-// @mixin font($_fsz, $_lnh) {
-//   font-size: #{$_fsz}px;
-//   line-height: calc($_lnh / $_fsz);
-// }
-
 .section {
   padding-top: 24px;
   padding-bottom: 24px;
@@ -40,21 +35,5 @@
     font-size: 48px;
     line-height: 56px; /* 116.667% */
     letter-spacing: -0.96px;
-  }
-}
-
-.playerWrapper {
-  // border-radius: 16px;
-  width: 343px;
-  height: 240px;
-
-  @include media(tablet) {
-    width: 688px;
-    height: 400px;
-  }
-
-  @include media(desktop) {
-    width: 1200px;
-    height: 580px;
   }
 }

@@ -1,4 +1,4 @@
-import VideoPlayer from 'modules/videoSection/utils/react-player';
+import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import s from './VideoSection.module.scss';
 import { Container } from 'shared/components';
 

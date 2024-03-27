@@ -5,6 +5,8 @@ import * as Yup from 'yup';
 import { sprite } from 'shared/icons';
 import ErrorSpan from '../ErrorSpan/ErrorSpan';
 import clsx from 'clsx';
+import { useModal } from 'context/ModalProvider';
+import { useCallback } from 'react';
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
@@ -16,10 +18,13 @@ const FeedbackSchema = Yup.object().shape({
 });
 
 const FormConsultation = () => {
+  const setModal = useModal();
+  const closeModal = useCallback(() => setModal(), [setModal]);
   const handleSubmit = (values) => {
     alert(
       `name: ${values.name} phone: ${values.phone} message: ${values.message} `
     );
+    closeModal();
   };
 
   return (

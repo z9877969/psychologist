@@ -1,15 +1,18 @@
-import { Image } from '../Image/Image';
 import { Paragraph } from '../Paragraph/Paragraph';
 import { PrimaryTitle } from '../PrimaryTitle/PrimaryTitle';
 import { Quote } from '../Quote/Quote';
 import s from './ContentList.module.scss';
+import * as images from '../../img';
+import articles from '../../data/articles.json';
+import { Picture } from 'shared/components';
 
-const ContentList = ({ articles }) => {
+const ContentList = () => {
   let previousWasParagraph = false;
 
+  const data = articles;
   return (
     <div>
-      {articles.map((item, index) => {
+      {data.map((item, index) => {
         let component;
         switch (item.block) {
           case 'primaryTitle':
@@ -22,16 +25,14 @@ const ContentList = ({ articles }) => {
             break;
           case 'image':
             component = (
-              <Image
-                key={index}
-                urlMobile={item.content.urlMobile}
-                urlMobile2x={item.content.urlMobile2x}
-                urlTablet={item.content.urlTablet}
-                urlTablet2x={item.content.urlTablet2x}
-                urlDesktop={item.content.urlDesktop}
-                urlDesktop2x={item.content.urlDesktop2x}
-                alt={item.content.alt}
-                height={item.content.height}
+              <Picture
+                className={s.wrapImage}
+                urlMobile={images[item.content.urlMobile]}
+                urlMobile2x={images[item.content.urlMobile2x]}
+                urlTablet={images[item.content.urlTablet]}
+                urlTablet2x={images[item.content.urlTablet2x]}
+                urlDesktop={images[item.content.urlDesktop]}
+                urlDesktop2x={images[item.content.urlDesktop2x]}
               />
             );
             previousWasParagraph = false;

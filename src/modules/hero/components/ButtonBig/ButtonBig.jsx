@@ -1,10 +1,14 @@
 import Button from 'shared/components/BigButton/BigButton';
-import s from './ButtonBig.module.scss';
+import { useCallback } from 'react';
+import { useModal } from 'context/ModalProvider';
+import { ModalConsultation } from 'modules/modalConsultation';
 const ButtonBig = () => {
-  return (
-    <div className={s.bigBox}>
-      <Button>Безкоштовна консультація</Button>
-    </div>
-  );
+  const showModal = useModal();
+
+  const handleClick = useCallback(() => {
+    showModal(<ModalConsultation />);
+  }, [showModal]);
+
+  return <Button onClick={handleClick}>Безкоштовна консультація</Button>;
 };
 export default ButtonBig;
