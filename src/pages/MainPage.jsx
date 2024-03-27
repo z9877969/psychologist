@@ -7,8 +7,14 @@ import Education from 'modules/education/components/EducationSection/EducationSe
 import { FrequentlyAskedQuestions } from 'modules/frequentlyAskedQuestions';
 import { Testimonials } from 'modules/testimonials';
 import { Hero } from 'modules/hero';
+import { useEffect } from 'react';
+import { scrollOnOpenPage } from 'shared/helpers/scroll';
 
 const MainPage = () => {
+  useEffect(() => {
+    scrollOnOpenPage();
+  }, []);
+
   return (
     <>
       <Hero />
