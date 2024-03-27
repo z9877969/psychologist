@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Container, Section, BlogListHeader } from 'shared/components';
-import { blogAPI } from 'shared/helpers/blogAPI';
 import {
-  BlogListFilters,
+  Container,
+  Section,
+  BlogListHeader,
   BlogList,
-  BlogListPagination,
-} from 'modules/blogListSection';
-import { BlogItem } from 'modules/blogSection';
-import * as images from '../../../blogSection/img';
+} from 'shared/components';
+import { blogAPI } from 'shared/helpers/blogAPI';
+import { BlogListFilters, BlogListPagination } from 'modules/blogListSection';
 import s from './BlogListMain.module.scss';
 import { useMediaQuery } from 'hooks/index';
 
@@ -74,19 +73,16 @@ const BlogListMain = () => {
     setSearchParams(newSearchParams);
   }
 
+  const header = 'Блог';
+  const text =
+    'Розмірковую над темами, які мене зацікавили. Запрошую читачів разом зі мною досліджувати ключові поняття психології';
+
   return (
     <Section className={s.section}>
       <Container>
-        <BlogListHeader />
+        <BlogListHeader header={header} text={text} />
         <BlogListFilters onChange={handleChangeFilters} />
-
-        {articles.length > 0 && (
-          <BlogList>
-            {articles.map((art) => (
-              <BlogItem key={art.id} blog={art} images={images} />
-            ))}
-          </BlogList>
-        )}
+        <BlogList articles={articles} />
 
         <BlogListPagination
           page={page}

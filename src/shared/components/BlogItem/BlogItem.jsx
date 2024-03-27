@@ -1,13 +1,18 @@
 import { Link, useLocation } from 'react-router-dom';
-import s from './BlogItem.module.scss';
 import { Picture } from 'shared/components';
+import * as images from 'shared/images/blog';
+import s from './BlogItem.module.scss';
 
-const BlogItem = ({ blog, images }) => {
+const BlogItem = ({ blog }) => {
   const location = useLocation();
 
   let imgWidth = '311';
   if (document.body.clientWidth > 767)
     imgWidth = document.body.clientWidth > 1439 ? '336' : '300';
+
+  const year = blog.date.slice(0, 4);
+  const month = blog.date.slice(5, 7);
+  const date = blog.date.slice(-2);
 
   return (
     <div className={s.wrapper}>
@@ -27,7 +32,7 @@ const BlogItem = ({ blog, images }) => {
 
       <ul className={s.list}>
         <li>
-          <p className={s.date}>{blog.date}</p>
+          <p className={s.date}>{`${date}.${month}.${year}`}</p>
         </li>
         <li>
           <p className={s.date}>{blog.author}</p>
