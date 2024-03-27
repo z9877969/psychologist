@@ -1,0 +1,21 @@
+.textContent {
+  color: var(#414343);
+  font-family: $main-font-family;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+@include media(tablet) {
+  .textContent {
+    font-size: 18px;
+    line-height: 1.33;
+    margin-bottom: 24px;
+  }
+}
+@include media(desktop) {
+  .textContent {
+    margin-bottom: 32px;
+  }
+}

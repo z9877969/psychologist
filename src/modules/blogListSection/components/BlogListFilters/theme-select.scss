@@ -1,0 +1,112 @@
+// @import '../../../../shared/styles/variables';
+
+.theme-select-container {
+  width: 100%;
+  height: 48px;
+
+  @include media(tablet) {
+    width: 332px;
+    height: 40px;
+  }
+
+  @include media(desktop) {
+    width: 588px;
+    height: 56px;
+  }
+
+  .theme-select__control {
+    width: 100%;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    outline: none;
+    border-radius: 16px;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    box-shadow: none;
+    gap: 8px;
+
+    transition: border-color #{$animation-duration} #{$animation-time-function};
+
+    &:hover,
+    &:focus {
+      border-color: #979797;
+    }
+  }
+}
+
+.theme-select-container .theme-select__control--is-focused {
+  border-color: #979797;
+  transition: border-color #{$animation-duration} #{$animation-time-function};
+}
+
+.theme-select__control .theme-select__placeholder {
+  color: #535353;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  @include font(16, 24);
+}
+
+.theme-select__control .theme-select__dropdown-indicator {
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  fill: none;
+  stroke: #414343;
+  transition: transform #{$animation-duration} #{$animation-time-function};
+}
+
+.theme-select__control--menu-is-open .theme-select__dropdown-indicator {
+  transform: rotate(180deg);
+}
+
+.theme-select__control .theme-select__value-container {
+  padding: 0;
+}
+
+.theme-select__control .theme-select__single-value {
+  margin: 0;
+  //   padding-left: 16px;
+  color: #414343;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  @include font(16, 24);
+}
+
+.theme-select__control .theme-select__indicator-separator {
+  display: none;
+}
+
+.theme-select-container .theme-select__menu {
+  margin: 0;
+  box-shadow: none;
+  border: 1px solid #dfdfdf;
+  border-radius: 16px;
+}
+
+.theme-select-container .theme-select__menu-list {
+  padding: 0;
+}
+
+.theme-select__menu-list .theme-select__option {
+  display: flex;
+  height: 40px;
+  padding: 0px 16px;
+  border-radius: 16px;
+  align-items: center;
+  color: #535353;
+  letter-spacing: -0.32px;
+  @include font(16, 24);
+}
+
+.theme-select__menu-list .theme-select__option--is-selected {
+  color: #1e5b2a;
+  font-weight: 600;
+  background-color: white;
+}
+
+.theme-select__menu-list .theme-select__option--is-focused {
+  background-color: #f3f6f5;
+}

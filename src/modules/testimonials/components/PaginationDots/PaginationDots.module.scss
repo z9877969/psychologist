@@ -1,0 +1,57 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.dot {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dot::before,
+.dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.dot::before {
+  width: 8px;
+  height: 8px;
+  background-color: $light-green;
+}
+
+.dot.active::before {
+  background-color: $green;
+}
+
+.dot.active::after {
+  width: 24px;
+  height: 24px;
+  border: 2px solid $green;
+}
+
+.dot:not(.active)::after {
+  display: none;
+}
+
+@include media(tablet) {
+  .pagination {
+    margin-bottom: 24px;
+  }
+}
+
+@include media(desktop) {
+  .pagination {
+    margin-bottom: 32px;
+  }
+}

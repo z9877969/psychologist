@@ -1,20 +1,46 @@
-import { Container } from 'shared/components';
-import s from './BlogListMain.module.scss';
-import BlogListHeader from '../../../../shared/components/BlogListHeader/BlogListHeader';
-import BlogListFilters from '../BlogListFilters/BlogListFilters';
-import BlogList from '../BlogList/BlogList';
-import BlogListPagination from '../BlogListPagination/BlogListPagination';
-import BlogItem from 'modules/blogSection/components/BlogItems/BlogItem';
 import { useEffect, useState } from 'react';
+import {
+  Container,
+  Section,
+  BlogListHeader,
+  BlogList,
+} from 'shared/components';
 import { blogAPI } from 'shared/helpers/blogAPI';
-import Section from 'shared/components/Section/Section';
+import { BlogListFilters, BlogListPagination } from 'modules/blogListSection';
+import s from './BlogListMain.module.scss';
+import { useMediaQuery } from 'hooks/index';
+
+import '../BlogListFilters/theme-select.scss';
+import { useSearchParams } from 'react-router-dom';
+
+const PAGINATION_LIMITS = {
+  isDesktop: 9,
+  isTablet: 6,
+  isMobile: 3,
+};
 
 const BlogListMain = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
   const [articles, setArticles] = useState([]);
-  const [category, setCategory] = useState('');
-  const [query, setQuery] = useState('');
+  const [category, setCategory] = useState(searchParams.get('category') || '');
+  const [query, setQuery] = useState(searchParams.get('query') || '');
+  const media = useMediaQuery();
+  const [currentMedia, setCurrentMedia] = useState(
+    media.isDesktop ? 'isDesktop' : media.isTablet ? 'isTablet' : 'isMobile'
+  );
+
+  useEffect(() => {
+    if (media[currentMedia]) return;
+
+    setCurrentMedia(
+      media.isDesktop ? 'isDesktop' : media.isTablet ? 'isTablet' : 'isMobile'
+    );
+
+    setPage(1);
+  }, [media, currentMedia]);
 
   useEffect(() => {
     async function getArticles() {
@@ -23,7 +49,7 @@ const BlogListMain = () => {
           page,
           category,
           query,
-          limit: 6,
+          limit: PAGINATION_LIMITS[currentMedia],
         });
         setArticles(result.data);
         setTotalPages(result.totalPages);
@@ -33,33 +59,37 @@ const BlogListMain = () => {
     }
 
     getArticles();
-  }, [page, category, query]);
+  }, [page, category, query, currentMedia]);
+
+  function handleChangeFilters(select = '', search = '') {
+    setCategory(select);
+    setQuery(search);
+    setPage(1);
+
+    const newSearchParams = {};
+    if (select !== '') newSearchParams.category = select;
+    if (search !== '') newSearchParams.query = search;
+
+    setSearchParams(newSearchParams);
+  }
+
+  const header = 'Блог';
+  const text =
+    'Розмірковую над темами, які мене зацікавили. Запрошую читачів разом зі мною досліджувати ключові поняття психології';
 
   return (
     <Section className={s.section}>
       <Container>
-        <BlogListHeader />
-        <BlogListFilters
-          category={category}
-          onSelect={setCategory}
-          onSearch={setQuery}
+        <BlogListHeader header={header} text={text} />
+        <BlogListFilters onChange={handleChangeFilters} />
+        <BlogList articles={articles} />
+
+        <BlogListPagination
+          page={page}
+          totalPages={totalPages}
+          onChange={setPage}
+          media={media}
         />
-
-        {articles.length && (
-          <BlogList>
-            {articles.map((art) => (
-              <BlogItem key={art.id} blog={art} />
-            ))}
-          </BlogList>
-        )}
-
-        {totalPages > 1 && (
-          <BlogListPagination
-            page={page}
-            totalPages={totalPages}
-            onChange={setPage}
-          />
-        )}
       </Container>
     </Section>
   );

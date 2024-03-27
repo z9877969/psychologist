@@ -2,8 +2,13 @@
   padding-top: 40px;
   padding-bottom: 40px;
 
+  @include media(tablet) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   @include media(desktop) {
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }

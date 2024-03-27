@@ -1,0 +1,39 @@
+.section {
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @include media(tablet) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include media(desktop) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.title {
+  margin-bottom: 16px;
+
+  color: #2c2727;
+  font-family: $main-font-family;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px; /* 120% */
+  letter-spacing: -0.6px;
+
+  @include media(tablet) {
+    margin-bottom: 32px;
+
+    font-size: 40px;
+    line-height: 48px; /* 120% */
+    letter-spacing: -0.8px;
+  }
+
+  @include media(desktop) {
+    font-size: 48px;
+    line-height: 56px; /* 116.667% */
+    letter-spacing: -0.96px;
+  }
+}

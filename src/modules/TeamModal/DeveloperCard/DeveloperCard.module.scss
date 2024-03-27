@@ -1,0 +1,83 @@
+.link {
+  display: flex;
+  flex-direction: row;
+}
+.card {
+  width: 289px;
+}
+
+.container {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin-right: 8px;
+}
+
+.photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.icon {
+  position: absolute;
+  left: 24px;
+  bottom: 0px;
+  width: 16px;
+  height: 16px;
+}
+
+.name {
+  color: $typography-black;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+.position {
+  color: $typography-grey-dark;
+  line-height: 1.5;
+  letter-spacing: -0.02;
+}
+
+@include media(tablet) {
+  .card {
+    width: 276px;
+  }
+  .container {
+    width: 80px;
+    height: 80px;
+    margin-right: 24px;
+  }
+
+  .photo {
+    width: 80px;
+    height: 80px;
+  }
+  .icon {
+    left: 60px;
+    bottom: 0px;
+    width: 20px;
+    height: 20px;
+  }
+  .details {
+    margin-top: 16px;
+  }
+  .name {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+
+@include media(desktop) {
+  .card {
+    width: 266px;
+  }
+
+  .details {
+    margin-top: 14px;
+  }
+  .name {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}

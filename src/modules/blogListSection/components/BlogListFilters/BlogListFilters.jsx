@@ -1,16 +1,31 @@
 import { useEffect, useState } from 'react';
-import s from './BlogListFilters.module.scss';
 import { blogAPI } from 'shared/helpers/blogAPI';
 import { sprite } from '../../../../shared/icons/index';
+import Select, { components } from 'react-select';
+import s from './BlogListFilters.module.scss';
+import { useSearchParams } from 'react-router-dom';
+import { useRef } from 'react';
 
-const BlogListFilters = ({ category = '', onSelect, onSearch }) => {
+const DropdownIndicator = (props) => {
+  return (
+    <components.DropdownIndicator {...props}>
+      <svg width={24} height={24}>
+        <use href={`${sprite}#icon-chevron-down`} />
+      </svg>
+    </components.DropdownIndicator>
+  );
+};
+
+const BlogListFilters = ({ onChange }) => {
+  const [searchParams] = useSearchParams();
   const [categories, setCategories] = useState([]);
+  const initialCategory = useRef(searchParams.get('category'));
 
   useEffect(() => {
     async function getCategories() {
       try {
         const result = await blogAPI.fetchCategories();
-        setCategories([{ id: 0, name: 'Оберіть тему' }, ...result]);
+        setCategories(result);
       } catch (err) {
         alert(err);
       }
@@ -20,43 +35,73 @@ const BlogListFilters = ({ category = '', onSelect, onSearch }) => {
   }, []);
 
   function handleSelect(e) {
-    onSelect(e.target.value);
+    onChange(e.value, searchParams.get('query') || '');
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    onSearch(e.target.elements.query.value.trim());
+
+    onChange(
+      searchParams.get('category') || '',
+      e.target.elements.query.value.trim()
+    );
   }
+
+  const options =
+    categories.length === 0
+      ? []
+      : categories.map((c) => {
+          return {
+            value: c.name,
+            label: c.title,
+          };
+        });
+
+  const defaultValue =
+    initialCategory.current === null
+      ? null
+      : {
+          value: initialCategory.current,
+          label:
+            categories.find((c) => c.name === initialCategory.current)?.title ??
+            '',
+        };
 
   return (
     <div className={s.container}>
-      <select
-        className={s.input}
-        name="category"
-        onChange={handleSelect}
-        value={category}
-      >
-        {/* <option value="" key={0}></option>
-        <option value="Психологія особистості">Психологія особистості</option>
-        <option value="Психологія організацій">Психологія організацій</option>
-        <option value="Психодіагностика">Психодіагностика</option>
-        <option value="Дитячо-батьківські стосунки">
-          Дитячо-батьківські стосунки
-        </option>
-        <option value="Психологія сімейних стосунків">
-          Психологія сімейних стосунків
-        </option> */}
-        {categories.length &&
-          categories.map((cat) => {
-            return (
-              <option key={cat.id} value={cat.id === 0 ? '' : cat.name}>
-                {cat.name}
-              </option>
-            );
-          })}
-      </select>
+      {(categories.length === 0 || initialCategory.current === null) && (
+        <Select
+          defaultValue={defaultValue}
+          onChange={handleSelect}
+          options={options}
+          components={{ DropdownIndicator }}
+          placeholder="Оберіть тему"
+          className="theme-select-container"
+          classNamePrefix="theme-select"
+          // menuIsOpen={true}
+        />
+      )}
+      {categories.length > 0 && initialCategory.current !== null && (
+        <Select
+          defaultValue={defaultValue}
+          onChange={handleSelect}
+          options={options}
+          components={{ DropdownIndicator }}
+          placeholder="Оберіть тему"
+          className="theme-select-container"
+          classNamePrefix="theme-select"
+          // menuIsOpen={true}
+        />
+      )}
+
       <form className={s.form} onSubmit={handleSubmit}>
-        <input className={s.input} type="text" name="query" />
+        <input
+          className={s.input}
+          type="text"
+          name="query"
+          defaultValue={searchParams.get('query') ?? ''}
+          placeholder="Пошук"
+        />
         <button className={s.button} type="submit">
           <svg width={24} height={24}>
             <use href={`${sprite}#icon-search`}></use>
