@@ -1,12 +1,17 @@
 .list {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  gap: 24px;
+  gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 
   @include media(tablet) {
-    flex-direction: row;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    gap: 24px;
   }
   @include media(desktop) {
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 }

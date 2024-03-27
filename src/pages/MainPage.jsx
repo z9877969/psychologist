@@ -12,7 +12,6 @@ const MainPage = () => {
   return (
     <>
       <Hero />
-      <BlogSection />
       <VideoSection />
       <About />
       <Education />
