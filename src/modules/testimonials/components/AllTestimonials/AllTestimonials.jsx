@@ -13,8 +13,8 @@ const AllTestimonials = ({ testimonials, onClose }) => {
       </div>
       <ScrollBar>
         <div className={s.cardsContainer}>
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} testimonial={testimonial} />
+          {testimonials.map((testimonial) => (
+            <TestimonialCard key={testimonial.id} {...testimonial} />
           ))}
         </div>
       </ScrollBar>
