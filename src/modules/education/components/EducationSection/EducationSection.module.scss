@@ -23,9 +23,8 @@
 
 .text {
   margin-bottom: 16px;
-  color: #414343;
+  color: $typography-grey-dark;
   font-family: $main-font-family;
-  font-size: 16px;
   line-height: 24px; /* 150% */
   letter-spacing: -0.32px;
   @include media(tablet) {
@@ -36,4 +35,45 @@
     margin-bottom: 32px;
     width: 690px;
   }
+}
+
+.container {
+  width: 343px;
+  height: 471px;
+
+  @include media(tablet) {
+    width: 688px;
+    height: 471px;
+  }
+  @include media(desktop) {
+    width: 1200px;
+    height: 526px;
+  }
+}
+
+.buttonsClass {
+  position: absolute;
+  right: 7px;
+  display: flex;
+  column-gap: 68px;
+  z-index: 5;
+  top: 490px;
+  transform: translateX(-50%);
+  @include media(tablet) {
+    left: unset;
+    bottom: unset;
+    transform: translateX(0);
+    right: 0px;
+    top: -160px;
+    column-gap: 58px;
+  }
+  @include media(desktop) {
+    column-gap: 84px;
+    right: 0px;
+    top: -170px;
+  }
+}
+
+.sectionEducation {
+  margin-bottom: 104px;
 }

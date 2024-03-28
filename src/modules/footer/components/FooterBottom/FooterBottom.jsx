@@ -20,7 +20,7 @@ const FooterBottom = () => {
         <div className={s.container}>
           <p className={s.text}>© Ірина Прудько | 2024</p>
           <a href="" className={s.link} onClick={handleShowOurTeamModal}>
-            created by GoIT students
+            created by GoIT
           </a>
         </div>
       </Container>

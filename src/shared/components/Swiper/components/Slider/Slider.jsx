@@ -11,20 +11,17 @@ export default function Slider({
   return (
     <Swiper
       onSwiper={(swiper) => (swiperRef.current = swiper)}
-      spaceBetween={50}
-      slidesPerView={2}
       breakpoints={{
         320: {
           slidesPerView: 1,
-          spaceBetween: 10,
         },
         768: {
           slidesPerView: 2,
-          spaceBetween: 20,
+          spaceBetween: 24,
         },
         1440: {
           slidesPerView: slidesPerViewDesck,
-          spaceBetween: 20,
+          spaceBetween: 24,
         },
       }}
     >
