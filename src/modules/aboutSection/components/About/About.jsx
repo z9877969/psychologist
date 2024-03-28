@@ -6,7 +6,7 @@ import aboutData from '../../data/aboutData.json';
 
 export default function About() {
   return (
-    <section className={s.section}>
+    <section id="about" className={s.section}>
       <Container className={s.container}>
         <div className={s.aboutWrapper}>
           <div className={s.textWrapper}>
