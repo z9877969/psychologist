@@ -9,6 +9,7 @@ import { Testimonials } from 'modules/testimonials';
 import { Hero } from 'modules/hero';
 import { useEffect } from 'react';
 import { scrollOnOpenPage } from 'shared/helpers/scroll';
+import { HowCanIHelpMain } from 'modules/howCanIHelp';
 
 const MainPage = () => {
   useEffect(() => {
@@ -21,6 +22,7 @@ const MainPage = () => {
       <VideoSection />
       <About />
       <Education />
+      <HowCanIHelpMain />
       <Consultation />
       <Testimonials />
       <BookConsultation />
