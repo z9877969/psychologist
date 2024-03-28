@@ -1,19 +1,17 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '/node_modules/swiper/swiper-bundle.min.css';
-import { useEffect, useRef } from 'react';
 
-export default function Slider({ data, component: Component, swiperRef }) {
-  const swiperInstance = useRef(null);
-
-  useEffect(() => {
-    swiperInstance.current = swiperRef.current.swiper;
-  }, [swiperRef]);
-
+export default function Slider({
+  data,
+  component: Component,
+  swiperRef,
+  isPagination,
+}) {
+  const slidesPerViewDesck = isPagination ? 2 : 3;
   return (
     <Swiper
       onSwiper={(swiper) => (swiperRef.current = swiper)}
       spaceBetween={50}
-      // ref={swiperRef}
       slidesPerView={2}
       breakpoints={{
         320: {
@@ -25,13 +23,13 @@ export default function Slider({ data, component: Component, swiperRef }) {
           spaceBetween: 20,
         },
         1440: {
-          slidesPerView: 3,
+          slidesPerView: slidesPerViewDesck,
           spaceBetween: 20,
         },
       }}
     >
       {data.map((item) => (
-        <SwiperSlide key={item.id} style={{ width: '100%' }}>
+        <SwiperSlide key={item.id}>
           <Component {...item} />
         </SwiperSlide>
       ))}

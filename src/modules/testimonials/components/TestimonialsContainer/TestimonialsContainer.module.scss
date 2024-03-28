@@ -7,60 +7,29 @@
     padding: 80px 0;
   }
 }
-// .navigationTop {
-//   margin-bottom: 16px;
-// }
+
 .title {
   color: $typography-black;
   @include font(30, 36);
-  // font-size: 30px;
   font-weight: 600;
-  // line-height: 1.2;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
-// .cardsContainer {
-//   display: flex;
-//   margin-bottom: 16px;
-// }
 
 @include media(tablet) {
-  // .navigationTop {
-  //   // display: flex;
-  //   // flex-direction: row;
-  //   // gap: 26px;
-  //   // margin-bottom: 24px;
-  //   // justify-content: space-between;
-  // }
   .title {
     font-size: 40px;
-    // letter-spacing: -0.02em;
     margin-bottom: 24px;
   }
-  // .cardsContainer {
-  //   margin-bottom: 24px;
-  //   flex-direction: row;
-  //   justify-content: center;
-  //   gap: 24px;
-  // }
 }
 
 @include media(desktop) {
-  // .navigationTop {
-  //   margin-bottom: 32px;
-  // }
   .title {
     @include font(48, 56);
-    // font-size: 48px;
-    // line-height: 1.17;
-    // letter-spacing: -0.025em;
     margin-bottom: 32px;
   }
-  // .cardsContainer {
-  //   margin-bottom: 32px;
-  // }
 }
-// ============================
+
 .buttonContainer {
   @include media(tablet) {
     top: -72px;
@@ -85,5 +54,17 @@
   }
   @include media(desktop) {
     bottom: -56px;
+  }
+}
+.loderWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 215px 0 219px;
+  @include media(tablet) {
+    padding: 215px 0 215px;
+  }
+  @include media(desktop) {
+    padding: 190px 0 190px;
   }
 }

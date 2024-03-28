@@ -12,18 +12,24 @@
   align-items: center;
   gap: 8px;
   align-self: stretch;
-  @include font(14, 20.02);
+  @include font(14, 20);
   border-radius: 100px;
-  background: $light-green;
+  background: $dark-green;
   color: $white;
-  font-family: 'Open Sans';
-  font-size: 14px;
-  font-style: normal;
   font-weight: 600;
-  line-height: 1.43;
+  transition: background-color $animation-duration $animation-time-function;
+}
+.btnFirst {
   &:hover,
   &:focus {
-    background: $dark-green;
+    background-color: $dark-green-hover;
+  }
+}
+.btnSecond {
+  background-color: $light-green;
+  &:hover,
+  &:focus {
+    background-color: $light-green-hover;
   }
 }
 
