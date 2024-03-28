@@ -36,7 +36,7 @@ const HowCanIHelpMain = () => {
   }, []);
 
   return (
-    <Section className={s.section}>
+    <Section className={s.section} id="services">
       <Container>
         <h2 className={s.title}>
           Як я можу <span className={s.titleAccent}>допомогти</span>
