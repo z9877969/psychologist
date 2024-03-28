@@ -1,0 +1,35 @@
+.slide {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 57.5px;
+  padding-right: 57.5px;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid $dark-green;
+  margin-right: 0px;
+  @include media(tablet) {
+    padding-left: 52px;
+    padding-right: 52px;
+  }
+
+  @include media(desktop) {
+    padding: 24px;
+  }
+}
+
+.sliderText {
+  color: $typography-black;
+  font-family: $main-font-family;
+  font-weight: 600px;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: -0.6px;
+}
+
+.picture {
+  margin-bottom: 16px;
+  @include media(desktop) {
+    margin-bottom: 24px;
+  }
+}
