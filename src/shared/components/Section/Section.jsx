@@ -1,5 +1,9 @@
-const Section = ({ className, children }) => {
-  return <section className={className}>{children}</section>;
+const Section = ({ className, children, id = '' }) => {
+  return (
+    <section className={className} id={id}>
+      {children}
+    </section>
+  );
 };
 
 export default Section;
