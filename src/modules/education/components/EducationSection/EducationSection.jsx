@@ -3,8 +3,8 @@ import Section from 'shared/components/Section/Section';
 import * as images from '../../img';
 import certifData from '../../data/certificates.json';
 import { SwiperContainer } from 'shared/components/Swiper';
-import SlideCertif from '../SlideCertif/SliderCertif';
 import s from './EducationSection.module.scss';
+import Slide from '../Slide/Slide';
 
 const EducationSection = () => {
   const data = certifData.map((item) => {
@@ -19,7 +19,7 @@ const EducationSection = () => {
     };
   });
   return (
-    <Section>
+    <Section className={s.sectionEducation}>
       <Container>
         <h2 className={s.title}>Освіта і сертифікати</h2>
         <p className={s.text}>
@@ -28,7 +28,12 @@ const EducationSection = () => {
           когнітивно-поведінкової терапії, основи психоаналізу та техніки
           позитивної психології
         </p>
-        <SwiperContainer data={data} component={SlideCertif} />
+        <SwiperContainer
+          data={data}
+          component={Slide}
+          containerClass={s.container}
+          buttonsClass={s.buttonsClass}
+        />
       </Container>
     </Section>
   );
