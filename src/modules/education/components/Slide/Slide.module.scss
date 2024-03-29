@@ -22,14 +22,26 @@
   font-family: $main-font-family;
   font-weight: 600px;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   text-align: center;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.04em;
+}
+
+.frame {
+  height: 351px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 16px;
+
+  @include media(desktop) {
+    margin-bottom: 24px;
+    height: 406px;
+  }
 }
 
 .picture {
-  margin-bottom: 16px;
-  @include media(desktop) {
-    margin-bottom: 24px;
-  }
+  height: 100%;
+  width: auto;
 }
