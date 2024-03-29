@@ -1,0 +1,7 @@
+.container {
+  position: relative;
+  .svg {
+    position: absolute;
+    z-index: -5;
+  }
+}

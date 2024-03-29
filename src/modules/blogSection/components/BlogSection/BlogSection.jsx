@@ -10,6 +10,7 @@ import { blogAPI } from 'shared/helpers/blogAPI';
 import { useMediaQuery } from 'hooks/index';
 
 import s from './BlogSection.module.scss';
+import BackgroundImage from 'shared/components/BackgroundImeg/BackgroundImage';
 
 const BlogSection = () => {
   const [articles, setArticles] = useState([]);
@@ -44,6 +45,14 @@ const BlogSection = () => {
         <BlogListHeader header={header} text={text} />
         <BlogList articles={visibleArticles} />
         <Button to="/blog">Переглянути більше статтей</Button>
+        <div className={s.container1}>
+          <BackgroundImage
+            classSvg={s.svgfirst}
+            classLine={s.svgLine}
+            name={'icon-vector-blog'}
+            nameLine={'icon-vector-blog-line'}
+          />
+        </div>
       </Container>
     </Section>
   );
