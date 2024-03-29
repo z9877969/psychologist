@@ -35,7 +35,7 @@ const FormRevie = () => {
   return (
     <Formik
       onSubmit={handleSubmit}
-      initialValues={{ name: '', phone: '', message: '', age: null }}
+      initialValues={{ name: '', phone: '', message: '', age: '' }}
       validationSchema={FeedbackSchema}
     >
       {({ errors }) => {
