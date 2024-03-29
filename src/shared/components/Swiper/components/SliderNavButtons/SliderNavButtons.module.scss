@@ -17,7 +17,8 @@
 
 .swiper_nav_btns {
   position: absolute;
-  right: 0;
+  // right: 0;
+  left: 50%;
   display: flex;
   column-gap: 68px;
   z-index: 5;
