@@ -5,6 +5,7 @@ import { SwiperContainer } from 'shared/components/Swiper';
 import HowCanIHelpItem from '../HowCanIHelpItem/HowCanIHelpItem';
 import * as images from '../../images';
 import s from './HowCanIHelpMain.module.scss';
+import HowCanIHelpBack from '../HowCanIHelpBack/HowCanIHelpBack';
 
 const HowCanIHelpMain = () => {
   const [data, setData] = useState([]);
@@ -53,6 +54,7 @@ const HowCanIHelpMain = () => {
           buttonsClass={s.sliderNavBar}
         />
       </Container>
+      <HowCanIHelpBack />
     </Section>
   );
 };
