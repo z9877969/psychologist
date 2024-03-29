@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 300px;
   gap: 24px;
   align-items: center;
 }
@@ -34,8 +34,8 @@
   background: transparent;
   height: 40px;
   width: 100%;
-  padding: 0 8px;
   color: #2c2727;
+  padding: 0 8px;
   outline: transparent;
   transition: border $animation-duration $animation-time-function;
   &:hover,
@@ -81,7 +81,7 @@
 @include media(tablet) {
   .form {
     width: 292px;
-    gap: 38px;
+    gap: 26px;
   }
   .input {
     width: 292px;
@@ -92,13 +92,29 @@
     width: 428px;
     height: 428px;
     display: grid;
+    grid-template-rows: 78px 78px 160px auto;
     grid-template-columns: 202px 202px;
-    grid-template-rows: 78px 168px 48px;
-    row-gap: 24px;
-    column-gap: 16px;
+    gap: 26px 20px;
   }
   .input {
     width: 202px;
+  }
+  .name,
+  .age {
+    grid-row: 1 / 2;
+    width: 202px;
+  }
+
+  .phone {
+    grid-row: 2 / 3;
+    width: 438px;
+    & > input {
+      width: 428px;
+    }
+  }
+  .message {
+    grid-row: 3 / 4;
+    height: 160px;
   }
   .textarea {
     width: 428px;
