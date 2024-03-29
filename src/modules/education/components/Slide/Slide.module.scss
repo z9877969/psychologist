@@ -27,9 +27,21 @@
   letter-spacing: -0.04em;
 }
 
-.picture {
+.frame {
+  height: 351px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
   margin-bottom: 16px;
+
   @include media(desktop) {
     margin-bottom: 24px;
+    height: 406px;
   }
+}
+
+.picture {
+  height: 100%;
+  width: auto;
 }
