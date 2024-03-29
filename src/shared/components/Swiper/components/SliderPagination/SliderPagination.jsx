@@ -15,13 +15,9 @@ const SliderPagination = ({ data, swiperRef, classname }) => {
   }, [swiperRef]);
 
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
-  const itemsOnPage = useMediaQuery({
-    query: '(min-width: 768px) and (max-width: 1439px)',
-  })
-    ? 1
-    : 2;
-  const numberOfBullet = isMobile ? data.length : data.length - itemsOnPage;
 
+  let numberOfBullet = isMobile ? data.length : data.length - 1;
+  if (numberOfBullet < 0) numberOfBullet = 0;
   const onChange = (index) => swiperRef.current?.slideTo(index);
   return (
     <div className={clsx(s.container, classname)}>

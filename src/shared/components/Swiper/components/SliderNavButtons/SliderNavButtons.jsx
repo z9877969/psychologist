@@ -3,7 +3,7 @@ import s from './SliderNavButtons.module.scss';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
-export const SliderNavButtons = ({ swiperRef, className }) => {
+export const SliderNavButtons = ({ swiperRef, className, data }) => {
   const [hasPrevSlide, setHasPrevSlide] = useState(false);
   const [hasNextSlide, setHasNextSlide] = useState(false);
 
@@ -18,7 +18,7 @@ export const SliderNavButtons = ({ swiperRef, className }) => {
       setHasPrevSlide(!swiper.isBeginning);
       setHasNextSlide(!swiper.isEnd);
     }
-  }, [swiperRef]);
+  }, [swiperRef, data]);
 
   const renderIcon = (iconId, isActive) => {
     return (

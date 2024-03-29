@@ -1,0 +1,128 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 24px;
+  align-items: center;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: start;
+  width: 100%;
+  position: relative;
+}
+
+.titleInput {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #414343;
+  position: relative;
+}
+.iconStar {
+  fill: #961c1c;
+  position: absolute;
+  top: -1px;
+  right: -10px;
+}
+.input {
+  border-radius: 8px;
+  border: 1px solid #dfdfdf;
+  background: transparent;
+  height: 40px;
+  width: 100%;
+  color: #2c2727;
+  padding: 0 8px;
+  outline: transparent;
+  transition: border $animation-duration $animation-time-function;
+  &:hover,
+  &:focus {
+    border-color: #979797;
+  }
+}
+.textarea {
+  border-radius: 8px;
+  border: 1px solid #dfdfdf;
+  background: transparent;
+  height: 168px;
+  width: 100%;
+  color: #2c2727;
+  padding: 10px 8px;
+  outline: transparent;
+  resize: none;
+  transition: border $animation-duration $animation-time-function;
+  &:hover,
+  &:focus {
+    border-color: #979797;
+  }
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 100px;
+  background-color: #1e5b2a;
+  color: #fff;
+  width: 100%;
+  height: 48px;
+  transition: background-color $animation-duration $animation-time-function;
+  &:hover,
+  &:focus {
+    background-color: #043e0f;
+  }
+}
+.error {
+  border-color: #961c1c;
+}
+@include media(tablet) {
+  .form {
+    width: 292px;
+    gap: 26px;
+  }
+  .input {
+    width: 292px;
+  }
+}
+@include media(desktop) {
+  .form {
+    width: 428px;
+    height: 428px;
+    display: grid;
+    grid-template-rows: 78px 78px 160px auto;
+    grid-template-columns: 202px 202px;
+    gap: 26px 20px;
+  }
+  .input {
+    width: 202px;
+  }
+  .name,
+  .age {
+    grid-row: 1 / 2;
+    width: 202px;
+  }
+
+  .phone {
+    grid-row: 2 / 3;
+    width: 438px;
+    & > input {
+      width: 428px;
+    }
+  }
+  .message {
+    grid-row: 3 / 4;
+    height: 160px;
+  }
+  .textarea {
+    width: 428px;
+  }
+  .btn {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    width: 242px;
+    margin-top: 8px;
+  }
+}

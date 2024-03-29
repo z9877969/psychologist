@@ -20,12 +20,17 @@ export default function SwiperContainer({
   return (
     <div className={clsx(s.wrapper, containerClass)}>
       {!showButton && (
-        <SliderNavButtons swiperRef={swiperRef} className={buttonsClass} />
+        <SliderNavButtons
+          swiperRef={swiperRef}
+          className={buttonsClass}
+          data={data}
+        />
       )}
       <Slider
         data={data}
         component={(props) => <Component {...props} />}
         swiperRef={swiperRef}
+        isPagination={isPagination}
       />
       {isPagination && (
         <SliderPagination

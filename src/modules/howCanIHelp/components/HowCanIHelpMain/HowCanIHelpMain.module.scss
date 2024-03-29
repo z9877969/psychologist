@@ -1,0 +1,69 @@
+.section {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 104px;
+
+  @include media(tablet) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include media(desktop) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.title {
+  color: #2c2727;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  margin-bottom: 16px;
+
+  @include font(30, 36);
+
+  @include media(tablet) {
+    letter-spacing: -0.8px;
+
+    @include font(40, 48);
+  }
+
+  @include media(desktop) {
+    letter-spacing: -0.96px;
+
+    @include font(48, 56);
+  }
+}
+
+.titleAccent {
+  color: #1e5b2a;
+}
+
+.text {
+  margin-bottom: 16px;
+  color: #414343;
+  letter-spacing: -0.32px;
+
+  @include font(16, 24);
+
+  @include media(tablet) {
+    margin-bottom: 24px;
+  }
+
+  @include media(desktop) {
+    margin-bottom: 32px;
+    max-width: 690px;
+  }
+}
+
+.sliderNavBar {
+  height: 48px;
+  bottom: -64px;
+  @include media(tablet) {
+    bottom: 0;
+    top: -184px;
+  }
+  @include media(desktop) {
+    top: -200px;
+  }
+}
