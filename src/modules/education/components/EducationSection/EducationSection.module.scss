@@ -39,23 +39,9 @@
   }
 }
 
-.container {
-  width: 343px;
-  height: 471px;
-
-  @include media(tablet) {
-    width: 688px;
-    height: 471px;
-  }
-  @include media(desktop) {
-    width: 1200px;
-    height: 526px;
-  }
-}
-
 .buttonsClass {
   position: absolute;
-  right: 7px;
+  right: -50%;
   display: flex;
   column-gap: 68px;
   z-index: 5;

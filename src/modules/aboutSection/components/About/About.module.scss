@@ -19,43 +19,43 @@
   font-family: $main-font-family;
   font-size: 30px;
   font-weight: 600;
-  line-height: 0.83; /* 120% */
-  letter-spacing: -0.02em;
+  line-height: 36px; /* 120% */
+  letter-spacing: -0.6px;
 
   @include media(tablet) {
     font-family: $main-font-family;
     font-size: 40px;
-    line-height: 0.83;
-    letter-spacing: -0.02em;
+    line-height: 48px; /* 120% */
+    letter-spacing: -0.8px;
   }
 
   @include media(desktop) {
     font-size: 48px;
 
-    line-height: 0.86; /* 116.667% */
-    letter-spacing: -0.01em;
+    line-height: 56px; /* 116.667% */
+    letter-spacing: -0.96px;
     width: 588px;
   }
 }
 
 .accent {
-  color: $primary-orange;
+  color: #eb6d0a;
   font-family: $main-font-family;
   font-size: 30px;
   font-weight: 600;
-  line-height: 0.83;
-  letter-spacing: -0.02em;
+  line-height: 36px;
+  letter-spacing: -0.6px;
 
   @include media(tablet) {
     font-size: 40px;
-    line-height: 0.83;
-    letter-spacing: -0.02em;
+    line-height: 48px;
+    letter-spacing: -0.8px;
   }
 
   @include media(desktop) {
     font-size: 48px;
-    line-height: 0.86;
-    letter-spacing: -0.01em;
+    line-height: 56px;
+    letter-spacing: -0.96px;
   }
 }
 
@@ -63,12 +63,12 @@
   margin-top: 16px;
   margin-bottom: 8px;
 
-  color: $dark-gray;
+  color: #414343;
 
   font-family: $main-font-family;
   font-size: 16px;
-  line-height: 0.66; /* 150% */
-  letter-spacing: -0.04em;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
 
   //   тут не треба tablet/desktop
   @include media(desktop) {
@@ -79,11 +79,12 @@
 
 .bottomText {
   margin-bottom: 16px;
-  color: $dark-gray;
+
+  color: #414343;
   font-family: $main-font-family;
   font-size: 16px;
-  line-height: 0.66; /* 150% */
-  letter-spacing: -0.04em;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
 
   @include media(tablet) {
     margin-bottom: 24px;
