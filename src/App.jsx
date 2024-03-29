@@ -1,8 +1,6 @@
-import { MainPage } from './pages';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { MainPage, BlogListPage, BlogPage } from './pages';
 import { SharedLayout } from 'shared/components';
-import BlogListPage from 'pages/BlogListPage';
-import BlogPage from 'pages/BlogPage';
 
 function App() {
   return (

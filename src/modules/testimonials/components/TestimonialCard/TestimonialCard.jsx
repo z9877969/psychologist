@@ -1,13 +1,13 @@
 import s from './TestimonialCard.module.scss';
 import { formatAge } from '../../utils/formatAge';
 
-function TestimonialCard({ testimonial }) {
+function TestimonialCard({ text, age, author }) {
   return (
     <div className={s.card}>
       <p className={s.quote}>“</p>
-      <p className={s.text}>{`"${testimonial.text}"`}</p>
+      <p className={s.text}>{`"${text}"`}</p>
       <p className={s.footer}>
-        {testimonial.author}, {formatAge(testimonial.age)}
+        {author}, {formatAge(age)}
       </p>
     </div>
   );

@@ -3,6 +3,7 @@ import ModalBackdrop from 'shared/components/ModalBackdrop/ModalBackdrop';
 import AllTestimonials from '../AllTestimonials/AllTestimonials';
 import LeaveReviewModal from '../LeaveReviewModal/LeaveReviewModal';
 import s from './ButtonGroup.module.scss';
+import clsx from 'clsx';
 
 const ButtonGroup = ({ testimonials }) => {
   const [showTestimonialsModal, setShowTestimonialsModal] = useState(false);
@@ -34,7 +35,10 @@ const ButtonGroup = ({ testimonials }) => {
 
   return (
     <div className={s.btnGroup}>
-      <button className={s.btn} onClick={handleShowAllTestimonials}>
+      <button
+        className={clsx(s.btn, s.btnFirst)}
+        onClick={handleShowAllTestimonials}
+      >
         Показати всі відгуки
       </button>
       {showTestimonialsModal && (
@@ -45,7 +49,10 @@ const ButtonGroup = ({ testimonials }) => {
           />
         </ModalBackdrop>
       )}
-      <button className={s.btn} onClick={handleShowLeaveReview}>
+      <button
+        className={clsx(s.btn, s.btnSecond)}
+        onClick={handleShowLeaveReview}
+      >
         Залишити відгук
       </button>
       {showLeaveReviewModal && (

@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  column-gap: 16px;
+  z-index: 5;
+  .bullet {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #6ca24a;
+    cursor: pointer;
+    &::after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .isActive {
+    background-color: #1e5b2a;
+    margin-left: 8px;
+    margin-right: 8px;
+    &::after {
+      border: 2px solid #1e5b2a;
+    }
+  }
+}
