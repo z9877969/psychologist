@@ -4,6 +4,7 @@ import s from './VideoPlayer.module.scss';
 import { Picture } from 'shared/components';
 import * as images from '../../img';
 import videoData from '../data/videoData.json';
+import Icon from '../IconPlayer/IconPlayer';
 
 export default function VideoPlayer() {
   return (
@@ -20,7 +21,8 @@ export default function VideoPlayer() {
             urlMobile2x={images[videoData.urlMobile2x]}
           />
         }
-        playing={false}
+        playIcon={<Icon />}
+        playing
         loop={false}
         controls={true}
         width="100%"
