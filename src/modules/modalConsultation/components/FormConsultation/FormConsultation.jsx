@@ -44,94 +44,94 @@ const FormConsultation = () => {
 
   return (
     <>
-      {initialState.name !== undefined && (
-        <Formik
-          onSubmit={handleSubmit}
-          initialValues={{
-            name: initialState.name,
-            phone: initialState.phone.slice(3),
-            message: initialState.message,
-          }}
-          validationSchema={FeedbackSchema}
-        >
-          {({ errors, values }) => {
-            const { name, phone, message } = values;
-            if (name || phone || message) {
-              localStorage.setItem(KEY, JSON.stringify(values));
-            }
-            return (
-              <Form className={s.form}>
-                <label className={s.label}>
-                  <span className={s.titleInput}>
-                    Ім’я
-                    <svg className={s.iconStar} width={8} height={8}>
-                      <use xlinkHref={`${sprite}#icon-star`}></use>
-                    </svg>
-                  </span>
+      <Formik
+        onSubmit={handleSubmit}
+        initialValues={{
+          name: initialState.name,
+          phone: initialState.phone.includes('+38')
+            ? initialState.phone.slice(3)
+            : initialState.phone,
+          message: initialState.message,
+        }}
+        validationSchema={FeedbackSchema}
+      >
+        {({ errors, values }) => {
+          const { name, phone, message } = values;
+          if (name || phone || message) {
+            localStorage.setItem(KEY, JSON.stringify(values));
+          }
+          return (
+            <Form className={s.form}>
+              <label className={s.label}>
+                <span className={s.titleInput}>
+                  Ім’я
+                  <svg className={s.iconStar} width={8} height={8}>
+                    <use xlinkHref={`${sprite}#icon-star`}></use>
+                  </svg>
+                </span>
 
-                  <Field
-                    className={clsx(s.input, errors.name && s.error)}
-                    name="name"
-                    type="text"
-                    placeholder="Введіть ім’я"
-                  />
-                  <ErrorMessage name="name">
-                    {(msg) => <ErrorSpan>{msg}</ErrorSpan>}
-                  </ErrorMessage>
-                </label>
-                <label className={s.label}>
-                  <span className={s.titleInput}>
-                    Номер телефону
-                    <svg className={s.iconStar} width={8} height={8}>
-                      <use xlinkHref={`${sprite}#icon-star`}></use>
-                    </svg>
-                  </span>
+                <Field
+                  className={clsx(s.input, errors.name && s.error)}
+                  name="name"
+                  type="text"
+                  placeholder="Введіть ім’я"
+                />
+                <ErrorMessage name="name">
+                  {(msg) => <ErrorSpan>{msg}</ErrorSpan>}
+                </ErrorMessage>
+              </label>
+              <label className={s.label}>
+                <span className={s.titleInput}>
+                  Номер телефону
+                  <svg className={s.iconStar} width={8} height={8}>
+                    <use xlinkHref={`${sprite}#icon-star`}></use>
+                  </svg>
+                </span>
 
-                  <Field name="phone" placeholder="Введіть номер">
-                    {({ field }) => (
-                      <PatternFormat
-                        {...field}
-                        className={clsx(
-                          s.input,
-                          errors.phone && s.error,
-                          values.phone.includes('_') && s.error
-                        )}
-                        format="+38 (###) #### ###"
-                        allowEmptyFormatting
-                        mask="_"
-                      />
-                    )}
-                  </Field>
-                  <ErrorMessage name="phone">
-                    {(msg) => <ErrorSpan>{msg}</ErrorSpan>}
-                  </ErrorMessage>
-                  {!errors.phone && values.phone.includes('_') && (
-                    <ErrorSpan>Не коректний номер</ErrorSpan>
+                <Field name="phone" placeholder="Введіть номер">
+                  {({ field }) => (
+                    <PatternFormat
+                      {...field}
+                      className={clsx(
+                        s.input,
+                        errors.phone && s.error,
+                        values.phone.includes('_') && s.error
+                      )}
+                      format="+38 (###) #### ###"
+                      allowEmptyFormatting
+                      mask="_"
+                    />
                   )}
-                </label>
-                <label className={s.label}>
-                  <span className={s.titleInput}>Повідомлення</span>
-                  <Field
-                    className={clsx(s.textarea, errors.message && s.error)}
-                    name="message"
-                    as="textarea"
-                    placeholder="Введіть повідомлення"
-                  />
-                  <ErrorMessage name="message">
-                    {(msg) => <ErrorSpan>{msg}</ErrorSpan>}
-                  </ErrorMessage>
-                  <span className={s.valueLength}>
-                    {values.message.length}/512
-                  </span>
-                </label>
-                <button className={s.btn} type="submit">
-                  Надіслати запит
-                </button>
-              </Form>
-            );
-          }}
-        </Formik>
-      )}
+                </Field>
+                <ErrorMessage name="phone">
+                  {(msg) => <ErrorSpan>{msg}</ErrorSpan>}
+                </ErrorMessage>
+                {!errors.phone && values.phone.includes('_') && (
+                  <ErrorSpan>Не коректний номер</ErrorSpan>
+                )}
+              </label>
+              <label className={s.label}>
+                <span className={s.titleInput}>Повідомлення</span>
+                <Field
+                  className={clsx(s.textarea, errors.message && s.error)}
+                  name="message"
+                  as="textarea"
+                  placeholder="Введіть повідомлення"
+                />
+                <ErrorMessage name="message">
+                  {(msg) => <ErrorSpan>{msg}</ErrorSpan>}
+                </ErrorMessage>
+                <span className={s.valueLength}>
+                  {values.message.length}/512
+                </span>
+              </label>
+              <button className={s.btn} type="submit">
+                Надіслати запит
+              </button>
+            </Form>
+          );
+        }}
+      </Formik>
     </>
   );
 };

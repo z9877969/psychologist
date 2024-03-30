@@ -52,7 +52,9 @@ const FormRevie = () => {
       onSubmit={handleSubmit}
       initialValues={{
         name: initialState.name,
-        phone: initialState.phone.slice(3),
+        phone: initialState.phone.includes('+38')
+          ? initialState.phone.slice(3)
+          : initialState.phone,
         message: initialState.message,
         age: initialState.age,
       }}
