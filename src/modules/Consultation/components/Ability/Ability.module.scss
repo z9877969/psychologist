@@ -5,7 +5,7 @@
 }
 
 .abylityId {
-  color: $green;
+  color: $dark-green;
   font-size: 28px;
   font-weight: 600;
   line-height: 1.21;
@@ -14,10 +14,15 @@
     font-size: 32px;
     line-height: 1.25;
   }
+
+  @include media(desktop) {
+    font-size: 34px;
+    line-height: 1.25;
+  }
 }
 
 .abilityText {
-  color: #2c2727;
+  color: $typography-black;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
