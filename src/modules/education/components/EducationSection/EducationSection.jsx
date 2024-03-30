@@ -31,7 +31,6 @@ const EducationSection = () => {
         <SwiperContainer
           data={data}
           component={Slide}
-          containerClass={s.container}
           buttonsClass={s.buttonsClass}
         />
       </Container>

@@ -1,0 +1,21 @@
+.container {
+  display: none;
+
+  @include media(desktop) {
+    display: block;
+    position: absolute;
+    width: 320px;
+    right: 0;
+    bottom: -293px;
+    z-index: -100;
+  }
+}
+
+.in {
+  position: absolute;
+  left: 26px;
+  top: 7px;
+}
+
+.out {
+}
