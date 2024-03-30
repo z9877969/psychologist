@@ -27,31 +27,7 @@
   fill: #fff;
   transition: fill $animation-duration $animation-time-function;
 }
-.telegram:hover,
-.telegram:focus {
-  fill: #2aabee;
-}
-.facebook {
-  display: inline-block;
-  height: 32px;
-  border-radius: 8px;
-  width: 32px;
-  transition: background-color $animation-duration $animation-time-function;
-  &:hover,
-  &:focus {
-    height: 32px;
-    border-radius: 8px;
-    width: 32px;
-    background-color: #3d5a98;
-  }
-}
-.youtybe {
-  transition: fill $animation-duration $animation-time-function;
-  &:hover,
-  &:focus {
-    fill: #ff0000;
-  }
-}
+
 @include media(tablet) {
   .address {
     gap: 20px;
@@ -64,5 +40,32 @@
     font-style: normal;
     font-weight: 600;
     padding: 8px 0;
+  }
+}
+@include media(desktop) {
+  .telegram:hover,
+  .telegram:focus {
+    fill: #2aabee;
+  }
+  .facebook {
+    display: inline-block;
+    height: 32px;
+    border-radius: 8px;
+    width: 32px;
+    transition: background-color $animation-duration $animation-time-function;
+    &:hover,
+    &:focus {
+      height: 32px;
+      border-radius: 8px;
+      width: 32px;
+      background-color: #3d5a98;
+    }
+  }
+  .youtybe {
+    transition: fill $animation-duration $animation-time-function;
+    &:hover,
+    &:focus {
+      fill: #ff0000;
+    }
   }
 }

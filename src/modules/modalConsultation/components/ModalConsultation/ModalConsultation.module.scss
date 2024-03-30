@@ -70,9 +70,20 @@
 @include media(desktop) {
   .modal {
     width: 1040px;
-    padding: 80px 80px 0;
+    padding: 80px 80px 40px;
+    position: relative;
   }
   .container {
     align-items: start;
+  }
+  .title {
+    width: 420px;
+  }
+  .formContainer {
+    position: static;
+  }
+  .btnSecond {
+    top: 40px;
+    right: 40px;
   }
 }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import s from './FooterNav.module.scss';
+import clsx from 'clsx';
 
 const FooterNav = () => {
   return (
@@ -31,7 +32,7 @@ const FooterNav = () => {
           <p className={s.subTitle}>Інше</p>
         </li>
         <li>
-          <a href="#reviews" className={s.link}>
+          <a href="#reviews" className={clsx(s.link, s.linkRev)}>
             Відгуки
           </a>
         </li>

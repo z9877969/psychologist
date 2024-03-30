@@ -8,11 +8,8 @@ import imgDesk from '../../img/photoFAQdesk.jpg';
 import imgDesk2x from '../../img/photoFAQdesk2x.jpg';
 import ScrollBar from '../ScrollBar/ScrollBar';
 import FAQList from '../FAQList/FAQList';
-import ModalRevie from 'modules/modalRevie/components/ModalRevie/ModalRevie';
-import { useModal } from 'context/ModalProvider';
 
 const FrequentlyAskedQuestions = () => {
-  const setModal = useModal();
   return (
     <section id="faq" className={s.section}>
       <Container>
@@ -31,9 +28,7 @@ const FrequentlyAskedQuestions = () => {
           </div>
 
           <div>
-            <h2 className={s.title} onClick={() => setModal(<ModalRevie />)}>
-              FAQ
-            </h2>
+            <h2 className={s.title}>FAQ</h2>
             <ScrollBar>
               <FAQList />
             </ScrollBar>
