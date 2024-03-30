@@ -6,6 +6,7 @@ import SwiperContainer from 'shared/components/Swiper/components/SwiperContainer
 import { useEffect, useState } from 'react';
 import fetchData from '../../data/fetchData';
 import { ThreeDots } from 'react-loader-spinner';
+import BackgroundImage from 'shared/components/BackgroundImeg/BackgroundImage';
 
 function TestimonialsContainer() {
   const [testimonials, setTestimonials] = useState([]);
@@ -50,6 +51,12 @@ function TestimonialsContainer() {
           </>
         )}
       </Container>
+      <BackgroundImage
+        classSvg={s.svg}
+        classLine={s.svgL}
+        name={'icon-vecto-reviews'}
+        nameLine={'icon-vector-reviews-line'}
+      />
     </section>
   );
 }

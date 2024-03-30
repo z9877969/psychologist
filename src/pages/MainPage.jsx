@@ -24,8 +24,8 @@ const MainPage = () => {
       <Education />
       <HowCanIHelpMain />
       <Consultation />
-      <Testimonials />
       <BookConsultation />
+      <Testimonials />
       <BlogSection />
       <FrequentlyAskedQuestions />
     </>

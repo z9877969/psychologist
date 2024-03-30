@@ -45,15 +45,13 @@ const BlogSection = () => {
         <BlogListHeader header={header} text={text} />
         <BlogList articles={visibleArticles} />
         <Button to="/blog">Переглянути більше статтей</Button>
-        <div className={s.container1}>
-          <BackgroundImage
-            classSvg={s.svgfirst}
-            classLine={s.svgLine}
-            name={'icon-vector-blog'}
-            nameLine={'icon-vector-blog-line'}
-          />
-        </div>
       </Container>
+      <BackgroundImage
+        classSvg={s.svgfirst}
+        classLine={s.svgLine}
+        name={'icon-vector-blog'}
+        nameLine={'icon-vector-blog-line'}
+      />
     </Section>
   );
 };
