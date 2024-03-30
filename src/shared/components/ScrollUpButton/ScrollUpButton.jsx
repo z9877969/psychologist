@@ -8,9 +8,9 @@ const ScrollUpButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const media = useMediaQuery();
 
-  let startPosition = 779;
-  if (media.isTablet) startPosition = 1116;
-  if (media.isDesktop) startPosition = 796;
+  let startPosition = 680;
+  if (media.isTablet) startPosition = 1016;
+  if (media.isDesktop) startPosition = 736;
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
