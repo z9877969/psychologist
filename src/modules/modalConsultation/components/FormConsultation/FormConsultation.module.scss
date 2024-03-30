@@ -35,6 +35,7 @@
   height: 40px;
   width: 100%;
   padding: 0 8px;
+  color: #2c2727;
   outline: transparent;
   transition: border $animation-duration $animation-time-function;
   &:hover,
@@ -48,6 +49,7 @@
   background: transparent;
   height: 168px;
   width: 100%;
+  color: #2c2727;
   padding: 10px 8px;
   outline: transparent;
   resize: none;
@@ -92,7 +94,7 @@
     display: grid;
     grid-template-columns: 202px 202px;
     grid-template-rows: 78px 168px 48px;
-    row-gap: 24px;
+    row-gap: 40px;
     column-gap: 16px;
   }
   .input {

@@ -1,13 +1,14 @@
 import articles from '../modules/blogPage/data/articles.json';
 
 import ContentList from 'modules/blogPage/components/ContentList/ContentList';
-import { Container } from 'shared/components';
+
 import { NavLink } from 'react-router-dom';
 import { sprite } from 'shared/icons';
 
 import { BlogLastArticles } from 'modules/blogPage';
 import { useEffect } from 'react';
 import { scrollOnOpenPage } from 'shared/helpers/scroll';
+import WrapDesctopBlogPage from 'shared/WrapDesctopBlogPage/WrapDesctopBlogPage';
 
 const BlogPage = () => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const BlogPage = () => {
 
   return (
     <>
-      <Container>
+      <WrapDesctopBlogPage>
         <div>
           <NavLink
             to="/blog"
@@ -31,7 +32,7 @@ const BlogPage = () => {
         <div>
           <ContentList articles={articles} />
         </div>
-      </Container>
+      </WrapDesctopBlogPage>
 
       <BlogLastArticles />
     </>

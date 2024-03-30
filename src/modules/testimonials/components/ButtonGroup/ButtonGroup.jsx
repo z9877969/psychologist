@@ -4,8 +4,11 @@ import AllTestimonials from '../AllTestimonials/AllTestimonials';
 import LeaveReviewModal from '../LeaveReviewModal/LeaveReviewModal';
 import s from './ButtonGroup.module.scss';
 import clsx from 'clsx';
+import { useModal } from 'context/ModalProvider';
+import { ModalRevie } from 'modules/modalRevie';
 
 const ButtonGroup = ({ testimonials }) => {
+  const setModal = useModal();
   const [showTestimonialsModal, setShowTestimonialsModal] = useState(false);
   const [showLeaveReviewModal, setShowLeaveReviewModal] = useState(false);
 
@@ -15,10 +18,6 @@ const ButtonGroup = ({ testimonials }) => {
 
   const handleCloseModal = () => {
     setShowTestimonialsModal(false);
-  };
-
-  const handleShowLeaveReview = () => {
-    setShowLeaveReviewModal(true);
   };
 
   const handleCloseLeaveReviewModal = () => {
@@ -51,7 +50,7 @@ const ButtonGroup = ({ testimonials }) => {
       )}
       <button
         className={clsx(s.btn, s.btnSecond)}
-        onClick={handleShowLeaveReview}
+        onClick={() => setModal(<ModalRevie />)}
       >
         Залишити відгук
       </button>

@@ -1,21 +1,32 @@
 .wraperQuote {
   display: flex;
   flex-direction: column;
-  margin-top: 32px;
-  margin-bottom: 32px;
-  padding: 40px 0 40px 0;
+  margin: 0 auto;
+  padding: 40px 0;
+  justify-content: center;
 }
 .quote {
   display: flex;
-  margin-bottom: 16px;
+
   justify-content: space-between;
+  margin: 0 auto 16px auto;
+  // width: 343px;
+  @include media(tablet) {
+    // width: 688px;
+    padding: 0;
+    margin: 0 0 16px 0;
+  }
+  @include media(desktop) {
+    justify-content: center;
+    // width: 1440px;
+  }
 }
 
 .wrapContent {
 }
 .content {
   width: 227px;
-
+  margin-bottom: 16px;
   color: var(--primary-green-dark, #1e5b2a);
   text-align: center;
   font-family: 'Open Sans';
@@ -26,7 +37,7 @@
     width: 572px;
   }
   @include media(desktop) {
-    width: 720px;
+    width: 650px;
     font-size: 24px;
     line-height: 1.33;
   }
