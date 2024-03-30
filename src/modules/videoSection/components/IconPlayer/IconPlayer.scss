@@ -1,0 +1,15 @@
+.icon {
+  display: contents;
+  width: 44px;
+  height: 44px;
+
+  @include media(tablet) {
+    width: 68px;
+    height: 68px;
+  }
+
+  @include media(desktop) {
+    width: 68px;
+    height: 68px;
+  }
+}
