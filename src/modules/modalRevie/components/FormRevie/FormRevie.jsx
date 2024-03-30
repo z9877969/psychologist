@@ -6,7 +6,9 @@ import { sprite } from 'shared/icons';
 import ErrorSpan from 'modules/modalConsultation/components/ErrorSpan/ErrorSpan';
 import clsx from 'clsx';
 import { useModal } from 'context/ModalProvider';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
+
+const KEY = 'formrevie';
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
@@ -26,20 +28,41 @@ const FeedbackSchema = Yup.object().shape({
 const FormRevie = () => {
   const setModal = useModal();
   const closeModal = useCallback(() => setModal(), [setModal]);
+
+  const [initialState] = useState(() => {
+    const data = JSON.parse(localStorage.getItem(KEY)) || {
+      name: '',
+      phone: '',
+      message: '',
+      age: '',
+    };
+    return data;
+  });
+
   const handleSubmit = (values) => {
     if (values.phone.includes('_')) return;
     alert(
       `name: ${values.name} phone: ${values.phone} message: ${values.message} `
     );
     closeModal();
+    localStorage.removeItem(KEY);
   };
   return (
     <Formik
       onSubmit={handleSubmit}
-      initialValues={{ name: '', phone: '', message: '', age: '' }}
+      initialValues={{
+        name: initialState.name,
+        phone: initialState.phone.slice(3),
+        message: initialState.message,
+        age: initialState.age,
+      }}
       validationSchema={FeedbackSchema}
     >
       {({ errors, values }) => {
+        const { name, phone, message } = values;
+        if (name || phone || message) {
+          localStorage.setItem(KEY, JSON.stringify(values));
+        }
         return (
           <Form className={s.form}>
             <label className={clsx(s.label, s.name)}>
@@ -124,6 +147,7 @@ const FormRevie = () => {
               <ErrorMessage name="message">
                 {(msg) => <ErrorSpan>{msg}</ErrorSpan>}
               </ErrorMessage>
+              <span className={s.valueLength}>{values.message.length}/512</span>
             </label>
             <button className={s.btn} type="submit">
               Надіслати відгук
