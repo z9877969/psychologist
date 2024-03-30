@@ -1,0 +1,79 @@
+.modal {
+  background-color: #fff;
+  padding: 24px 16px;
+  overflow: auto;
+  height: 100%;
+  border-radius: 8px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.imgContainer {
+  position: relative;
+  flex-shrink: 0;
+}
+.btnClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btnSecond {
+  display: none;
+}
+.icon {
+  stroke: #979797;
+}
+.title {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  margin-bottom: 16px;
+}
+@include media(tablet) {
+  .modal {
+    padding: 40px;
+    height: auto;
+    width: 688px;
+    height: auto;
+    overflow: none;
+  }
+  .container {
+    flex-direction: row;
+    gap: 24px;
+  }
+  .imgContainer {
+    position: static;
+  }
+  .btnClose {
+    display: none;
+  }
+  .formContainer {
+    position: relative;
+  }
+  .btnSecond {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .title {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    width: 180px;
+  }
+}
+@include media(desktop) {
+  .modal {
+    width: 1040px;
+    padding: 80px;
+  }
+  .container {
+    align-items: start;
+  }
+}

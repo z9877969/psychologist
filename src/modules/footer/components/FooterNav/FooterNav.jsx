@@ -16,9 +16,9 @@ const FooterNav = () => {
           </a>
         </li>
         <li>
-          <a href="#about" className={s.link}>
+          <Link to="/#about" className={s.link}>
             Про мене
-          </a>
+          </Link>
         </li>
         <li>
           <a href="#services" className={s.link}>
