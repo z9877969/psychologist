@@ -21,6 +21,9 @@ const FormConsultation = () => {
   const setModal = useModal();
   const closeModal = useCallback(() => setModal(), [setModal]);
   const handleSubmit = (values) => {
+    if (values.phone.includes('_')) {
+      return;
+    }
     alert(
       `name: ${values.name} phone: ${values.phone} message: ${values.message} `
     );
@@ -33,7 +36,7 @@ const FormConsultation = () => {
       initialValues={{ name: '', phone: '', message: '' }}
       validationSchema={FeedbackSchema}
     >
-      {({ errors }) => {
+      {({ errors, values }) => {
         return (
           <Form className={s.form}>
             <label className={s.label}>
@@ -66,7 +69,11 @@ const FormConsultation = () => {
                 {({ field }) => (
                   <PatternFormat
                     {...field}
-                    className={clsx(s.input, errors.phone && s.error)}
+                    className={clsx(
+                      s.input,
+                      errors.phone && s.error,
+                      values.phone.includes('_') && s.error
+                    )}
                     format="+38 (###) #### ###"
                     allowEmptyFormatting
                     mask="_"
@@ -76,6 +83,9 @@ const FormConsultation = () => {
               <ErrorMessage name="phone">
                 {(msg) => <ErrorSpan>{msg}</ErrorSpan>}
               </ErrorMessage>
+              {!errors.phone && values.phone.includes('_') && (
+                <ErrorSpan>Не коректний номер</ErrorSpan>
+              )}
             </label>
             <label className={s.label}>
               <span className={s.titleInput}>Повідомлення</span>
