@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 import s from './ScrollUpButton.module.scss';
 import { sprite } from 'shared/icons';
 import clsx from 'clsx';
+import { useMediaQuery } from 'hooks/index';
 
 const ScrollUpButton = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const width = document.body.clientWidth;
-  let startPosition = 1119;
-  if (width > 767) startPosition = width > 1439 ? 1640 : 1716;
+  const media = useMediaQuery();
+
+  let startPosition = 680;
+  if (media.isTablet) startPosition = 1016;
+  if (media.isDesktop) startPosition = 736;
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);

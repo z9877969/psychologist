@@ -21,9 +21,11 @@
     justify-content: center;
     position: fixed;
     bottom: 112px;
-
     z-index: 90;
-    transform: translate(311px, 60px);
+    transform: translate(262px, 60px);
+    @include media(mobile) {
+      transform: translate(311px, 60px);
+    }
 
     opacity: 0;
     transition:
@@ -32,12 +34,12 @@
 
     @include media(tablet) {
       bottom: 96px;
-      transform: translate(680px, 70px);
+      transform: translate(680px, 96px);
     }
     @include media(desktop) {
       width: 56px;
       height: 56px;
-      transform: translate(1264px, 70px);
+      transform: translate(1264px, 96px);
     }
     .svg {
       fill: transparent;
@@ -59,8 +61,11 @@
     }
   }
   .isOpen {
-    transform: translate(311px, 0);
+    transform: translate(256px, 0);
     opacity: 1;
+    @include media(mobile) {
+      transform: translate(311px, 0);
+    }
     @include media(tablet) {
       transform: translate(680px, 0);
     }
