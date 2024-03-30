@@ -11,7 +11,9 @@ export const Quote = ({ data }) => {
           {data.map((quote) => (
             <li key={quote.id}>
               <div className={s.quote}>
-                <p className={s.textEl}>“</p>
+                <div>
+                  <p className={s.textEl}>“</p>
+                </div>
                 <div className={s.wrapContent}>
                   <p className={s.content}>
                     <span className={s.accent}>{quote.accent}</span>
