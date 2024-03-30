@@ -27,6 +27,7 @@ const FormRevie = () => {
   const setModal = useModal();
   const closeModal = useCallback(() => setModal(), [setModal]);
   const handleSubmit = (values) => {
+    if (values.phone.includes('_')) return;
     alert(
       `name: ${values.name} phone: ${values.phone} message: ${values.message} `
     );
@@ -38,7 +39,7 @@ const FormRevie = () => {
       initialValues={{ name: '', phone: '', message: '', age: '' }}
       validationSchema={FeedbackSchema}
     >
-      {({ errors }) => {
+      {({ errors, values }) => {
         return (
           <Form className={s.form}>
             <label className={clsx(s.label, s.name)}>
@@ -89,7 +90,11 @@ const FormRevie = () => {
                 {({ field }) => (
                   <PatternFormat
                     {...field}
-                    className={clsx(s.input, errors.phone && s.error)}
+                    className={clsx(
+                      s.input,
+                      errors.phone && s.error,
+                      values.phone.includes('_') && s.error
+                    )}
                     format="+38 (###) #### ###"
                     allowEmptyFormatting
                     mask="_"
@@ -99,6 +104,9 @@ const FormRevie = () => {
               <ErrorMessage name="phone">
                 {(msg) => <ErrorSpan>{msg}</ErrorSpan>}
               </ErrorMessage>
+              {!errors.phone && values.phone.includes('_') && (
+                <ErrorSpan>Не коректний номер</ErrorSpan>
+              )}
             </label>
             <label className={clsx(s.label, s.message)}>
               <span className={s.titleInput}>

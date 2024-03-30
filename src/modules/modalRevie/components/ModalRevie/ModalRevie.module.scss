@@ -14,6 +14,7 @@
 .imgContainer {
   position: relative;
   flex-shrink: 0;
+  height: 269px;
 }
 .btnClose {
   position: absolute;
@@ -47,6 +48,8 @@
   }
   .imgContainer {
     position: static;
+    height: auto;
+    width: 292px;
   }
   .btnClose {
     display: none;
@@ -72,8 +75,23 @@
   .modal {
     width: 1040px;
     padding: 80px;
+    position: relative;
   }
+
   .container {
     align-items: start;
+  }
+  .imgContainer {
+    width: 428px;
+  }
+  .title {
+    width: 300px;
+  }
+  .formContainer {
+    position: static;
+  }
+  .btnSecond {
+    top: 40px;
+    right: 40px;
   }
 }
