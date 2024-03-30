@@ -1,35 +1,45 @@
 .navigation {
   display: none;
 }
+
 @include media(desktop) {
+  .navigation {
+    display: flex;
+  }
   .navigationList {
     display: flex;
     align-items: flex-start;
     gap: 24px;
   }
-  .navigation {
-    display: flex;
+
+  // Для hover,focus//
+  .headerListItem {
+    display: inline-block;
+    padding: 8px;
   }
   .headerListLink {
-    padding: 8px 0;
-    font-family: $main-font-family;
+    color: $typography-black;
     font-size: 16px;
-    font-style: normal;
     line-height: 1.5;
+    font-weight: 400;
     letter-spacing: -0.32px;
-    color: $primary-text-color;
     position: relative;
-    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+    transition: font-weight 0.2s ease-in-out;
+    &:hover,
+    &:focus {
+      color: #1e5b2a;
+      font-weight: 600;
+    }
   }
 
-  .headerListLink:hover,
-  .headerListLink:active,
-  .headerListLink:focus {
+  // isActive
+  .active {
+    position: relative;
     color: #1e5b2a;
     font-weight: 600;
   }
-
-  .headerListLink::after {
+  .active::after {
     content: '';
     position: absolute;
     left: 0;
@@ -37,12 +47,8 @@
     width: 100%;
     height: 1px;
     background-color: #1e5b2a;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease-in-out;
-  }
-  .headerListLink:focus::after,
-  .headerListLink:active::after {
     transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0 ease-in-out;
   }
 }

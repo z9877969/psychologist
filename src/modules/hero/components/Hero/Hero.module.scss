@@ -45,7 +45,7 @@
   }
 }
 
-@media screen and (min-width: 1444px) {
+@media screen and (min-width: 1440px) {
   .heroWrap {
     display: flex;
     align-items: center;
@@ -63,5 +63,6 @@
   .hero {
     padding-top: 0;
     padding-bottom: 0;
+    position: relative;
   }
 }

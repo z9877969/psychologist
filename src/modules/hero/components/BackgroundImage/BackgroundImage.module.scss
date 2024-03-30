@@ -1,0 +1,25 @@
+.backgroundContainer {
+  display: none;
+}
+@include media(desktop) {
+  .backgroundContainer {
+    display: block;
+    position: absolute;
+    width: 125px;
+    right: 0;
+    bottom: -235px;
+    // z-index: -101;
+  }
+  .main {
+    position: absolute;
+    width: 114px;
+    top: 6px;
+    right: 0;
+  }
+  .back {
+    width: 125;
+    top: 16px;
+    left: 5px;
+    right: 0;
+  }
+}

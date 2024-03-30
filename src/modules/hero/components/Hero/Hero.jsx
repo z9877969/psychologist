@@ -5,6 +5,7 @@ import TextContent from '../TextContent/TextContent';
 import ButtonBig from '../ButtonBig/ButtonBig';
 import ButtonSmall from '../ButtonSmall/ButtonSmall';
 import s from './Hero.module.scss';
+import BackgroundImage from '../BackgroundImage/BackgroundImage';
 
 const Hero = () => {
   return (
@@ -21,6 +22,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
+        <BackgroundImage />
       </Container>
     </section>
   );
