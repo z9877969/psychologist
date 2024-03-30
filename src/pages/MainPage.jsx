@@ -10,6 +10,9 @@ import { Hero } from 'modules/hero';
 import { useEffect } from 'react';
 import { scrollOnOpenPage } from 'shared/helpers/scroll';
 import { HowCanIHelpMain } from 'modules/howCanIHelp';
+import { Quote } from 'modules/quotes/components/Quote';
+import quotes1 from '../modules/quotes/data/quotes1.json';
+import quotes2 from '../modules/quotes/data/quotes2.json';
 
 const MainPage = () => {
   useEffect(() => {
@@ -22,10 +25,12 @@ const MainPage = () => {
       <VideoSection />
       <About />
       <Education />
+      <Quote data={quotes1} />
       <HowCanIHelpMain />
       <Consultation />
-      <Testimonials />
       <BookConsultation />
+      <Testimonials />
+      <Quote data={quotes2} />
       <BlogSection />
       <FrequentlyAskedQuestions />
     </>
