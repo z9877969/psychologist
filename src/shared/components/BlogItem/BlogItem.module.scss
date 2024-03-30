@@ -5,6 +5,8 @@
   padding: 16px;
   width: 100%;
   transition: border 250ms linear;
+  z-index: 2;
+  background-color: $white;
   @include media(tablet) {
     width: 332px;
   }

@@ -1,0 +1,11 @@
+.container {
+  display: none;
+  @include media(desktop) {
+    display: block;
+    position: relative;
+    .svg {
+      position: absolute;
+      z-index: -5;
+    }
+  }
+}
