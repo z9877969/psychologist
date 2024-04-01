@@ -13,6 +13,7 @@ import { useMediaQuery } from 'hooks/index';
 import '../BlogListFilters/theme-select.scss';
 import { useSearchParams } from 'react-router-dom';
 import { scrollOnOpenPage } from 'shared/helpers/scroll';
+import { ThreeDots } from 'react-loader-spinner';
 
 const PAGINATION_LIMITS = {
   isDesktop: 9,
@@ -20,9 +21,15 @@ const PAGINATION_LIMITS = {
   isMobile: 3,
 };
 
+const LOADER_SIZE = {
+  isDesktop: 100,
+  isTablet: 80,
+  isMobile: 60,
+};
+
 const BlogListMain = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-
+  const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
   const [articles, setArticles] = useState([]);
@@ -45,6 +52,7 @@ const BlogListMain = () => {
 
   useEffect(() => {
     async function getArticles() {
+      setIsLoading(true);
       try {
         const result = await blogAPI.fetchArticles({
           page,
@@ -56,6 +64,8 @@ const BlogListMain = () => {
         setTotalPages(result.totalPages);
       } catch (err) {
         alert(err);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -86,15 +96,29 @@ const BlogListMain = () => {
     <Section className={s.section}>
       <Container>
         <BlogListHeader header={header} text={text} />
-        <BlogListFilters onChange={handleChangeFilters} />
-        <BlogList articles={articles} />
-
-        <BlogListPagination
-          page={page}
-          totalPages={totalPages}
-          onChange={setPage}
-          media={media}
-        />
+        <BlogListFilters onChange={handleChangeFilters} isLoading={isLoading} />
+        <div className={s.loadingBlock}>
+          <BlogList articles={articles} />
+          <BlogListPagination
+            page={page}
+            totalPages={totalPages}
+            onChange={setPage}
+            media={media}
+            isLoading={isLoading}
+          />
+          {isLoading && (
+            <ThreeDots
+              color="#1E5B2A"
+              // color="#467927"
+              // color="#6CA24A"
+              width={LOADER_SIZE[currentMedia]}
+              // height={500}
+              // radius={}
+              wrapperClass={s.loaderWrapper}
+              ariaLabel="three-dots-loading"
+            />
+          )}
+        </div>
       </Container>
     </Section>
   );

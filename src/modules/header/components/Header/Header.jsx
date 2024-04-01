@@ -31,7 +31,11 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
   return (
     <header>
       <Container>
@@ -39,7 +43,7 @@ const Header = () => {
           className={`${s.headerWrapper} ${isScrolled ? s.headerSrolled : ''}`}
         >
           <BurgerMenu isOpen={isMobileMenuOpen} onClick={toggleMobileMenu} />
-          <Link to={'/'}>
+          <Link to={'/'} onClick={scrollToTop}>
             <Logo />
           </Link>
           <Navigation />
