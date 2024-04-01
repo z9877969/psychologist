@@ -41,6 +41,14 @@ export const blogAPI = {
       .toSorted((a, b) => b.date.localeCompare(a.date))
       .slice((page - 1) * limit, Math.min(total, page * limit));
 
-    return { data, total, totalPages };
+    // imitation delay of backend.  max value = 3000 ms
+    const timer = Math.floor(Math.random() * 1000 * 3);
+    // const timer = 10000;
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ data, total, totalPages });
+      }, timer);
+    });
   },
 };
