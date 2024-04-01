@@ -144,7 +144,7 @@ const FormRevie = () => {
                 className={clsx(s.textarea, errors.message && s.error)}
                 name="message"
                 as="textarea"
-                placeholder="Введіть повідомлення"
+                placeholder="Напишіть відгук"
               />
               <ErrorMessage name="message">
                 {(msg) => <ErrorSpan>{msg}</ErrorSpan>}
