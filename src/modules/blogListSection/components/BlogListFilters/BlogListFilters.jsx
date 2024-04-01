@@ -16,7 +16,7 @@ const DropdownIndicator = (props) => {
   );
 };
 
-const BlogListFilters = ({ onChange }) => {
+const BlogListFilters = ({ onChange, isLoading }) => {
   const [searchParams] = useSearchParams();
   const [categories, setCategories] = useState([]);
   const initialCategory = useRef(searchParams.get('category'));
@@ -73,6 +73,7 @@ const BlogListFilters = ({ onChange }) => {
         <Select
           defaultValue={defaultValue}
           onChange={handleSelect}
+          isDisabled={isLoading}
           options={options}
           components={{ DropdownIndicator }}
           placeholder="Оберіть тему"
@@ -85,6 +86,7 @@ const BlogListFilters = ({ onChange }) => {
         <Select
           defaultValue={defaultValue}
           onChange={handleSelect}
+          isDisabled={isLoading}
           options={options}
           components={{ DropdownIndicator }}
           placeholder="Оберіть тему"
@@ -101,8 +103,9 @@ const BlogListFilters = ({ onChange }) => {
           name="query"
           defaultValue={searchParams.get('query') ?? ''}
           placeholder="Пошук"
+          disabled={isLoading}
         />
-        <button className={s.button} type="submit">
+        <button className={s.button} type="submit" disabled={isLoading}>
           <svg width={24} height={24}>
             <use href={`${sprite}#icon-search`}></use>
           </svg>
