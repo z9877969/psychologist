@@ -1,0 +1,31 @@
+.imageWrapper {
+  display: none;
+}
+@include media(desktop) {
+  .imageWrapper {
+    top: 0;
+    bottom: 0px;
+    left: 0px;
+    display: block;
+    position: absolute;
+
+    z-index: -100;
+  }
+  .main {
+    position: absolute;
+    left: -220px;
+
+    top: 400px;
+    width: 811px;
+    height: 743px;
+  }
+
+  .line {
+    position: absolute;
+    left: -220px;
+    top: 385px;
+
+    width: 842px;
+    height: 772px;
+  }
+}
