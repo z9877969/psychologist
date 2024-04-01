@@ -7,6 +7,7 @@ import ErrorSpan from '../ErrorSpan/ErrorSpan';
 import clsx from 'clsx';
 import { useModal } from 'context/ModalProvider';
 import { useCallback, useState } from 'react';
+import { telegremApi as tgApi } from 'services';
 
 const KEY = 'formconsultation';
 
@@ -35,11 +36,19 @@ const FormConsultation = () => {
     if (values.phone.includes('_')) {
       return;
     }
-    alert(
-      `name: ${values.name} phone: ${values.phone} message: ${values.message} `
-    );
-    closeModal();
-    localStorage.removeItem(KEY);
+
+    tgApi
+      .sendMessageTg({ formData: values, formType: 'consultation' })
+      .then(() => {
+        // eslint-disable-next-line
+        console.log('SEND MESSAGE SUCCESS');
+      })
+      // eslint-disable-next-line
+      .catch((err) => console.log(err.message))
+      .finally(() => {
+        closeModal();
+        localStorage.removeItem(KEY);
+      });
   };
 
   return (
