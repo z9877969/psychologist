@@ -11,7 +11,7 @@ import FAQList from '../FAQList/FAQList';
 
 const FrequentlyAskedQuestions = () => {
   return (
-    <section id="faq" className={s.section}>
+    <section className={s.section} id="faq">
       <Container>
         <div className={s.container}>
           <div className={s.imgContainer}>
