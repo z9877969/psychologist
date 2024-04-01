@@ -10,10 +10,11 @@
   border-radius: 16px;
   border: 1px solid #1e5b2a;
   background-color: #fff;
-  // margin-bottom: 3px;
   box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.1);
 
-  transition: border-color #{$animation-duration} #{$animation-time-function};
+  transition:
+    border-color #{$animation-duration} #{$animation-time-function},
+    box-shadow #{$animation-duration} #{$animation-time-function};
 
   &:hover {
     padding: 15px;
@@ -33,32 +34,8 @@
     padding: 15px;
 
     border: 2px solid #eb6d0a;
-    // box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.1);
+    box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.1);
   }
-
-  // &::after {
-  //   content: '';
-  //   // display: block;
-  //   position: absolute;
-  //   z-index: -1;
-  //   width: calc(100% - 4px);
-  //   height: calc(100% - 1px);
-  //   top: 0;
-  //   left: 0;
-  //   border-radius: 16px;
-  //   border: 1px solid #1e5b2a;
-  //   background-color: #fff;
-  //   // box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.1);
-
-  //   transition:
-  //     border #{$animation-duration} #{$animation-time-function},
-  //     box-shadow #{$animation-duration} #{$animation-time-function};
-  // }
-
-  // &:hover::after {
-  //   border: 2px solid #eb6d0a;
-  //   box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.1);
-  // }
 }
 
 .img {
@@ -93,7 +70,6 @@
 
 .text {
   color: #414343;
-  // max-height: 108px;
   overflow: auto;
   @include font(14, 20);
 }
@@ -125,13 +101,16 @@
   color: #fff;
   font-weight: 600;
 
-  transition: background-color #{$animation-duration} #{$animation-time-function};
+  transition:
+    background-color #{$animation-duration} #{$animation-time-function},
+    font-weight #{$animation-duration} #{$animation-time-function};
 
   @include font(14, 20);
 
   &:hover,
   &:focus {
     background-color: #467927;
+    font-weight: 700;
   }
 
   @include media(desktop) {
@@ -141,4 +120,5 @@
 
 .container:hover .button {
   background-color: #467927;
+  font-weight: 700;
 }

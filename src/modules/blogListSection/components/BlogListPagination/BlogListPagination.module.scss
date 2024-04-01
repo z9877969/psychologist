@@ -7,10 +7,13 @@
 .arrowItemPrev {
   width: 40px;
   height: 40px;
-  margin-right: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include media(mobile) {
+    margin-right: 8px;
+  }
 }
 
 .arrowItemNext {
@@ -19,8 +22,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 8px;
+
+  @include media(mobile) {
+    margin-left: 8px;
+  }
 }
+
 .arrowLink {
   width: 24px;
   height: 24px;
