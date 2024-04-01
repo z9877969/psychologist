@@ -1,8 +1,29 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import s from './FooterNav.module.scss';
 import clsx from 'clsx';
+import { useEffect } from 'react';
 
 const FooterNav = () => {
+  const navigate = useNavigate();
+  const handleRedirect = () => {
+    navigate('/');
+  };
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    scrollToSection();
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
   return (
     <nav className={s.nav}>
       <ul className={s.list}>
@@ -12,17 +33,17 @@ const FooterNav = () => {
           </a>
         </li>
         <li>
-          <a href="/" className={s.link}>
+          <NavLink exact="true" className={s.link} to="/" onClick={scrollToTop}>
             Головна
+          </NavLink>
+        </li>
+        <li>
+          <a href="#about" onClick={handleRedirect} className={s.link}>
+            Про мене
           </a>
         </li>
         <li>
-          <Link to="/#about" className={s.link}>
-            Про мене
-          </Link>
-        </li>
-        <li>
-          <a href="#services" className={s.link}>
+          <a href="#services" onClick={handleRedirect} className={s.link}>
             Послуги
           </a>
         </li>
@@ -32,17 +53,21 @@ const FooterNav = () => {
           <p className={s.subTitle}>Інше</p>
         </li>
         <li>
-          <a href="#reviews" className={clsx(s.link, s.linkRev)}>
+          <a
+            href="#reviews"
+            onClick={handleRedirect}
+            className={clsx(s.link, s.linkRev)}
+          >
             Відгуки
           </a>
         </li>
         <li>
-          <Link to="/blog" className={s.link}>
+          <Link to="/blog" onClick={scrollToTop} className={s.link}>
             Блог
           </Link>
         </li>
         <li>
-          <a href="#faq" className={s.link}>
+          <a href="#faq" onClick={handleRedirect} className={s.link}>
             FAQ
           </a>
         </li>
