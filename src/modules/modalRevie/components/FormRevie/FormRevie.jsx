@@ -21,6 +21,7 @@ const FeedbackSchema = Yup.object().shape({
     .max(512, 'До 512 символів!')
     .required('Це поле обовʼязкове'),
   age: Yup.number()
+    .typeError('Введіть число')
     .min(18, 'Вам має бути 18 років')
     .required('Це поле обовʼязкове'),
 });
@@ -41,9 +42,8 @@ const FormRevie = () => {
 
   const handleSubmit = (values) => {
     if (values.phone.includes('_')) return;
-    alert(
-      `name: ${values.name} phone: ${values.phone} message: ${values.message} `
-    );
+    // eslint-disable-next-line
+    console.log('SEND MESSAGE SUCCESS');
     closeModal();
     localStorage.removeItem(KEY);
   };
@@ -65,6 +65,7 @@ const FormRevie = () => {
         if (name || phone || message) {
           localStorage.setItem(KEY, JSON.stringify(values));
         }
+
         return (
           <Form className={s.form}>
             <label className={clsx(s.label, s.name)}>
