@@ -6,6 +6,12 @@
 .logo:active {
   fill: #043e0f;
 }
+@include media(to-desktop) {
+  .logo {
+    margin-top: 6.47px;
+    margin-bottom: 6.47px;
+  }
+}
 @include media(desktop) {
   .logo {
     width: 158px;

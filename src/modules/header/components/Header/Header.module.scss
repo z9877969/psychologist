@@ -3,6 +3,7 @@ header {
   z-index: 100;
   width: 100%;
   top: 0;
+
   background-color: #ffffff;
 }
 .headerSrolled {
@@ -15,4 +16,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@include media(to-tablet) {
+  .headerWrapper {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+@include media(to-desktop) {
+  .headerWrapper {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
 }

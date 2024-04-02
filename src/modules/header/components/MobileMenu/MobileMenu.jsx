@@ -1,22 +1,31 @@
 import { NavLink } from 'react-router-dom';
 import s from './MobileMenu.module.scss';
 import Backdrop from '../Backdrop/Backdrop';
-import { useEffect } from 'react';
+
 import { useNavigate } from 'react-router-dom';
+
 const MobileMenu = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
-  const handleRedirect = () => {
-    navigate('/');
-  };
+
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = document.querySelector('header').offsetHeight;
+      const sectionTop = section.offsetTop - headerHeight;
+      window.scrollTo({
+        top: sectionTop,
+        behavior: 'smooth',
+      });
     }
   };
-  useEffect(() => {
-    scrollToSection();
-  }, []);
+
+  const handleMenuItemClick = async (sectionId) => {
+    onClose();
+    await navigate('/');
+    setTimeout(() => {
+      scrollToSection(sectionId);
+    }, 100);
+  };
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -44,40 +53,34 @@ const MobileMenu = ({ isOpen, onClose }) => {
                 </NavLink>
               </li>
               <li className={s.headerListItem}>
-                <a
+                <button
                   className={s.headerListLink}
-                  href="#about"
                   onClick={() => {
-                    onClose();
-                    handleRedirect();
+                    handleMenuItemClick('about');
                   }}
                 >
                   Про мене
-                </a>
+                </button>
               </li>
               <li className={s.headerListItem}>
-                <a
+                <button
                   className={s.headerListLink}
-                  href="#services"
                   onClick={() => {
-                    onClose();
-                    handleRedirect();
+                    handleMenuItemClick('services');
                   }}
                 >
                   Послуги
-                </a>
+                </button>
               </li>
               <li className={s.headerListItem}>
-                <a
+                <button
                   className={s.headerListLink}
-                  href="#reviews"
                   onClick={() => {
-                    onClose();
-                    handleRedirect();
+                    handleMenuItemClick('reviews');
                   }}
                 >
                   Відгуки
-                </a>
+                </button>
               </li>
               <li className={s.headerListItem}>
                 <NavLink
@@ -92,16 +95,14 @@ const MobileMenu = ({ isOpen, onClose }) => {
                 </NavLink>
               </li>
               <li className={s.headerListItem}>
-                <a
+                <button
                   className={s.headerListLink}
-                  href="#faq"
                   onClick={() => {
-                    onClose();
-                    handleRedirect();
+                    handleMenuItemClick('faq');
                   }}
                 >
                   FAQ
-                </a>
+                </button>
               </li>
             </ul>
           </nav>

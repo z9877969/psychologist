@@ -15,6 +15,9 @@
 .open {
   transition: transform 0.3s ease-in-out;
 }
+.headerListItem {
+  padding: 8px 0;
+}
 .navigationList {
   display: flex;
   padding: 24px 0px;
@@ -60,7 +63,11 @@
 .headerListLink:active::after {
   transform: scaleX(1);
 }
-
+@include media(to-desktop) {
+  .navigationList {
+    padding: 40px 0;
+  }
+}
 @include media(desktop) {
   .mobileMenuContainer {
     display: none;
