@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '/node_modules/swiper/swiper-bundle.min.css';
-// import s from './Slider.module.scss';
 
 export default function Slider({
   data,
@@ -12,9 +11,11 @@ export default function Slider({
   return (
     <Swiper
       onSwiper={(swiper) => (swiperRef.current = swiper)}
+      grabCursor={true}
       breakpoints={{
         320: {
           slidesPerView: 1,
+          spaceBetween: 16,
         },
         768: {
           slidesPerView: 2,
