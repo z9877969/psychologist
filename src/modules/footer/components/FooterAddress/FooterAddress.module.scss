@@ -10,7 +10,7 @@
 }
 .tell {
   color: #fff;
-  transition: font-weight $animation-duration $animation-time-function;
+  transition: font-weight 100ms $animation-time-function;
   font-style: normal;
   &:hover,
   &:focus {
@@ -25,7 +25,7 @@
 }
 .icon {
   fill: #fff;
-  transition: fill $animation-duration $animation-time-function;
+  transition: fill 200ms $animation-time-function;
 }
 
 @include media(tablet) {
