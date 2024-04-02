@@ -78,6 +78,8 @@
 .wrapElLeft {
   position: absolute;
   left: 0;
+  top: 20px;
+
   @include media(desktop) {
     left: -60px; /* Відстань від лівого краю дива */
   }

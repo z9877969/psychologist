@@ -100,7 +100,7 @@
   top: 30px;
   left: 0;
   @include media(tablet) {
-    left: 100px;
+    left: 80px;
   }
   @include media(desktop) {
     top: -15px;
@@ -113,7 +113,7 @@
   bottom: 60px;
   right: 0px;
   @include media(tablet) {
-    right: 100px;
+    right: 80px;
   }
   @include media(desktop) {
     // bottom: 100px;
