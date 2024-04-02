@@ -13,6 +13,7 @@
     "test": "echo 'test finished successfully'"
   },
   "dependencies": {
+    "axios": "^1.6.8",
     "clsx": "^2.1.0",
     "formik": "^2.4.5",
     "modern-normalize": "^2.0.0",

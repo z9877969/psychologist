@@ -52,11 +52,8 @@ const BlogListPagination = ({ page, totalPages, onChange, media }) => {
   }
 
   function handlePageChange(e) {
-    // console.log(`change to page: ${e.selected}`);
     onChange(e.selected + 1);
   }
-
-  // console.log(`page ${page} of total ${totalPages}`);
 
   return (
     <>
@@ -90,21 +87,6 @@ const BlogListPagination = ({ page, totalPages, onChange, media }) => {
       />
     </>
   );
-
-  // return (
-  //   <ul className={s.list}>
-  //     {Array.from({ length: totalPages }, (_, i) => (
-  //       <li key={i}>
-  //         <button
-  //           className={clsx(s.button, page === i + 1 && s.current)}
-  //           onClick={() => onChange(i + 1)}
-  //         >
-  //           {i + 1}
-  //         </button>
-  //       </li>
-  //     ))}
-  //   </ul>
-  // );
 };
 
 export default BlogListPagination;

@@ -41,6 +41,7 @@
     width: 688px;
     height: auto;
     overflow: none;
+    position: relative;
   }
   .container {
     flex-direction: row;
@@ -54,28 +55,25 @@
   .btnClose {
     display: none;
   }
-  .formContainer {
-    position: relative;
-  }
+
   .btnSecond {
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 40px;
+    right: 40px;
   }
   .title {
     font-size: 22px;
     font-style: normal;
     font-weight: 600;
     line-height: 30px;
-    width: 180px;
+    width: 200px;
   }
 }
 @include media(desktop) {
   .modal {
     width: 1040px;
     padding: 80px;
-    position: relative;
   }
 
   .container {
@@ -89,9 +87,5 @@
   }
   .formContainer {
     position: static;
-  }
-  .btnSecond {
-    top: 40px;
-    right: 40px;
   }
 }

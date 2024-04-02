@@ -59,6 +59,18 @@
     border-color: #979797;
   }
 }
+.valueLength {
+  color: #2c2727;
+  font-size: 10px;
+  font-style: normal;
+  line-height: 10px;
+  position: absolute;
+  right: 0px;
+  bottom: -14px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
 .btn {
   display: flex;
   align-items: center;
@@ -102,6 +114,9 @@
   }
   .textarea {
     width: 428px;
+  }
+  .valueLength {
+    right: -110%;
   }
   .btn {
     grid-column-start: 1;
