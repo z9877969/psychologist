@@ -3,8 +3,10 @@
 
   margin-left: auto;
   margin-right: auto;
-  padding: 40px 16px;
+  padding: 40px 0;
   justify-content: center;
+  position: relative;
+
   @include media(tablet) {
     padding: 60px 40px;
   }
@@ -13,24 +15,24 @@
   }
 }
 .quote {
-  display: flex;
+  // display: flex;
   margin-bottom: 16px;
-  justify-content: space-between;
-  width: 343px;
+  // justify-content: space-between;
+  // width: 343px;
   @include media(tablet) {
     padding: 0 80px;
-    width: 688px;
+    // width: 688px;
   }
   @include media(desktop) {
     justify-content: center;
-    width: 788px;
+    // width: 788px;
     padding: 0;
   }
 }
 
 .wrapContent {
-  margin-right: 16px;
-  margin-left: 16px;
+  display: flex;
+  justify-content: center;
 }
 .content {
   width: 221px;
@@ -93,8 +95,29 @@
     font-size: 88px;
   }
 }
-.wrapEl {
-  display: flex;
-  align-self: stretch;
-  align-items: flex-end;
+.wrapElLeft {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  @include media(tablet) {
+    left: 100px;
+  }
+  @include media(desktop) {
+    top: -15px;
+    left: 145px; /* Відстань від лівого краю дива */
+  }
+}
+
+.wrapElRight {
+  position: absolute;
+  bottom: 60px;
+  right: 0px;
+  @include media(tablet) {
+    right: 100px;
+  }
+  @include media(desktop) {
+    // bottom: 100px;
+    bottom: 20px;
+    right: 145px;
+  }
 }
