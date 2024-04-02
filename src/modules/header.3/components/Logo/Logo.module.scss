@@ -1,0 +1,25 @@
+.logo {
+  width: 156px;
+  height: 40.94px;
+  fill: #1e5b2a;
+}
+.logo:hover,
+.logo:focus,
+.logo:active {
+  fill: #043e0f;
+}
+@include media(tablet) {
+  .logo {
+    height: 44px;
+    margin-top: 6.47px;
+    margin-bottom: 6.47px;
+  }
+}
+@include media(desktop) {
+  .logo {
+    width: 158px;
+    height: 32px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
