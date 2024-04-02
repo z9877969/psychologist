@@ -14,7 +14,7 @@ const ModalConsultation = () => {
         <div className={s.imgContainer}>
           <MyPicture />
           <button className={s.btnClose} onClick={closeModal}>
-            <svg className={s.icon} width={28} height={28}>
+            <svg className={s.icon} width={24} height={24}>
               <use xlinkHref={`${sprite}#icon-cross`}></use>
             </svg>
           </button>
@@ -22,7 +22,7 @@ const ModalConsultation = () => {
         <div className={s.formContainer}>
           <h2 className={s.title}>Записатися на консультацію</h2>
           <button className={s.btnSecond} onClick={() => closeModal()}>
-            <svg className={s.icon} width={28} height={28}>
+            <svg className={s.icon} width={24} height={24}>
               <use xlinkHref={`${sprite}#icon-cross`}></use>
             </svg>
           </button>

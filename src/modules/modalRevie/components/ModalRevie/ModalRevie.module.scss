@@ -15,17 +15,24 @@
   position: relative;
   flex-shrink: 0;
   height: 269px;
+  width: 311px;
 }
 .btnClose {
   position: absolute;
   top: 0;
   right: 0;
+  outline: transparent;
 }
 .btnSecond {
   display: none;
+  outline: transparent;
 }
 .icon {
-  stroke: #979797;
+  stroke: #1e5b2a;
+  transition: stroke $animation-duration $animation-time-function;
+  &:hover {
+    stroke: #043e0f;
+  }
 }
 .title {
   font-size: 20px;
@@ -49,7 +56,7 @@
   }
   .imgContainer {
     position: static;
-    height: auto;
+    height: 618px;
     width: 292px;
   }
   .btnClose {
@@ -80,7 +87,8 @@
     align-items: start;
   }
   .imgContainer {
-    width: 428px;
+    width: 419px;
+    height: 532px;
   }
   .title {
     width: 300px;

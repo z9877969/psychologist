@@ -37,8 +37,6 @@
     height: 2px;
     background-color: #fff;
     transform: scaleX(0);
-    transform-origin: left;
-    transition: transform $animation-duration $animation-time-function;
   }
   &:focus::after,
   &:hover::after {

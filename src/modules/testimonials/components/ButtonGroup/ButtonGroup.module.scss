@@ -17,12 +17,15 @@
   background: $dark-green;
   color: $white;
   font-weight: 600;
-  transition: background-color $animation-duration $animation-time-function;
+  transition:
+    background-color $animation-duration $animation-time-function,
+    font-weight $animation-duration $animation-time-function;
 }
 .btnFirst {
   &:hover,
   &:focus {
     background-color: $dark-green-hover;
+    font-weight: 700;
   }
 }
 .btnSecond {
@@ -30,6 +33,7 @@
   &:hover,
   &:focus {
     background-color: $light-green-hover;
+    font-weight: 700;
   }
 }
 

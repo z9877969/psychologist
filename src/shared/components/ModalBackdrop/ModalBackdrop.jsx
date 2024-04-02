@@ -1,7 +1,16 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import s from './ModalBackdrop.module.scss';
+import clsx from 'clsx';
 
 const ModalBackdrop = ({ children, onClose }) => {
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setActive(true), 300);
+  }, []);
+
+  const dinamicStyle = clsx(s.backdrop, active && s.active);
+
   const handleCloseModal = useCallback(
     (e) => {
       if (e.target === e.currentTarget || e.code === 'Escape') {
@@ -22,7 +31,7 @@ const ModalBackdrop = ({ children, onClose }) => {
   }, [handleCloseModal]);
 
   return (
-    <div className={s.backdrop} onClick={handleCloseModal}>
+    <div className={dinamicStyle} onClick={handleCloseModal}>
       {children}
     </div>
   );

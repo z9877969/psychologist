@@ -1,17 +1,43 @@
 .wrapper {
-  position: relative;
   border-radius: 16px;
   box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.1);
-  padding: 16px;
+  padding: 16px 15px;
   width: 100%;
-  transition: border 250ms linear;
+  border-radius: 16px;
+  border: 1px solid $dark-green;
+  transition:
+    border $animation-duration $animation-time-function,
+    box-shadow $animation-duration $animation-time-function,
+    padding $animation-duration $animation-time-function;
+
   background-color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 456px;
+  .content {
+    max-width: 311px;
+  }
   @include media(tablet) {
-    width: 332px;
+    max-width: 332px;
+
+    .content {
+      max-width: 300px;
+    }
   }
   @include media(desktop) {
-    width: 384px;
-    padding: 24px;
+    max-width: 384px;
+    min-height: 480px;
+    padding: 24px 0;
+    .content {
+      max-width: 336px;
+    }
+
+    &:hover {
+      padding: 23px 0;
+      border: 2px solid $primary-orange;
+      box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.1);
+    }
   }
 
   .pictureWrapper {
@@ -29,56 +55,33 @@
     margin-bottom: 8px;
   }
   .date {
-    color: #535353;
+    color: $typography-grey;
     @include font(14, 20);
     font-weight: 300;
   }
   .title {
-    color: #1e5b2a;
+    color: $dark-green;
     @include font(16, 24);
     font-weight: 600;
     letter-spacing: -0.02em;
     margin-bottom: 8px;
   }
   .BlogText {
-    color: #414343;
+    color: $dark-gray;
     @include font(14, 20);
     font-weight: 300;
     margin-bottom: 16px;
   }
   .link {
-    color: #414343;
+    color: $dark-gray;
     @include font(16, 24);
     letter-spacing: -0.02em;
     display: inline-block;
     cursor: pointer;
 
-    transition:
-      // transform 250ms linear,
-      // color 250ms linear,
-      font-weight 250ms linear;
+    transition: font-weight $animation-duration $animation-time-function;
   }
   &:hover .link {
-    // transform: scale(1.04);
-    // color: #1e1f1f;
     font-weight: 600;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 16px;
-    border: 1px solid #1e5b2a;
-    transition:
-      border 250ms linear,
-      box-shadow 250ms linear;
-  }
-  &:hover::after {
-    border: 2px solid var(--primary-orange, #eb6d0a);
-    box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.1);
   }
 }

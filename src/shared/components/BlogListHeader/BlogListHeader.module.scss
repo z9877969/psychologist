@@ -1,5 +1,5 @@
 .title {
-  color: #2c2727;
+  color: $typography-black;
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 8px;
@@ -17,7 +17,7 @@
 }
 
 .description {
-  color: #414343;
+  color: $dark-gray;
   letter-spacing: -0.02em;
   @include font(16, 24);
 
