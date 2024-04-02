@@ -16,7 +16,12 @@
 }
 @include media(tablet) {
   .scrollBar {
-    max-height: 460px;
+    max-height: 408px;
     padding-right: 24px;
+  }
+}
+@include media(desktop) {
+  .scrollBar {
+    max-height: 554px;
   }
 }
