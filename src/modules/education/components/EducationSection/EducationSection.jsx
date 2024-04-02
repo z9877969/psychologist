@@ -18,6 +18,7 @@ const EducationSection = () => {
       urlDesktop2x: images[item.urlDesktop2x],
     };
   });
+
   return (
     <Section className={s.sectionEducation}>
       <Container>

@@ -1,0 +1,53 @@
+.modal {
+  background-color: #fff;
+  overflow: auto;
+  border-radius: 8px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 25px 15px 10px 15px;
+  @include media(tablet) {
+    padding: 20px 20px 10px 20px;
+  }
+  @include media(desktop) {
+    padding: 30px 20px 10px 20px;
+  }
+}
+.imgWrap {
+  height: 80vh;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  @include media(tablet) {
+    height: 90vh;
+  }
+
+  @include media(desktop) {
+    height: 90vh;
+  }
+}
+
+.btnClose {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 4px;
+}
+
+.icon {
+  width: 18px;
+  &:hover {
+    fill: $dark-green-hover;
+  }
+  @include media(tablet) {
+    width: 20px;
+  }
+
+  @include media(desktop) {
+    width: 24px;
+  }
+}
