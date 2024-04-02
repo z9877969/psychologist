@@ -29,9 +29,10 @@
       text-shadow 0.1s ease-in-out;
   }
 
-  .headerListLink:hover,
-  .headerListLink:active,
-  .headerListLink:focus {
+  .headerListLink:hover
+  // .headerListLink:active,
+  // .headerListLink:focus
+  {
     color: #1e5b2a;
     font-weight: 600;
     // text-shadow: 0 0 1px#1e5b2a;
