@@ -10,9 +10,17 @@
   transition:
     background-color $animation-duration $animation-time-function,
     font-weight $animation-duration $animation-time-function;
+
   @include font(14, 20);
   font-weight: 600;
   outline: transparent;
+
+  &:hover,
+  &:focus {
+    background-color: $light-green-hover;
+    color: $white;
+    font-weight: 700;
+  }
 
   @include media(tablet) {
     width: 332px;
@@ -22,11 +30,5 @@
 
   @include media(desktop) {
     width: 242px;
-    &:hover,
-    &:focus {
-      background-color: $light-green-hover;
-      color: $white;
-      font-weight: 700;
-    }
   }
 }

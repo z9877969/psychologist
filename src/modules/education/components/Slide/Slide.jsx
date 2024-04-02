@@ -5,12 +5,17 @@ import Modal from '../Modal/Modal';
 
 export default function Slide({ text, ...props }) {
   const setModal = useModal();
+
+  const handleClick = () => setModal(<Modal {...props} />);
+
   return (
-    <div className={s.slide} onClick={() => setModal(<Modal {...props} />)}>
+    <div className={s.slide} onClick={handleClick}>
       <div className={s.frame}>
         <Picture {...props} className={s.picture} />
       </div>
-      <p className={s.sliderText}>{text}</p>
+      <button className={s.sliderText} onClick={handleClick}>
+        {text}
+      </button>
     </div>
   );
 }
