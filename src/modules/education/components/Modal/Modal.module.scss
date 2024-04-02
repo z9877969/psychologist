@@ -41,7 +41,7 @@
 .icon {
   width: 18px;
   &:hover {
-    fill: $dark-green;
+    fill: $dark-green-hover;
   }
   @include media(tablet) {
     width: 20px;
