@@ -16,37 +16,39 @@ const BlogItem = ({ blog }) => {
 
   return (
     <div className={s.wrapper}>
-      <div className={s.pictureWrapper}>
-        <Picture
-          urlDesktop={images[blog.urlDesktop]}
-          urlDesktop2x={images[blog.urlDesktop2x]}
-          urlTablet={images[blog.urlTablet]}
-          urlTablet2x={images[blog.urlTablet2x]}
-          urlMobile={images[blog.urlMobile]}
-          urlMobile2x={images[blog.urlMobile2x]}
-          alt={blog.alt}
-          width={imgWidth}
-          height={blog.height}
-        />
-      </div>
+      <div className={s.content}>
+        <div className={s.pictureWrapper}>
+          <Picture
+            urlDesktop={images[blog.urlDesktop]}
+            urlDesktop2x={images[blog.urlDesktop2x]}
+            urlTablet={images[blog.urlTablet]}
+            urlTablet2x={images[blog.urlTablet2x]}
+            urlMobile={images[blog.urlMobile]}
+            urlMobile2x={images[blog.urlMobile2x]}
+            alt={blog.alt}
+            width={imgWidth}
+            height={blog.height}
+          />
+        </div>
 
-      <ul className={s.list}>
-        <li>
-          <p className={s.date}>{`${date}.${month}.${year}`}</p>
-        </li>
-        <li>
-          <p className={s.date}>{blog.author}</p>
-        </li>
-      </ul>
-      <h3 className={s.title}>{blog.title}</h3>
-      <p className={s.BlogText}>{blog.text}</p>
-      <Link
-        className={s.link}
-        to={`/blog/${blog.id}`}
-        state={{ from: location }}
-      >
-        Читати більше
-      </Link>
+        <ul className={s.list}>
+          <li>
+            <p className={s.date}>{`${date}.${month}.${year}`}</p>
+          </li>
+          <li>
+            <p className={s.date}>{blog.author}</p>
+          </li>
+        </ul>
+        <h3 className={s.title}>{blog.title}</h3>
+        <p className={s.BlogText}>{blog.text}</p>
+        <Link
+          className={s.link}
+          to={`/blog/${blog.id}`}
+          state={{ from: location }}
+        >
+          Читати більше
+        </Link>
+      </div>
     </div>
   );
 };
