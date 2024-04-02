@@ -23,6 +23,8 @@
   color: rgb(255, 255, 255);
   display: block;
   position: relative;
+  transition: font-weight 100ms;
+
   &:hover,
   &:focus {
     color: rgb(255, 255, 255);
@@ -36,11 +38,12 @@
     width: 100%;
     height: 2px;
     background-color: #fff;
-    transform: scaleX(0);
+    display: none;
+    transition: display 100ms;
   }
   &:focus::after,
   &:hover::after {
-    transform: scaleX(1);
+    display: block;
   }
 }
 .subTitle {

@@ -2,10 +2,10 @@
   &:hover .gradientPath,
   &:focus .gradientPath,
   &:active .gradientPath {
-    animation: fillAnimation 300ms linear forwards;
+    animation: fillAnimation 200ms linear forwards;
   }
   &:not(:hover) .gradientPath {
-    animation: blurAnimation 300ms linear forwards;
+    animation: blurAnimation 200ms linear forwards;
   }
 }
 .gradientPath {

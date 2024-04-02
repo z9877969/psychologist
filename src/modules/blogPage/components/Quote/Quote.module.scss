@@ -4,21 +4,17 @@
   margin: 0 auto;
   padding: 40px 0;
   justify-content: center;
+  position: relative;
 }
 .quote {
-  display: flex;
-
-  justify-content: space-between;
   margin: 0 auto 16px auto;
-  // width: 343px;
+
   @include media(tablet) {
-    // width: 688px;
     padding: 0;
-    margin: 0 0 16px 0;
+    margin-bottom: 16px;
   }
   @include media(desktop) {
     justify-content: center;
-    // width: 1440px;
   }
 }
 
@@ -37,7 +33,7 @@
     width: 572px;
   }
   @include media(desktop) {
-    width: 650px;
+    width: 720px;
     font-size: 24px;
     line-height: 1.33;
   }
@@ -49,6 +45,10 @@
   font-size: 22px;
   font-style: italic;
   line-height: 1.36px; /* 136.364% */
+  @include media(desktop) {
+    font-size: 24px;
+    line-height: 1.33;
+  }
 }
 .wrapAuthor {
 }
@@ -74,7 +74,23 @@
   font-size: 78px;
   line-height: 0.6923; /* 69.231% */
 }
-.wrapEl {
-  display: flex;
-  align-items: flex-end;
+
+.wrapElLeft {
+  position: absolute;
+  left: 0;
+  top: 20px;
+
+  @include media(desktop) {
+    left: -60px; /* Відстань від лівого краю дива */
+  }
+}
+
+.wrapElRight {
+  position: absolute;
+  bottom: 80px;
+  right: 0px;
+  @include media(desktop) {
+    // bottom: 100px;
+    right: -60px;
+  }
 }
