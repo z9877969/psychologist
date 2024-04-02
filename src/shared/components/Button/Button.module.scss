@@ -1,15 +1,15 @@
 .link {
   border-radius: 100px;
-  background-color: #6ca24a;
+  background-color: $light-green;
   display: flex;
   padding: 14px 8px;
   justify-content: center;
   align-items: center;
   width: 100%;
-  color: #ffffff;
+  color: $white;
   transition:
-    background-color 250ms linear,
-    font-weight 250ms linear;
+    background-color $animation-duration $animation-time-function,
+    font-weight $animation-duration $animation-time-function;
   @include font(14, 20);
   font-weight: 600;
   outline: transparent;
@@ -24,8 +24,8 @@
     width: 242px;
     &:hover,
     &:focus {
-      background-color: #467927;
-      color: #ffffff;
+      background-color: $light-green-hover;
+      color: $white;
       font-weight: 700;
     }
   }

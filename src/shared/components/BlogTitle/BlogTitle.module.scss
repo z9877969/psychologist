@@ -1,6 +1,6 @@
 .description {
   @include font(16, 24);
-  color: #414343;
+  color: $typography-grey-dark;
   letter-spacing: -0.02em;
 
   @include media(tablet) {
@@ -9,7 +9,7 @@
 }
 .title {
   @include font(30, 36);
-  color: #2c2727;
+  color: $typography-black;
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 8px;
