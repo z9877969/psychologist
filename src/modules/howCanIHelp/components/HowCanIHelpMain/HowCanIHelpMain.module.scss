@@ -17,7 +17,8 @@
 .title {
   color: #2c2727;
   font-weight: 600;
-  letter-spacing: -0.6px;
+  // letter-spacing: -0.6px;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 
   @include font(30, 36);
@@ -42,7 +43,8 @@
 .text {
   margin-bottom: 16px;
   color: #414343;
-  letter-spacing: -0.32px;
+  // letter-spacing: -0.32px;
+  letter-spacing: -0.02em;
 
   @include font(16, 24);
 
