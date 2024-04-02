@@ -12,4 +12,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: opacity 200ms $animation-time-function;
+}
+
+.active {
+  opacity: 1;
 }
