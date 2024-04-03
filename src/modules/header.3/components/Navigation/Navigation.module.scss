@@ -1,0 +1,60 @@
+.navigation {
+  display: none;
+}
+
+@include media(desktop) {
+  .navigation {
+    display: flex;
+  }
+  .navigationList {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  // Для hover,focus//
+
+  .headerListLink {
+    display: inline-block;
+    padding: 8px 0;
+    font-family: $main-font-family;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.32px;
+    color: $primary-text-color;
+    position: relative;
+    transition:
+      color 0.1s ease-in-out,
+      text-shadow 0.1s ease-in-out;
+  }
+
+  .headerListLink:hover
+  // .headerListLink:active,
+  // .headerListLink:focus
+  {
+    color: #1e5b2a;
+    font-weight: 600;
+    // text-shadow: 0 0 1px#1e5b2a;
+    transform: scale(1.02);
+  }
+}
+
+// isActive
+.active {
+  position: relative;
+  color: #1e5b2a;
+  font-weight: 600;
+}
+.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #1e5b2a;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0 ease-in-out;
+}
