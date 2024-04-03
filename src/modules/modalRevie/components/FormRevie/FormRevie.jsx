@@ -23,6 +23,7 @@ const FeedbackSchema = Yup.object().shape({
   age: Yup.number()
     .typeError('Введіть число')
     .min(18, 'Вам має бути 18 років')
+    .max(120, 'Некоректний вік')
     .required('Це поле обовʼязкове'),
 });
 
