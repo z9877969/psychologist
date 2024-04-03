@@ -10,13 +10,15 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 16px;
+  padding: 26px;
   @include media(tablet) {
+    padding: 16px;
     padding: 40px;
     height: 80vh;
     width: auto;
   }
   @include media(desktop) {
+    padding: 26px;
   }
 }
 .imgWrap {
@@ -35,10 +37,10 @@
 .btnClose {
   display: block;
   position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 24px;
-  height: 24px;
+  top: 0px;
+  right: 10px;
+  width: 18px;
+  height: 18px;
 
   stroke: #1e5b2a;
 
@@ -46,6 +48,9 @@
     stroke: #043e0f;
   }
   @include media(tablet) {
-    // height: 90vh;
+    width: 24px;
+    height: 24px;
+    top: 2px;
+    right: 6px;
   }
 }
