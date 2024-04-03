@@ -1,43 +1,67 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  flex: 1 0 0;
-  padding: 16px;
+  box-sizing: border-box;
+  padding: 62px 16px 16px;
   border-radius: 16px;
   border: 1px solid $dark-green;
-  background-color: #ffffff;
-}
-.quote {
-  width: 23px;
-  height: 38px;
-  color: $dark-green;
-  font-size: 64px;
-  line-height: 1.12;
-}
-.text {
-  color: $dark-gray;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-}
-.footer {
-  color: $dark-green;
-  margin-left: auto;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-}
+  background-color: $white;
+  .text {
+    color: #414343;
+    @include font(14, 20);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
 
-@include media(tablet) {
-  .card {
-    padding: 24px;
-    max-width: 332px;
+  .limit {
+    height: 241px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    margin-bottom: 0;
+  }
+  .footer {
+    color: #1e5b2a;
+    text-align: right;
+    @include font(16, 24);
+    letter-spacing: -0.02em;
+  }
+  @include media(tablet) {
+    .limit {
+      height: 224px;
+      -webkit-line-clamp: 9;
+    }
+  }
+  @include media(desktop) {
+    .text {
+      margin-bottom: 16px;
+    }
+    padding: 78px 24px 24px;
+    ////????????????????????????????????????????????????
+    .limit {
+      height: 128px;
+      -webkit-line-clamp: 5;
+    }
   }
 }
+.cardLimit {
+  height: 343px;
+  max-width: 343px;
 
-@include media(desktop) {
-  .card {
+  .text {
+    margin-bottom: 0;
+    @include font(16, 24);
+  }
+
+  @include media(tablet) {
+    max-width: 332px;
+    padding: 70px 24px 24px;
+  }
+  @include media(desktop) {
     max-width: 588px;
+    height: 246px;
+    .text {
+      margin-bottom: 0;
+    }
   }
 }
