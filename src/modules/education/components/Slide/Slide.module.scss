@@ -1,49 +1,52 @@
 .slide {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 57.5px;
-  padding-right: 57.5px;
+  padding: 16px;
   display: block;
+  min-height: 471px;
   border-radius: 16px;
-  border: 1px solid $dark-green;
   margin-right: 0px;
   border-radius: 16px;
   border: 1px solid #1e5b2a;
   background-color: #fff;
-  box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.1);
   box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+
   transition:
     border-color #{$animation-duration} #{$animation-time-function},
     box-shadow #{$animation-duration} #{$animation-time-function};
 
-  &:hover {
-    padding-top: 15px;
-    padding-bottom: 15px;
+  &:hover,
+  &:focus-within {
+    padding: 15px;
     border: 2px solid #eb6d0a;
+    box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.1);
   }
+
   @include media(tablet) {
-    padding-left: 52px;
-    padding-right: 52px;
   }
 
   @include media(desktop) {
     padding: 24px;
+
+    &:hover,
+    &:focus-within {
+      padding: 23px;
+    }
   }
 }
 
 .sliderText {
   color: $typography-black;
-  font-family: $main-font-family;
-  font-weight: 600px;
+  outline: none;
+  font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .frame {
   height: 351px;
-  width: auto;
   display: flex;
   justify-content: center;
   overflow: hidden;

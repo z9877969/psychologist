@@ -15,7 +15,11 @@ const BlogItem = ({ blog }) => {
   const date = blog.date.slice(-2);
 
   return (
-    <div className={s.wrapper}>
+    <Link
+      className={s.wrapper}
+      to={`/blog/${blog.id}`}
+      state={{ from: location }}
+    >
       <div className={s.content}>
         <div className={s.pictureWrapper}>
           <Picture
@@ -41,15 +45,15 @@ const BlogItem = ({ blog }) => {
         </ul>
         <h3 className={s.title}>{blog.title}</h3>
         <p className={s.BlogText}>{blog.text}</p>
-        <Link
+        <p
           className={s.link}
-          to={`/blog/${blog.id}`}
-          state={{ from: location }}
+          // to={`/blog/${blog.id}`}
+          // state={{ from: location }}
         >
           Читати більше
-        </Link>
+        </p>
       </div>
-    </div>
+    </Link>
   );
 };
 export default BlogItem;

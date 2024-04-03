@@ -26,7 +26,7 @@ const BlogPage = () => {
             <svg width="24" height="24" style={{ marginRight: '5px' }}>
               <use xlinkHref={`${sprite}#icon-paginator-chevron-left`}></use>
             </svg>
-            Повернутися до всіх статтей
+            Повернутися назад
           </NavLink>
         </div>
         <div>

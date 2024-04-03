@@ -19,7 +19,7 @@ const HowCanIHelpItem = ({ title, text, price, ...props }) => {
       : '' + price;
 
   return (
-    <div className={s.container}>
+    <div className={s.container} onClick={handleClick}>
       <div className={s.content}>
         <Picture className={s.img} {...props} />
         <h3 className={s.title}>{title}</h3>
