@@ -9,7 +9,11 @@ const FAQItem = ({ text, title, id, indexActive }) => {
   useEffect(() => {
     if (indexActive === id) {
       setActive(true);
-      itemRef.current.scrollIntoView({ block: 'center', behavior: 'smooth' });
+
+      setTimeout(() => {
+        itemRef.current.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }, 200);
+
       return;
     } else setActive(false);
   }, [indexActive, id]);
