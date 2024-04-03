@@ -4,28 +4,24 @@
   border-radius: 8px;
 }
 .container {
-  height: 85vh;
+  height: 60vh;
+  width: auto;
   display: flex;
   justify-content: center;
-  // flex-direction: column;
   align-items: center;
   position: relative;
   padding: 16px;
-  // padding: 25px 15px 10px 15px;
   @include media(tablet) {
-    // padding: 20px 20px 10px 20px;
     padding: 40px;
+    height: 80vh;
+    width: auto;
   }
   @include media(desktop) {
-    // padding: 80px;
-    // padding: 30px 20px 10px 20px;
   }
 }
 .imgWrap {
   height: 100%;
   width: auto;
-  // display: flex;
-  // justify-content: center;
   overflow: hidden;
   @include media(tablet) {
     // height: 90vh;
@@ -48,5 +44,8 @@
 
   &:hover {
     stroke: #043e0f;
+  }
+  @include media(tablet) {
+    // height: 90vh;
   }
 }
