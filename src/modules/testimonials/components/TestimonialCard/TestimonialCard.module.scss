@@ -1,9 +1,17 @@
 .card {
+  position: relative;
   box-sizing: border-box;
   padding: 62px 16px 16px;
   border-radius: 16px;
   border: 1px solid $dark-green;
   background-color: $white;
+  .svg {
+    width: 23px;
+    height: 38px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
   .text {
     color: #414343;
     @include font(14, 20);
@@ -31,16 +39,25 @@
       height: 224px;
       -webkit-line-clamp: 9;
     }
+    .svg {
+      top: 14px;
+      left: 24px;
+      width: 26px;
+      height: 40px;
+    }
   }
   @include media(desktop) {
     .text {
       margin-bottom: 16px;
     }
     padding: 78px 24px 24px;
-    ////????????????????????????????????????????????????
     .limit {
       height: 128px;
       -webkit-line-clamp: 5;
+    }
+    .svg {
+      top: 20px;
+      left: 24px;
     }
   }
 }
@@ -56,6 +73,10 @@
   @include media(tablet) {
     max-width: 332px;
     padding: 70px 24px 24px;
+    .svg {
+      top: 22px;
+      left: 24px;
+    }
   }
   @include media(desktop) {
     max-width: 588px;

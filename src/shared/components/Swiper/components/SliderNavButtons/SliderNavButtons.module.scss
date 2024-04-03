@@ -1,23 +1,31 @@
 .button_arrow {
   line-height: 0;
   border-radius: 8px;
+  transition: background-color $animation-duration $animation-time-function;
   .svg {
     fill: #1e5b2a;
+    transition: fill $animation-duration $animation-time-function;
   }
-  .buttonDisab {
-    fill: #979797;
+  &:hover {
+    .svg {
+      fill: #043e0f;
+    }
   }
+
   &:hover {
     background-color: rgba(223, 233, 225, 0.2);
   }
+
   &:active {
     background-color: rgba(223, 233, 225, 0.4);
+  }
+  .buttonDisab {
+    fill: #979797;
   }
 }
 
 .swiper_nav_btns {
   position: absolute;
-  // right: 0;
   left: 50%;
   display: flex;
   column-gap: 68px;
@@ -34,5 +42,10 @@
   @include media(desktop) {
     column-gap: 84px;
     right: 0px;
+  }
+  .button_disabled {
+    .buttonDisab {
+      fill: #979797;
+    }
   }
 }
