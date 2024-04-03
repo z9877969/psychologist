@@ -1,34 +1,61 @@
 .testimonialsModal {
-  max-width: 80%;
-  margin: auto;
-  background-color: #fff;
+  width: 343px;
+  height: 362px;
+  background-color: $white;
+  position: relative;
+  padding: 24px 16px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.modalHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.closeButton {
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 24px;
-}
-
-.cardsContainer {
-  display: grid;
-  grid-gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-
-  @media (max-width: 767.98px) {
-    grid-template-columns: 1fr;
+  .svg {
+    stroke: #1e5b2a;
+    width: 24px;
+    height: 24px;
+    transition: stroke $animation-time-function $animation-duration;
+  }
+  .title {
+    color: #2c2727;
+    @include font(20, 28);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .closeButton {
+    border: none;
+    outline: transparent;
+    line-height: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+  }
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  @include media(tablet) {
+    width: 689px;
+    height: 526px;
+    padding: 40px;
+    .title {
+      margin-bottom: 32px;
+      @include font(22, 30);
+    }
+    .closeButton {
+      top: 40px;
+      right: 40px;
+    }
+  }
+  @include media(desktop) {
+    width: 1040px;
+    height: 772px;
+    padding: 80px;
+    .cardsContainer {
+      row-gap: 24px;
+    }
+    .closeButton:hover .svg {
+      stroke: #043e0f;
+    }
+    .title {
+      @include font(24, 32);
+    }
   }
 }

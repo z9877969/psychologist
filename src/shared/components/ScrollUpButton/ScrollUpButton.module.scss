@@ -39,7 +39,7 @@
     @include media(desktop) {
       width: 56px;
       height: 56px;
-      transform: translate(1264px, 96px);
+      transform: translate(1344px, 96px);
     }
     .svg {
       fill: transparent;
@@ -70,7 +70,7 @@
       transform: translate(680px, 0);
     }
     @include media(desktop) {
-      transform: translate(1264px, 0);
+      transform: translate(1344px, 0);
     }
   }
 }

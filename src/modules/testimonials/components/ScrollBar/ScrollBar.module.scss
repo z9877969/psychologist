@@ -1,7 +1,7 @@
 .scrollBar {
-  max-height: 544px;
+  max-height: 270px;
   overflow-y: auto;
-  padding-right: 16px;
+  padding-right: 22px;
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -16,7 +16,12 @@
 }
 @include media(tablet) {
   .scrollBar {
-    max-height: 460px;
-    padding-right: 24px;
+    max-height: 384px;
+    padding-right: 30px;
+  }
+}
+@include media(desktop) {
+  .scrollBar {
+    max-height: 550px;
   }
 }
