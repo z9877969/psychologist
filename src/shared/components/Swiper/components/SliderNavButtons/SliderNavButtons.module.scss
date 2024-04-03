@@ -6,13 +6,15 @@
     fill: #1e5b2a;
     transition: fill $animation-duration $animation-time-function;
   }
-  &:hover {
+  &:hover,
+  :focus {
     .svg {
       fill: #043e0f;
     }
   }
 
-  &:hover {
+  &:hover,
+  :focus {
     background-color: rgba(223, 233, 225, 0.2);
   }
 
