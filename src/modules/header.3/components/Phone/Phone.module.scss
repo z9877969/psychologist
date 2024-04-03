@@ -1,0 +1,57 @@
+@keyframes changeImage {
+  0% {
+    background-image: url('../../image/phone.svg');
+  }
+  50% {
+    background-image: url('../../image/phone_call.svg');
+  }
+  100% {
+    background-image: url('../../image/icon_call2.svg');
+  }
+}
+
+.imageContainer {
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  animation: changeImage 1.5s infinite;
+  @include media(desktop) {
+    width: 24px;
+    height: 24px;
+  }
+}
+.phoneLink {
+  padding: 6px;
+  @include media(desktop) {
+    padding: 0;
+  }
+}
+.phoneContact {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  @include media(desktop) {
+    padding: 8px;
+  }
+}
+.numberForDesk {
+  color: #2c2727;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+}
+.numberForDesk:hover,
+.numberForDesk:focus {
+  font-weight: 600;
+}
+
+@include media(to-desktop) {
+  .numberForDesk {
+    display: none;
+  }
+}
