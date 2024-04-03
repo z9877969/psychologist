@@ -38,7 +38,7 @@ const ButtonGroup = ({ testimonials }) => {
         className={clsx(s.btn, s.btnFirst)}
         onClick={handleShowAllTestimonials}
       >
-        Показати всі відгуки
+        Переглянути всі відгуки
       </button>
       {showTestimonialsModal && (
         <ModalBackdrop onClose={handleCloseModal}>
