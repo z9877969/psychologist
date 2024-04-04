@@ -13,12 +13,13 @@ const FAQList = () => {
 
   return (
     <ul className={s.list}>
-      {text.map((item) => (
+      {text.map((item, index) => (
         <li key={item.id} onClick={() => toggleIndex(item.id)}>
           <FAQItem
             id={item.id}
             title={item.title}
             text={item.text}
+            index={index}
             indexActive={indexActive}
             toggleIndex={toggleIndex}
           />
