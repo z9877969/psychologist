@@ -71,8 +71,6 @@ const BlogListFilters = ({ onChange, isLoading }) => {
             '',
         };
 
-  console.log(query);
-
   return (
     <div className={s.container}>
       {(categories.length === 0 || initialCategory.current === null) && (
