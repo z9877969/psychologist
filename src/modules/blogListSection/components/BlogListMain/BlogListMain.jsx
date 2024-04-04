@@ -6,7 +6,11 @@ import {
   BlogList,
 } from 'shared/components';
 import { blogAPI } from 'shared/helpers/blogAPI';
-import { BlogListFilters, BlogListPagination } from 'modules/blogListSection';
+import {
+  BlogListFilters,
+  BlogListPagination,
+  NoArticlesFound,
+} from 'modules/blogListSection';
 import s from './BlogListMain.module.scss';
 import { useMediaQuery } from 'hooks/index';
 
@@ -109,15 +113,12 @@ const BlogListMain = () => {
           {isLoading && (
             <ThreeDots
               color="#1E5B2A"
-              // color="#467927"
-              // color="#6CA24A"
               width={LOADER_SIZE[currentMedia]}
-              // height={500}
-              // radius={}
               wrapperClass={s.loaderWrapper}
               ariaLabel="three-dots-loading"
             />
           )}
+          {!isLoading && articles.length === 0 && <NoArticlesFound />}
         </div>
       </Container>
     </Section>

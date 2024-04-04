@@ -3,6 +3,7 @@ import articlesData from '../modules/blogPage/data/articlesData.json'; // Шля
 import ContentList from '../modules/blogPage/components/ContentList/ContentList'; // Компонент для відображення вмісту статті
 import { BlogLastArticles } from 'modules/blogPage';
 import WrapDesctopBlogPage from 'shared/WrapDesctopBlogPage/WrapDesctopBlogPage';
+
 import { NavLink, useNavigate } from 'react-router-dom';
 import { sprite } from 'shared/icons';
 
@@ -36,7 +37,6 @@ const BlogPage = () => {
           Повернутися назад
         </NavLink>
         <div>
-          <h1>{article.title}</h1>
           <ContentList article={article} />
         </div>
       </WrapDesctopBlogPage>
