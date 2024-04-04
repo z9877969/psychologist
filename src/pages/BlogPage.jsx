@@ -1,36 +1,43 @@
-import articles from '../modules/blogPage/data/articles.json';
-
-import ContentList from 'modules/blogPage/components/ContentList/ContentList';
-
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import articlesData from '../modules/blogPage/data/articlesData.json'; // Шлях до файлу з даними статей
+import ContentList from '../modules/blogPage/components/ContentList/ContentList'; // Компонент для відображення вмісту статті
+import { BlogLastArticles } from 'modules/blogPage';
+import WrapDesctopBlogPage from 'shared/WrapDesctopBlogPage/WrapDesctopBlogPage';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { sprite } from 'shared/icons';
 
-import { BlogLastArticles } from 'modules/blogPage';
-import { useEffect } from 'react';
-import { scrollOnOpenPage } from 'shared/helpers/scroll';
-import WrapDesctopBlogPage from 'shared/WrapDesctopBlogPage/WrapDesctopBlogPage';
-
 const BlogPage = () => {
+  const [article, setArticle] = useState(null);
+  const navigate = useNavigate();
+  function goBack() {
+    navigate(-1);
+  }
+
   useEffect(() => {
-    scrollOnOpenPage();
+    // Знаходження статті за її ідентифікатором
+    setArticle(articlesData[0]);
   }, []);
+
+  if (!article) {
+    return <div>Стаття не знайдена</div>;
+  }
 
   return (
     <>
       <WrapDesctopBlogPage>
+        <NavLink
+          to="#"
+          onClick={goBack}
+          style={{ display: 'flex', alignItems: 'center', color: 'black' }}
+        >
+          <svg width="24" height="24" style={{ marginRight: '5px' }}>
+            <use xlinkHref={`${sprite}#icon-paginator-chevron-left`}></use>
+          </svg>
+          Повернутися назад
+        </NavLink>
         <div>
-          <NavLink
-            to="/blog"
-            style={{ display: 'flex', alignItems: 'center', color: 'black' }}
-          >
-            <svg width="24" height="24" style={{ marginRight: '5px' }}>
-              <use xlinkHref={`${sprite}#icon-paginator-chevron-left`}></use>
-            </svg>
-            Повернутися назад
-          </NavLink>
-        </div>
-        <div>
-          <ContentList articles={articles} />
+          <h1>{article.title}</h1>
+          <ContentList article={article} />
         </div>
       </WrapDesctopBlogPage>
 

@@ -1,31 +1,36 @@
+import { Picture } from 'shared/components';
 import { Paragraph } from '../Paragraph/Paragraph';
 import { PrimaryTitle } from '../PrimaryTitle/PrimaryTitle';
 import { Quote } from '../Quote/Quote';
-import s from './ContentList.module.scss';
+
+import s from './ContentList.module.scss'; // Підключення файлу стилів
 import * as images from '../../img';
-import articles from '../../data/articles.json';
-import { Picture } from 'shared/components';
 
-const ContentList = () => {
-  let previousWasParagraph = false;
-
-  const data = articles;
+const ContentList = ({ article }) => {
   return (
     <div>
-      {data.map((item, index) => {
-        let component;
+      {article.contents.map((item, index) => {
         switch (item.block) {
           case 'primaryTitle':
-            component = <PrimaryTitle key={index} content={item.content} />;
-            previousWasParagraph = false;
-            break;
+            return <PrimaryTitle key={index} content={item.content} />;
           case 'paragraph':
-            component = <Paragraph key={index} content={item.content} />;
-            previousWasParagraph = true;
-            break;
+            // Додавання стилів до всіх параграфів, крім останнього
+            return (
+              <div
+                key={index}
+                className={
+                  index !== article.contents.length - 1
+                    ? s.paragraphWrapper
+                    : ''
+                }
+              >
+                <Paragraph content={item.content} />
+              </div>
+            );
           case 'image':
-            component = (
+            return (
               <Picture
+                key={index}
                 className={s.wrapImage}
                 urlMobile={images[item.content.urlMobile]}
                 urlMobile2x={images[item.content.urlMobile2x]}
@@ -35,10 +40,8 @@ const ContentList = () => {
                 urlDesktop2x={images[item.content.urlDesktop2x]}
               />
             );
-            previousWasParagraph = false;
-            break;
           case 'quote':
-            component = (
+            return (
               <Quote
                 key={index}
                 content={item.content}
@@ -46,19 +49,11 @@ const ContentList = () => {
                 author={item.author}
               />
             );
-            previousWasParagraph = false;
-            break;
           default:
             // eslint-disable-next-line no-console
             console.error('Unknown block type:', item.block);
             return null;
         }
-
-        if (previousWasParagraph && item.block !== 'paragraph') {
-          component = <div className={s.wrapParagraph}>{component}</div>;
-        }
-
-        return component;
       })}
     </div>
   );
