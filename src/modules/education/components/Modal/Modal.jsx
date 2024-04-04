@@ -11,7 +11,7 @@ export default function Modal(props) {
     <div className={s.modal}>
       <div className={s.container}>
         <button className={s.btnClose} onClick={closeModal}>
-          <svg className={s.icon} width={28} height={28}>
+          <svg className={s.icon} width={24} height={24}>
             <use xlinkHref={`${sprite}#icon-cross`}></use>
           </svg>
         </button>

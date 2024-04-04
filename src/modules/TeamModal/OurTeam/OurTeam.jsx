@@ -2,7 +2,7 @@ import { ModalBackdrop } from 'shared/components';
 import ScrollBar from '../../frequentlyAskedQuestions/components/ScrollBar/ScrollBar';
 import DeveloperCard from '../DeveloperCard/DeveloperCard';
 import s from './OurTeam.module.scss';
-import developersData from '../data/';
+import developersData from '../data';
 import { sprite } from 'shared/icons';
 
 const OurTeam = ({ onClose }) => {

@@ -9,7 +9,7 @@ export { default as certifTab1 } from './cetrificate-tablet1.jpg';
 export { default as certifTab1x } from './cetrificate-tablet1@2x.jpg';
 export { default as certifTab2 } from './cetrificate-tablet2.jpg';
 export { default as certifTab2x } from './cetrificate-tablet2@2x.jpg';
-export { default as certifTab3 } from './cetrificate-tablet3.jpg.jpg';
+export { default as certifTab3 } from './cetrificate-tablet3.jpg';
 export { default as certifTab3x } from './cetrificate-tablet3@2x.jpg';
 
 export { default as certifDesk1 } from './cetrificate-desktop1.jpg';
