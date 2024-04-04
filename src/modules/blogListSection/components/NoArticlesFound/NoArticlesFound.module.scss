@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  padding: 0 16px;
+  min-height: 368px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media(tablet) {
+    padding: 0 40px;
+  }
+
+  @include media(desktop) {
+    padding: 0 80px;
+    min-height: 368px;
+  }
+}
+
+.text {
+  color: #1e5b2a;
+  text-align: center;
+  @include font(20, 28);
+}

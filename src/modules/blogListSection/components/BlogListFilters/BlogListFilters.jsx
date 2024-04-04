@@ -19,6 +19,7 @@ const DropdownIndicator = (props) => {
 const BlogListFilters = ({ onChange, isLoading }) => {
   const [searchParams] = useSearchParams();
   const [categories, setCategories] = useState([]);
+  const [query, setQuery] = useState(searchParams.get('query') ?? '');
   const initialCategory = useRef(searchParams.get('category'));
 
   useEffect(() => {
@@ -41,10 +42,13 @@ const BlogListFilters = ({ onChange, isLoading }) => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    onChange(
-      searchParams.get('category') || '',
-      e.target.elements.query.value.trim()
-    );
+    onChange(searchParams.get('category') || '', query.trim());
+  }
+
+  function handleRemoveQuery() {
+    setQuery('');
+
+    onChange(searchParams.get('category') || '', '');
   }
 
   const options =
@@ -66,6 +70,8 @@ const BlogListFilters = ({ onChange, isLoading }) => {
             categories.find((c) => c.name === initialCategory.current)?.title ??
             '',
         };
+
+  console.log(query);
 
   return (
     <div className={s.container}>
@@ -101,15 +107,30 @@ const BlogListFilters = ({ onChange, isLoading }) => {
           className={s.input}
           type="text"
           name="query"
-          defaultValue={searchParams.get('query') ?? ''}
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
           placeholder="Пошук"
           disabled={isLoading}
         />
+
         <button className={s.button} type="submit" disabled={isLoading}>
           <svg width={24} height={24}>
             <use href={`${sprite}#icon-search`}></use>
           </svg>
         </button>
+
+        {query !== '' && (
+          <button
+            className={s.removeButton}
+            type="button"
+            onClick={handleRemoveQuery}
+            disabled={isLoading}
+          >
+            <svg width={24} height={24}>
+              <use href={`${sprite}#icon-close`}></use>
+            </svg>
+          </button>
+        )}
       </form>
     </div>
   );
