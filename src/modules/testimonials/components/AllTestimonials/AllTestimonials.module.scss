@@ -1,6 +1,6 @@
 .testimonialsModal {
   width: 343px;
-  height: 362px;
+  height: 507px;
   background-color: $white;
   position: relative;
   padding: 24px 16px;
@@ -56,6 +56,22 @@
     }
     .title {
       @include font(24, 32);
+    }
+  }
+  .scroll {
+    max-height: 415px;
+
+    padding-right: 22px;
+    @include media(tablet) {
+      & {
+        max-height: 384px;
+        padding-right: 30px;
+      }
+    }
+    @include media(desktop) {
+      & {
+        max-height: 550px;
+      }
     }
   }
 }

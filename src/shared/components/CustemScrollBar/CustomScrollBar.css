@@ -1,0 +1,17 @@
+.os-scrollbar.os-scrollbar-vertical.os-scrollbar-cornerless {
+  background-color: #dfdfdf;
+  border-radius: 100px;
+  width: 6px;
+  padding: 0;
+}
+.os-scrollbar .os-scrollbar-track {
+  width: 100%;
+}
+.os-scrollbar.os-scrollbar-handle-interactive .os-scrollbar-handle {
+  background-color: #6ca24a;
+  border-radius: 100px;
+}
+.os-scrollbar-auto-hide.os-scrollbar-auto-hide-hidden {
+  opacity: 1;
+  visibility: visible;
+}

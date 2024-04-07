@@ -1,4 +1,4 @@
-import ScrollBar from '../ScrollBar/ScrollBar';
+import CustomScrollBar from 'shared/components/CustemScrollBar/CustomScrollBar';
 import TestimonialCard from '../TestimonialCard/TestimonialCard';
 import s from './AllTestimonials.module.scss';
 import { sprite } from 'shared/icons';
@@ -13,7 +13,7 @@ const AllTestimonials = ({ testimonials, onClose }) => {
         </svg>
       </button>
 
-      <ScrollBar>
+      <CustomScrollBar className={s.scroll}>
         <div className={s.cardsContainer}>
           {testimonials.map((testimonial) => (
             <TestimonialCard
@@ -23,7 +23,7 @@ const AllTestimonials = ({ testimonials, onClose }) => {
             />
           ))}
         </div>
-      </ScrollBar>
+      </CustomScrollBar>
     </div>
   );
 };
