@@ -12,19 +12,17 @@
   gap: 16px;
 }
 .logo {
-  font-size: 32px;
-  font-family: $secondary-font-family;
-  color: rgb(235, 109, 10);
-  &:hover {
-    color: rgb(235, 109, 10);
+  fill: rgb(235, 109, 10);
+  &:hover,
+  &:focus,
+  &:active {
+    fill: rgb(235, 109, 10);
   }
 }
 .link {
   color: rgb(255, 255, 255);
   display: block;
   position: relative;
-  transition: font-weight 100ms;
-
   &:hover,
   &:focus {
     color: rgb(255, 255, 255);
@@ -38,12 +36,11 @@
     width: 100%;
     height: 2px;
     background-color: #fff;
-    display: none;
-    transition: display 100ms;
+    transform: scaleX(0);
   }
   &:focus::after,
   &:hover::after {
-    display: block;
+    transform: scaleX(1);
   }
 }
 .subTitle {

@@ -28,7 +28,7 @@
   }
   .title {
     font-size: 40px;
-    margin-top: 24px;
+    margin-bottom: 24px;
   }
 }
 
@@ -40,6 +40,8 @@
     position: relative;
     width: 588px;
     height: 708px;
+    overflow: hidden;
+    border-radius: 16px;
   }
   .img {
     position: absolute;

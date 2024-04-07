@@ -2,6 +2,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import s from './FooterNav.module.scss';
 import clsx from 'clsx';
 import { useEffect } from 'react';
+import LogoImg from 'shared/components/LogoImg/LogoImg';
 
 const FooterNav = () => {
   const navigate = useNavigate();
@@ -28,8 +29,8 @@ const FooterNav = () => {
     <nav className={s.nav}>
       <ul className={s.list}>
         <li>
-          <a href="/" className={s.logo}>
-            Iryna Prudko
+          <a href="/">
+            <LogoImg className={s.logo} />
           </a>
         </li>
         <li>

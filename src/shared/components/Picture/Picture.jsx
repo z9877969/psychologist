@@ -8,10 +8,11 @@ const Picture = ({
   alt = '',
   width = '',
   height = '',
+  pictureClassName,
   ...props
 }) => {
   return (
-    <picture>
+    <picture className={pictureClassName}>
       <source
         media="(min-width: 1440px)"
         srcSet={`${urlDesktop} 1x, ${urlDesktop2x} 2x`}

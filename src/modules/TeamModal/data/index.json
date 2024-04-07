@@ -2,307 +2,120 @@
   {
     "name": "Julia Kopytko",
     "position": "UX/UI Designer",
-    "photo": "https://media.licdn.com/dms/image/D5603AQFCrxchzS_2sw/profile-displayphoto-shrink_400_400/0/1701975779940?e=1717027200&v=beta&t=UeEZrW8HHHWLyafG6Fuv5E4ePbpaprYzsRXtPCF6h6M",
+    "img1x": "imgDeskJulia1x",
+    "img2x": "imgDeskJulia2x",
     "linkedin": "https://www.linkedin.com/in/juliakopytko/"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Andrii Kyrylenko",
+    "position": "Team Lead",
+    "img1x": "imgDeskAndrii1x",
+    "img2x": "imgDeskAndrii2x",
+    "linkedin": "https://www.linkedin.com/in/andrii-l-kyrylenko/"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Anton Ishchenko",
+    "position": "Developer",
+    "img1x": "imgDeskAnton1x",
+    "img2x": "imgDeskAnton2x",
+    "linkedin": "https://www.linkedin.com/in/antony-ishchenko/"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Iryna Lender",
+    "position": "Developer",
+    "img1x": "imgDeskIra1x",
+    "img2x": "imgDeskIra2x",
+    "linkedin": "http://www.linkedin.com/in/iryna-lender"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Kostiantyn Kulzhynskyi",
+    "position": "Developer",
+    "img1x": "imgDeskKostiantyn1x",
+    "img2x": "imgDeskKostiantyn2x",
+    "linkedin": "https://www.linkedin.com/in/kostiantyn-kulzhynskyi"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Oleksandr Krizhanovsky",
+    "position": "Developer",
+    "img1x": "imgDeskOleks1x",
+    "img2x": "imgDeskOleks2x",
+    "linkedin": "https://www.linkedin.com/in/oleksandr-krizhanovsky/"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Serhii Leonov",
+    "position": "Developer",
+    "img1x": "imgDeskSergij1x",
+    "img2x": "imgDeskSergij2x",
+    "linkedin": "https://www.linkedin.com/in/leonovserhii/"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Nataliia Musienko",
+    "position": "Developer",
+    "img1x": "imgDeskTasha1x",
+    "img2x": "imgDeskTasha2x",
+    "linkedin": "http://www.linkedin.com/in/natalia-musienko-front-end-developer"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Maryna Nazina",
+    "position": "Developer",
+    "img1x": "imgDeskMari1x",
+    "img2x": "imgDeskMari2x",
+    "linkedin": "https://www.linkedin.com/in/nazinamari/"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Yevhen Pozniak",
+    "position": "Developer",
+    "img1x": "imgDeskEvgenij1x",
+    "img2x": "imgDeskEvgenij2x",
+    "linkedin": "https://www.linkedin.com/in/yevhen-pozniak/"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Vasyl Diachuk",
+    "position": "Developer",
+    "img1x": "imgDeskVasil1x",
+    "img2x": "imgDeskVasil2x",
+    "linkedin": "http://www.linkedin.com/in/vasyl-diachuk"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Anastasiia Kutusenko",
+    "position": "QA",
+    "img1x": "imgDeskAnastasia1x",
+    "img2x": "imgDeskAnastasia2x",
+    "linkedin": "http://www.linkedin.com/in/anastasiia-kutusenko"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Lydmila Matviychuk",
+    "position": "QA",
+    "img1x": "imgDeskLuda1x",
+    "img2x": "imgDeskLuda2x",
+    "linkedin": "https://www.linkedin.com/in/lydmila-matviychuk-6b1208290/"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Nadiya Ilnitska",
+    "position": "QA",
+    "img1x": "imgDeskNadia1x",
+    "img2x": "imgDeskNadia2x",
+    "linkedin": "http://linkedin.com/in/nadiya-ilnitska"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Oksana Luchko",
+    "position": "QA",
+    "img1x": "imgDeskOksana1x",
+    "img2x": "imgDeskOksana2x",
+    "linkedin": "https://www.linkedin.com/in/oksana-luchko-3a5b2b289"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
+    "name": "Yurii Dankanych",
+    "position": "QA",
+    "img1x": "imgDeskJurij1x",
+    "img2x": "imgDeskJurij2x",
+    "linkedin": "http://www.linkedin.com/in/yurii-dankanych-2b7b07279"
   },
   {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
-    "linkedin": "https://www.linkedin.com/"
-  },
-  {
-    "name": "Your Name",
-    "position": "Position",
-    "photo": "",
+    "name": "Liza Sigal",
+    "position": "PM",
+    "img1x": "defj1x",
+    "img2x": "defj2x",
     "linkedin": "https://www.linkedin.com/"
   }
 ]
