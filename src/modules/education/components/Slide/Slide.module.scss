@@ -58,6 +58,11 @@
   }
 }
 
+.pictureWrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .picture {
   height: 100%;
   width: auto;

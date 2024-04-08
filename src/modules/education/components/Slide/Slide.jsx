@@ -15,7 +15,11 @@ export default function Slide({ text, ...props }) {
   return (
     <div className={s.slide} onClick={handleClick}>
       <div className={s.frame}>
-        <Picture {...props} className={s.picture} />
+        <Picture
+          {...props}
+          className={s.picture}
+          pictureClassName={s.pictureWrapper}
+        />
       </div>
       <button className={s.sliderText}>{text}</button>
     </div>
