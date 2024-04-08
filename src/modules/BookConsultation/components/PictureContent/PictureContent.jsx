@@ -13,6 +13,7 @@ const PictureContent = () => {
   return (
     <div className={s.thumb}>
       <Picture
+        className={s.picture}
         mob={portretMob}
         mob2x={portretMob2x}
         tab={portretTab}
@@ -21,6 +22,7 @@ const PictureContent = () => {
         desc2x={portretDesc2x}
         alt="psyshologist avatar"
         width={343}
+        height={343}
       />
     </div>
   );

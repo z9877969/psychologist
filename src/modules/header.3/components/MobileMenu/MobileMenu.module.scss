@@ -1,18 +1,16 @@
-.mainBox {
-  z-index: 100;
-}
-.mobileContainer {
-  text-align: center;
+.mobileMenuContainer {
+  z-index: -1;
   position: absolute;
-  bottom: 0px;
+  text-align: center;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   background-color: white;
-  padding: 16px;
+  padding: 8px 0;
   transform: translateY(0);
 }
 .open {
+  transform: translateY(100%);
   transition: transform 0.3s ease-in-out;
 }
 .headerListItem {
@@ -20,15 +18,13 @@
 }
 .navigationList {
   display: flex;
-  padding: 24px 0px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
   align-self: stretch;
+  gap: 24px;
 }
 .headerListLink {
-  padding: 8px 0;
   font-family: $main-font-family;
   font-size: 16px;
   font-style: normal;
@@ -63,8 +59,8 @@
 .headerListLink:active::after {
   transform: scaleX(1);
 }
-@include media(to-desktop) {
-  .navigationList {
+@include media(tablet) {
+  .mobileMenuContainer {
     padding: 40px 0;
   }
 }

@@ -1,21 +1,26 @@
 header {
   position: sticky;
-  z-index: 100;
-  width: 100%;
+  z-index: 50;
   top: 0;
-
-  background-color: #ffffff;
+  background-color: white;
 }
 .headerSrolled {
   border-bottom: 1px solid #1e5b2a;
   width: 100%;
 }
+.container {
+  background-color: white;
+  z-index: 55;
+}
 .headerWrapper {
+  z-index: 60;
   padding-top: 24px;
   padding-bottom: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  background-color: white;
 }
 @include media(to-desktop) {
   .headerWrapper {
