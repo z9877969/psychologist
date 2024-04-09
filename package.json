@@ -18,6 +18,8 @@
     "formik": "^2.4.5",
     "modern-normalize": "^2.0.0",
     "nanoid": "^5.0.6",
+    "overlayscrollbars": "^2.7.1",
+    "overlayscrollbars-react": "^0.5.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^6.1.6",
