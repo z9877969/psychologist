@@ -1,10 +1,14 @@
 import s from './ButtonSmall.module.scss';
+import scrollToSection from 'modules/header.3/helpers';
 
 const ButtonSmall = () => {
+  const handleMenuItemClick = (sectionId) => {
+    scrollToSection(sectionId);
+  };
   return (
-    <a className={s.link} href="#services">
+    <button className={s.link} onClick={() => handleMenuItemClick('services')}>
       Послуги
-    </a>
+    </button>
   );
 };
 

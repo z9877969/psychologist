@@ -16,3 +16,13 @@
     height: 708px;
   }
 }
+@include media(tablet) {
+  .picture {
+    height: 688px;
+  }
+}
+@include media(desktop) {
+  .picture {
+    height: 708px;
+  }
+}
