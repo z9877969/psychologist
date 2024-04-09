@@ -12,7 +12,7 @@ import useMedia from 'hooks/useMediaQuery';
 import Backdrop from '../Backdrop/Backdrop';
 
 const HeaderSection = () => {
-  const media = useMedia;
+  const media = useMedia();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const toggleMobileMenu = () => {
