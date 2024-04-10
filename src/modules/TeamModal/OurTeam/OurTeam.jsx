@@ -1,9 +1,9 @@
 import { ModalBackdrop } from 'shared/components';
-import ScrollBar from '../../frequentlyAskedQuestions/components/ScrollBar/ScrollBar';
 import DeveloperCard from '../DeveloperCard/DeveloperCard';
 import s from './OurTeam.module.scss';
 import developersData from '../data';
 import { sprite } from 'shared/icons';
+import CustomScrollBar from 'shared/components/CustemScrollBar/CustomScrollBar';
 
 const OurTeam = ({ onClose }) => {
   return (
@@ -19,13 +19,13 @@ const OurTeam = ({ onClose }) => {
 
         <h2 className={s.title}>Команда, яка створила сайт</h2>
 
-        <ScrollBar>
+        <CustomScrollBar>
           <div className={s.cardsContainer}>
             {developersData.map((developer, index) => (
               <DeveloperCard key={index} developer={developer} />
             ))}
           </div>
-        </ScrollBar>
+        </CustomScrollBar>
       </div>
     </ModalBackdrop>
   );
