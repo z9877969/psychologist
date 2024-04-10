@@ -6,8 +6,8 @@ import imgTablet from '../../img/photoFAQtablet.jpg';
 import imgTablet2x from '../../img/photoFAQtablet2x.jpg';
 import imgDesk from '../../img/photoFAQdesk.jpg';
 import imgDesk2x from '../../img/photoFAQdesk2x.jpg';
-import ScrollBar from '../ScrollBar/ScrollBar';
 import FAQList from '../FAQList/FAQList';
+import CustomScrollBar from 'shared/components/CustemScrollBar/CustomScrollBar';
 
 const FrequentlyAskedQuestions = () => {
   return (
@@ -29,9 +29,9 @@ const FrequentlyAskedQuestions = () => {
 
           <div>
             <h2 className={s.title}>FAQ</h2>
-            <ScrollBar>
+            <CustomScrollBar className={s.scroll}>
               <FAQList />
-            </ScrollBar>
+            </CustomScrollBar>
           </div>
         </div>
       </Container>

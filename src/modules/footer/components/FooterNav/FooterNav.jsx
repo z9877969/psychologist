@@ -1,25 +1,18 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import s from './FooterNav.module.scss';
 import clsx from 'clsx';
-import { useEffect } from 'react';
 import LogoImg from 'shared/components/LogoImg/LogoImg';
+import scrollToSection from 'modules/header.3/helpers';
 
 const FooterNav = () => {
   const navigate = useNavigate();
-  const handleRedirect = () => {
-    navigate('/');
-  };
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
-  useEffect(() => {
-    scrollToSection();
-  }, []);
-
+  const handleRedirect = async (sectionId) => {
+    await navigate('/');
+    setTimeout(() => {
+      scrollToSection(sectionId);
+    }, 300);
+  };
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -39,14 +32,14 @@ const FooterNav = () => {
           </NavLink>
         </li>
         <li>
-          <a href="#about" onClick={handleRedirect} className={s.link}>
+          <button onClick={() => handleRedirect('about')} className={s.link}>
             Про мене
-          </a>
+          </button>
         </li>
         <li>
-          <a href="#services" onClick={handleRedirect} className={s.link}>
+          <button onClick={() => handleRedirect('services')} className={s.link}>
             Послуги
-          </a>
+          </button>
         </li>
       </ul>
       <ul className={s.list}>
@@ -54,13 +47,12 @@ const FooterNav = () => {
           <p className={s.subTitle}>Інше</p>
         </li>
         <li>
-          <a
-            href="#reviews"
-            onClick={handleRedirect}
+          <button
+            onClick={() => handleRedirect('reviews')}
             className={clsx(s.link, s.linkRev)}
           >
             Відгуки
-          </a>
+          </button>
         </li>
         <li>
           <Link to="/blog" onClick={scrollToTop} className={s.link}>
@@ -68,9 +60,9 @@ const FooterNav = () => {
           </Link>
         </li>
         <li>
-          <a href="#faq" onClick={handleRedirect} className={s.link}>
+          <button onClick={() => handleRedirect('faq')} className={s.link}>
             FAQ
-          </a>
+          </button>
         </li>
       </ul>
     </nav>
