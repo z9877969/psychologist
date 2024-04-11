@@ -10,7 +10,7 @@ import { scrollOnOpenPage } from 'shared/helpers/scroll';
 
 const BlogPage = () => {
   const [article, setArticle] = useState(null);
-  const param = useParams();
+  const { blogId } = useParams();
 
   const navigate = useNavigate();
   function goBack() {
@@ -23,13 +23,13 @@ const BlogPage = () => {
 
   useEffect(() => {
     const selectedArticle = articlesData.find((article) =>
-      article.id.includes(param.blogId)
+      article.id.includes(blogId)
     );
 
     if (selectedArticle) {
       setArticle(selectedArticle);
     }
-  }, [param]);
+  }, [blogId]);
 
   return (
     <>
