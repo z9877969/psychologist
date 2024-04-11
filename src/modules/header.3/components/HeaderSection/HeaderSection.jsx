@@ -7,16 +7,21 @@ import { useState, useEffect } from 'react';
 import Phone from '../Phone/Phone';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import MobileMenu from '../MobileMenu/MobileMenu';
+import { useCallback } from 'react';
+import useMedia from 'hooks/useMediaQuery';
+import Backdrop from '../Backdrop/Backdrop';
 
 const HeaderSection = () => {
+  const media = useMedia();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-  const closeMobileMenu = () => {
+  const closeMobileMenu = useCallback(() => {
     setIsMobileMenuOpen(false);
-  };
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
@@ -31,6 +36,7 @@ const HeaderSection = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -38,7 +44,7 @@ const HeaderSection = () => {
   };
   return (
     <header>
-      <Container>
+      <Container className={s.container}>
         <div
           className={`${s.headerWrapper} ${isScrolled ? s.headerSrolled : ''}`}
         >
@@ -49,8 +55,12 @@ const HeaderSection = () => {
           <Navigation />
           <Phone />
         </div>
+        {!media.isDesktop && (
+          <MobileMenu isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
+        )}
       </Container>
-      <MobileMenu isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
+
+      <Backdrop show={isMobileMenuOpen} onClick={{ closeMobileMenu }} />
     </header>
   );
 };

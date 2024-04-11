@@ -30,5 +30,7 @@ export { default as imgDeskNadia1x } from './img@1xNadia.png';
 export { default as imgDeskNadia2x } from './img@2xNadia.png';
 export { default as imgDeskJurij1x } from './img@1xJurij.png';
 export { default as imgDeskJurij2x } from './img@2xJurij.png';
+export { default as imgDeskLiza1x } from './img@1xLiza.png';
+export { default as imgDeskLiza2x } from './img@2xLiza.png';
 export { default as defj1x } from './img@1x.png';
 export { default as defj2x } from './img@2x.png';

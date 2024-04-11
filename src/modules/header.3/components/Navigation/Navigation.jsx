@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import s from './Navigation.module.scss';
-
+import scrollToSection from 'modules/header.3/helpers';
 import clsx from 'clsx';
 
 const buildLinkClass = ({ isActive }) => {
@@ -10,23 +10,11 @@ const buildLinkClass = ({ isActive }) => {
 const Navigation = () => {
   const navigate = useNavigate();
 
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const headerHeight = document.querySelector('header').offsetHeight;
-      const sectionTop = section.offsetTop - headerHeight;
-
-      window.scrollTo({
-        top: sectionTop,
-        behavior: 'smooth',
-      });
-    }
-  };
   const handleMenuItemClick = async (sectionId) => {
     await navigate('/');
     setTimeout(() => {
       scrollToSection(sectionId);
-    }, 100);
+    }, 300);
   };
   const scrollToTop = () => {
     window.scrollTo({

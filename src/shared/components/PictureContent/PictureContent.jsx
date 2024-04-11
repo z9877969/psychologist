@@ -13,6 +13,7 @@ const PictureContent = () => {
   return (
     <div className={s.thumb}>
       <Picture
+        className={s.picture}
         urlMobile={consultationMob}
         urlMobile2x={consultationMob2x}
         urlTablet={consultationTab}
