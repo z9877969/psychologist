@@ -4,24 +4,32 @@ import ContentList from '../modules/blogPage/components/ContentList/ContentList'
 import { BlogLastArticles } from 'modules/blogPage';
 import WrapDesctopBlogPage from 'shared/WrapDesctopBlogPage/WrapDesctopBlogPage';
 
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { sprite } from 'shared/icons';
+import { scrollOnOpenPage } from 'shared/helpers/scroll';
 
 const BlogPage = () => {
   const [article, setArticle] = useState(null);
+  const param = useParams();
+
   const navigate = useNavigate();
   function goBack() {
     navigate(-1);
   }
 
   useEffect(() => {
-    // Знаходження статті за її ідентифікатором
-    setArticle(articlesData[0]);
+    scrollOnOpenPage();
   }, []);
 
-  if (!article) {
-    return <div>Стаття не знайдена</div>;
-  }
+  useEffect(() => {
+    const selectedArticle = articlesData.find((article) =>
+      article.id.includes(param.blogId)
+    );
+
+    if (selectedArticle) {
+      setArticle(selectedArticle);
+    }
+  }, [param]);
 
   return (
     <>
@@ -36,9 +44,7 @@ const BlogPage = () => {
           </svg>
           Повернутися назад
         </NavLink>
-        <div>
-          <ContentList article={article} />
-        </div>
+        <div>{article && <ContentList article={article} />}</div>
       </WrapDesctopBlogPage>
 
       <BlogLastArticles />
