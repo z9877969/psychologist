@@ -1,58 +1,60 @@
-.instagram {
-  &:hover .gradientPath {
-    animation: fillAnimation 200ms linear forwards;
-  }
-  &:not(:hover) .gradientPath {
-    animation: blurAnimation 200ms linear forwards;
-  }
-}
 .gradientPath {
   fill: #fff;
   transition: all $animation-duration $animation-time-function;
 }
-@keyframes fillAnimation {
-  0% {
-    fill: #fff;
+@include media(desktop) {
+  .instagram {
+    &:hover .gradientPath {
+      animation: fillAnimation 200ms linear forwards;
+    }
+    &:not(:hover) .gradientPath {
+      animation: blurAnimation 200ms linear forwards;
+    }
   }
-  20% {
-    fill: url(#paint0_radial_57682_225);
+  @keyframes fillAnimation {
+    0% {
+      fill: #fff;
+    }
+    20% {
+      fill: url(#paint0_radial_57682_225);
+    }
+    40% {
+      opacity: 0.6;
+      fill: url(#paint0_radial_57682_220);
+    }
+    60% {
+      opacity: 0.7;
+      fill: url(#paint0_radial_57682_229);
+    }
+    80% {
+      opacity: 0.8;
+      fill: url(#paint0_radial_57682_226);
+    }
+    100% {
+      fill: url(#paint0_radial_57682_221);
+    }
   }
-  40% {
-    opacity: 0.6;
-    fill: url(#paint0_radial_57682_220);
-  }
-  60% {
-    opacity: 0.7;
-    fill: url(#paint0_radial_57682_229);
-  }
-  80% {
-    opacity: 0.8;
-    fill: url(#paint0_radial_57682_226);
-  }
-  100% {
-    fill: url(#paint0_radial_57682_221);
-  }
-}
-@keyframes blurAnimation {
-  0% {
-    fill: url(#paint0_radial_57682_221);
-  }
-  20% {
-    opacity: 0.8;
-    fill: url(#paint0_radial_57682_226);
-  }
-  40% {
-    opacity: 0.7;
-    fill: url(#paint0_radial_57682_229);
-  }
-  60% {
-    opacity: 0.6;
-    fill: url(#paint0_radial_57682_220);
-  }
-  80% {
-    fill: url(#paint0_radial_57682_225);
-  }
-  100% {
-    fill: #fff;
+  @keyframes blurAnimation {
+    0% {
+      fill: url(#paint0_radial_57682_221);
+    }
+    20% {
+      opacity: 0.8;
+      fill: url(#paint0_radial_57682_226);
+    }
+    40% {
+      opacity: 0.7;
+      fill: url(#paint0_radial_57682_229);
+    }
+    60% {
+      opacity: 0.6;
+      fill: url(#paint0_radial_57682_220);
+    }
+    80% {
+      fill: url(#paint0_radial_57682_225);
+    }
+    100% {
+      fill: #fff;
+    }
   }
 }

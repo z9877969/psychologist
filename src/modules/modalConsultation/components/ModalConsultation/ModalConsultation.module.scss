@@ -1,9 +1,9 @@
 .modal {
   background-color: #fff;
-  padding: 24px 16px;
+  padding: 34px 16px;
   overflow: auto;
-  height: 75vh;
   border-radius: 8px;
+  position: relative;
 }
 .container {
   display: flex;
@@ -16,11 +16,12 @@
   flex-shrink: 0;
   height: 269px;
   width: 311px;
+  display: none;
 }
 .btnClose {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   outline: transparent;
 }
 .btnSecond {
@@ -58,6 +59,7 @@
     position: static;
     height: 558px;
     width: 292px;
+    display: block;
   }
   .btnClose {
     display: none;

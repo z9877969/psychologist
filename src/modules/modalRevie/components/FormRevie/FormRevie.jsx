@@ -134,6 +134,11 @@ const FormRevie = () => {
               {!errors.phone && values.phone.includes('_') && (
                 <ErrorSpan>Не коректний номер</ErrorSpan>
               )}
+              {!errors.phone && !values.phone.includes('_') && (
+                <span className={s.valueLength} style={{ left: 0 }}>
+                  Ваш номер телефону не буде відображатися у відгуку
+                </span>
+              )}
             </label>
             <label className={clsx(s.label, s.message)}>
               <span className={s.titleInput}>
