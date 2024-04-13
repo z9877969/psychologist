@@ -7,7 +7,7 @@ const FooterAddress = () => {
     <address className={s.address}>
       <p className={s.subTitle}>Контакти</p>
       <a className={s.tell} href="tel:+380653456789">
-        +38 (065) 345 67 89
+        +38 (065) 345-67-89
       </a>
       <ul className={s.list}>
         <li>
