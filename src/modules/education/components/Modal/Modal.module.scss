@@ -4,7 +4,6 @@
   border-radius: 8px;
 }
 .container {
-  // height: 70vh;
   width: auto;
   display: flex;
   justify-content: center;
@@ -13,7 +12,6 @@
   padding: 40px 16px 40px 16px;
 
   @include media(tablet) {
-    // height: 70vh;
     width: auto;
     padding: 40px;
   }
