@@ -11,7 +11,7 @@
   border-radius: 8px;
   background-color: #ffffff;
   cursor: pointer;
-  transition: border 200ms $animation-time-function;
+  transition: border #{$animation-duration} #{$animation-time-function};
 }
 .titleContainer {
   display: flex;

@@ -4,7 +4,6 @@
   border-radius: 8px;
 }
 .container {
-  height: 60vh;
   width: auto;
   display: flex;
   justify-content: center;
@@ -13,25 +12,18 @@
   padding: 40px 16px 40px 16px;
 
   @include media(tablet) {
-    height: 80vh;
     width: auto;
     padding: 40px;
   }
   @include media(desktop) {
     padding: 40px;
+    height: 70vh;
   }
 }
 .imgWrap {
-  height: 100%;
-  width: auto;
+  width: 100%;
+  height: auto;
   overflow: hidden;
-  @include media(tablet) {
-    // height: 90vh;
-  }
-
-  @include media(desktop) {
-    // height: 90vh;
-  }
 }
 
 .btnClose {
