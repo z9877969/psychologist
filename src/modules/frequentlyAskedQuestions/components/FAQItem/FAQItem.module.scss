@@ -8,13 +8,9 @@
   gap: 8px;
   border: 1px solid #dfdfdf;
   border-radius: 8px;
-  margin-top: 1px;
-  margin-bottom: 1px;
   background-color: #ffffff;
   cursor: pointer;
-  transition:
-    border $animation-duration $animation-time-function,
-    margin $animation-duration $animation-time-function;
+  transition: border #{$animation-duration} #{$animation-time-function};
 }
 .titleContainer {
   display: flex;
@@ -66,7 +62,7 @@
 }
 .activeItem {
   border: 2px solid #1e5b2a;
-  margin: 0;
+  padding: 15px;
 }
 .activeBtn {
   transform: rotate(45deg);
