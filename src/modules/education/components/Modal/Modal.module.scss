@@ -17,13 +17,23 @@
   }
   @include media(desktop) {
     padding: 40px;
-    height: 70vh;
+    height: calc(100vh * 0.95);
   }
 }
 .imgWrap {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   overflow: hidden;
+}
+
+.image {
+  @include media(tablet) {
+    height: calc(100vh * 0.85);
+    width: auto;
+  }
+  @include media(desktop) {
+    height: 100%;
+  }
 }
 
 .btnClose {

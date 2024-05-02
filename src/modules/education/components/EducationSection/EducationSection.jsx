@@ -1,21 +1,15 @@
 import Container from 'shared/components/Container/Container';
 import Section from 'shared/components/Section/Section';
-import * as images from '../../img';
-import certifData from '../../data/certificates.json';
 import { SwiperContainer } from 'shared/components/Swiper';
 import s from './EducationSection.module.scss';
 import Slide from '../Slide/Slide';
 
-const EducationSection = () => {
-  const data = certifData.map((item) => {
+const EducationSection = ({ list }) => {
+  const data = list.map(({ imageUrl, descr, ...rest }) => {
     return {
-      ...item,
-      urlMobile: images[item.urlMobile],
-      urlMobile2x: images[item.urlMobile2x],
-      urlTablet: images[item.urlTablet],
-      urlTablet2x: images[item.urlTablet2x],
-      urlDesktop: images[item.urlDesktop],
-      urlDesktop2x: images[item.urlDesktop2x],
+      imageUrl,
+      text: descr,
+      ...rest,
     };
   });
 

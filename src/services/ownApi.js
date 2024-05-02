@@ -17,3 +17,8 @@ export const getBlogsListApi = async () => {
   const { data } = await instance.get('/blogs');
   return data;
 };
+
+export const getMainPageContentApi = async () => {
+  const { data } = await instance.get('/pages/main');
+  return data;
+};

@@ -6,11 +6,12 @@ import * as images from '../../img';
 import videoData from '../data/videoData.json';
 import Icon from '../IconPlayer/IconPlayer';
 
-export default function VideoPlayer() {
+export default function VideoPlayer({ videoUrl }) {
   return (
     <div className={s.playerWrapper}>
       <ReactPlayer
-        url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+        // url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+        url={videoUrl}
         light={
           <Picture
             urlDesktop={images[videoData.urlDesktop]}

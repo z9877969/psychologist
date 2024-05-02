@@ -4,7 +4,7 @@ import { sprite } from 'shared/icons';
 import { useModal } from 'context/ModalProvider';
 import { useCallback } from 'react';
 
-export default function Modal(props) {
+export default function Modal({ imageUrl }) {
   const setModal = useModal();
   const closeModal = useCallback(() => setModal(), [setModal]);
   return (
@@ -17,13 +17,9 @@ export default function Modal(props) {
         </button>
         <div className={s.imgWrap}>
           <Picture
-            urlMobile={props.urlMobile}
-            urlMobile2x={props.urlMobile2x}
-            urlTablet={props.urlTablet}
-            urlTablet2x={props.urlTablet2x}
-            urlDesktop={props.urlDesktop}
-            urlDesktop2x={props.urlDesktop2x}
-            height="100%"
+            defaultImage={imageUrl}
+            className={s.image}
+            height="85%"
             width="auto"
           />
         </div>

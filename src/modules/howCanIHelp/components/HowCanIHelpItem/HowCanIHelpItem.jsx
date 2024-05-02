@@ -5,7 +5,7 @@ import { useCallback } from 'react';
 import { useModal } from 'context/ModalProvider';
 import { ModalConsultation } from 'modules/modalConsultation';
 
-const HowCanIHelpItem = ({ title, text, price, ...props }) => {
+const HowCanIHelpItem = ({ title, descr, price, imageUrl }) => {
   const showModal = useModal();
 
   const handleClick = useCallback(() => {
@@ -21,9 +21,9 @@ const HowCanIHelpItem = ({ title, text, price, ...props }) => {
   return (
     <div className={s.container} onClick={handleClick}>
       <div className={s.content}>
-        <Picture className={s.img} {...props} />
+        <Picture className={s.img} defaultImage={imageUrl} />
         <h3 className={s.title}>{title}</h3>
-        <p className={s.text}>{text}</p>
+        <p className={s.text}>{descr}</p>
         <p className={s.price}>{`від ${priceFormat} грн`}</p>
       </div>
       <Button className={s.button} onClick={handleClick}>
