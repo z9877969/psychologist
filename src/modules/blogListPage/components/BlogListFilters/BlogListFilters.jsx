@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { blogAPI } from 'shared/helpers/blogAPI';
+import { useState } from 'react';
 import { sprite } from '../../../../shared/icons/index';
 import Select, { components } from 'react-select';
 import s from './BlogListFilters.module.scss';
@@ -16,24 +15,10 @@ const DropdownIndicator = (props) => {
   );
 };
 
-const BlogListFilters = ({ onChange, isLoading }) => {
+const BlogListFilters = ({ onChange, isLoading, categories }) => {
   const [searchParams] = useSearchParams();
-  const [categories, setCategories] = useState([]);
   const [query, setQuery] = useState(searchParams.get('query') ?? '');
   const initialCategory = useRef(searchParams.get('category'));
-
-  useEffect(() => {
-    async function getCategories() {
-      try {
-        const result = await blogAPI.fetchCategories();
-        setCategories(result);
-      } catch (err) {
-        alert(err);
-      }
-    }
-
-    getCategories();
-  }, []);
 
   function handleSelect(e) {
     onChange(e.value, searchParams.get('query') || '');
@@ -54,28 +39,27 @@ const BlogListFilters = ({ onChange, isLoading }) => {
   const options =
     categories.length === 0
       ? []
-      : categories.map((c) => {
-          return {
-            value: c.name,
-            label: c.title,
-          };
-        });
+      : [
+          ...categories.map((c) => {
+            return {
+              value: c._id,
+              label: c.title,
+            };
+          }),
+          {
+            value: null,
+            label: 'Всі теми',
+          },
+        ];
 
   const defaultValue =
-    initialCategory.current === null
-      ? null
-      : {
-          value: initialCategory.current,
-          label:
-            categories.find((c) => c.name === initialCategory.current)?.title ??
-            '',
-        };
+    initialCategory.current === null ? null : options[options.length - 1];
 
   return (
     <div className={s.container}>
       {(categories.length === 0 || initialCategory.current === null) && (
         <Select
-          defaultValue={defaultValue}
+          // defaultValue={defaultValue}
           onChange={handleSelect}
           isDisabled={isLoading}
           options={options}

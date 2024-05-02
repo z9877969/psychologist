@@ -20,6 +20,10 @@
 
   .content {
     max-width: 311px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
   }
 
   &:hover,
@@ -55,7 +59,28 @@
     display: block;
     margin-bottom: 16px;
     border-radius: 8px;
+    width: 311px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.pictureBg {
+      background-color: #dbdbdb;
+    }
+
+    & > img {
+      height: 100%;
+      width: auto;
+    }
+
+    @include media(tablet) {
+      width: 300px;
+    }
+
     @include media(desktop) {
+      width: 336px;
       margin-bottom: 24px;
     }
   }
@@ -76,12 +101,22 @@
     font-weight: 600;
     letter-spacing: -0.02em;
     margin-bottom: 8px;
+    height: 72px;
   }
   .BlogText {
     color: $dark-gray;
     @include font(14, 20);
     font-weight: 300;
     margin-bottom: 16px;
+    height: 60px;
+  }
+
+  .title,
+  .BlogText {
+    overflow: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
   }
 
   .link {
