@@ -8,6 +8,7 @@ import clsx from 'clsx';
 import { useModal } from 'context/ModalProvider';
 import { useCallback, useState } from 'react';
 import { ownApi } from 'services';
+import { toastify } from 'shared/helpers';
 
 const KEY = 'formconsultation';
 
@@ -46,11 +47,9 @@ const FormConsultation = () => {
     ownApi
       .sendTgMessage({ formData: values, formType: 'consultation' })
       .then(() => {
-        // eslint-disable-next-line
-        console.log('SEND MESSAGE SUCCESS');
+        toastify.success('Успішно відправлено!');
       })
-      // eslint-disable-next-line
-      .catch((err) => console.log(err.message))
+      .catch(() => toastify.error('Щось пішло не так. Спробуйте ще раз.'))
       .finally(() => {
         closeModal();
         localStorage.removeItem(KEY);

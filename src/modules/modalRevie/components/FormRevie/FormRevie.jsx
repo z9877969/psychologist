@@ -9,6 +9,7 @@ import { useModal } from 'context/ModalProvider';
 import { useCallback, useState } from 'react';
 import { addFeedbackApi } from 'services/ownApi';
 import { Loader } from 'shared/components';
+import { toastify } from 'shared/helpers';
 
 const KEY = 'formrevie';
 
@@ -53,11 +54,13 @@ const FormRevie = () => {
     try {
       setIsLoading(true);
       await addFeedbackApi(values);
+      toastify.success('Успішно відправлено!');
       closeModal();
       localStorage.removeItem(KEY);
     } catch (error) {
       // eslint-disable-next-line
       console.log(error.message);
+      toastify.error('Щось пішло не так. Спробуйте ще раз.');
     } finally {
       setIsLoading(false);
     }
