@@ -22,3 +22,8 @@ export const getMainPageContentApi = async () => {
   const { data } = await instance.get('/pages/main');
   return data;
 };
+
+export const addFeedbackApi = async (body) => {
+  const { data } = await instance.post('/feedbacks', body);
+  return data;
+};
