@@ -7,12 +7,10 @@ import ErrorSpan from 'modules/modalConsultation/components/ErrorSpan/ErrorSpan'
 import clsx from 'clsx';
 import { useModal } from 'context/ModalProvider';
 import { useCallback, useState } from 'react';
-import { ThreeDots } from 'react-loader-spinner';
 import { addFeedbackApi } from 'services/ownApi';
-import { createPortal } from 'react-dom';
+import { Loader } from 'shared/components';
 
 const KEY = 'formrevie';
-const loaderRoot = document.querySelector('#loader-root');
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
@@ -62,29 +60,7 @@ const FormRevie = () => {
   };
   return (
     <>
-      {isLoading &&
-        createPortal(
-          <div
-            style={{
-              position: 'absolute',
-              width: '100vw',
-              height: '100vh',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 150,
-            }}
-          >
-            <ThreeDots
-              color="#1E5B2A"
-              // width={LOADER_SIZE[currentMedia]}
-              width={'10vh'}
-              wrapperClass={s.loaderWrapper}
-              ariaLabel="three-dots-loading"
-            />
-          </div>,
-          loaderRoot
-        )}
+      {isLoading && <Loader />}
       <Formik
         onSubmit={handleSubmit}
         initialValues={{

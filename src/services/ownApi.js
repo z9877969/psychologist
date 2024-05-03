@@ -27,3 +27,8 @@ export const addFeedbackApi = async (body) => {
   const { data } = await instance.post('/feedbacks', body);
   return data;
 };
+
+export const getFeedbacskApi = async () => {
+  const { data } = await instance.get('/feedbacks/visible');
+  return data;
+};

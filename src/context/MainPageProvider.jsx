@@ -1,8 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
 import { getMainPageContentApi } from 'services/ownApi';
-
-const loaderRoot = document.querySelector('#loader-root');
+import { Loader } from 'shared/components';
 
 export const MainPageContext = createContext(null);
 
@@ -29,21 +27,7 @@ const BlogsProvider = ({ children }) => {
   return (
     <MainPageContext.Provider value={page}>
       {page && children}
-      {isLoading &&
-        createPortal(
-          <div
-            style={{
-              width: '100vw',
-              height: '100vh',
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              backgroundColor: '#ffffff',
-              zIndex: 150,
-            }}
-          ></div>,
-          loaderRoot
-        )}
+      {isLoading && <Loader />}
     </MainPageContext.Provider>
   );
 };

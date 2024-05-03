@@ -4,9 +4,9 @@ import ButtonGroup from '../ButtonGroup/ButtonGroup';
 import s from './TestimonialsContainer.module.scss';
 import SwiperContainer from 'shared/components/Swiper/components/SwiperContainer/SwiperContainer';
 import { useEffect, useState } from 'react';
-import fetchData from '../../data/fetchData';
 import { ThreeDots } from 'react-loader-spinner';
 import BackgroundImage from 'shared/components/BackgroundImeg/BackgroundImage';
+import { getFeedbacskApi } from 'services/ownApi';
 
 function TestimonialsContainer() {
   const [testimonials, setTestimonials] = useState([]);
@@ -14,12 +14,19 @@ function TestimonialsContainer() {
 
   const fetchTestimonials = async () => {
     try {
-      //  setError(false);
       setLoading(true);
-      const result = await fetchData();
-      setTestimonials(result);
+      const result = await getFeedbacskApi();
+      setTestimonials(
+        result.map(({ message, age, author, _id }) => ({
+          text: message,
+          age,
+          author,
+          id: _id,
+        }))
+      );
     } catch (error) {
-      //  setError(true);
+      // eslint-disable-next-line
+      console.log(error.message);
     } finally {
       setLoading(false);
     }
