@@ -21,6 +21,10 @@ const FeedbackSchema = Yup.object().shape({
   message: Yup.string()
     .min(5, 'Від 5 символів')
     .max(512, 'До 512 символів!')
+    .matches(
+      /^[0-9А-ЯЇІЄҐЬЙа-яїієґьй\s,.'"\-()!?]*$/,
+      'Цифри, літери та знаки ,.-()!?'
+    )
     .required('Це поле обовʼязкове'),
   age: Yup.number()
     .typeError('Введіть число')
