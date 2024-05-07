@@ -9,19 +9,22 @@ import { useMediaQuery } from 'hooks';
 import { useBlogs } from 'hooks/useBlogs';
 import BackgroundImage from 'shared/components/BackgroundImeg/BackgroundImage';
 import s from './BlogSection.module.scss';
+import { useMemo } from 'react';
+import { shuffleArray } from 'shared/helpers';
 
 const BlogSection = () => {
   const { blogs = [] } = useBlogs();
   const media = useMediaQuery();
 
-  const visibleArticles =
-    blogs.length === 0
-      ? []
-      : media.isDesktop
-        ? blogs.slice(0, 3)
-        : media.isTablet
-          ? blogs.slice(0, 2)
-          : blogs.slice(0, 1);
+  const visibleArticles = useMemo(() => {
+    if (blogs.length === 0) return [];
+    const blogsShuffle = shuffleArray(blogs);
+    return media.isDesktop
+      ? blogsShuffle.slice(0, 3)
+      : media.isTablet
+        ? blogsShuffle.slice(0, 2)
+        : blogsShuffle.slice(0, 1);
+  }, [blogs, media]);
 
   const header = 'Блог';
   const text =

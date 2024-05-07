@@ -17,10 +17,10 @@ function TestimonialsContainer() {
       setLoading(true);
       const result = await getFeedbacskApi();
       setTestimonials(
-        result.map(({ message, age, author, _id }) => ({
+        result.map(({ message, age, name, _id }) => ({
           text: message,
           age,
-          author,
+          name,
           id: _id,
         }))
       );

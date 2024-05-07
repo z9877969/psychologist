@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 import { getBlogsListApi } from 'services/ownApi';
+import { toastify } from 'shared/helpers';
 
 export const BlogsContext = createContext(null);
 
@@ -14,11 +15,10 @@ const BlogsProvider = ({ children }) => {
         setIsLoading(true);
         const result = await getBlogsListApi();
 
-        setBlogs(result.blogs);
+        setBlogs(result.blogs.filter((el) => el.items.length > 0));
         setCategories(result.categories);
       } catch (error) {
-        // eslint-disable-next-line
-        console.log(error.message);
+        toastify.error('Щось пішло не так :(\nСпробуйте пізніше ще раз.');
       } finally {
         setIsLoading(false);
       }
