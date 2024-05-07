@@ -1,42 +1,29 @@
-import { useEffect, useState } from 'react';
-import articlesData from '../modules/blogPage/data/articlesData.json'; // Шлях до файлу з даними статей
-import ContentList from '../modules/blogPage/components/ContentList/ContentList'; // Компонент для відображення вмісту статті
-import { BlogLastArticles } from 'modules/blogPage';
+import { useEffect } from 'react';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
+import { BlogLastArticles, ContentList } from 'modules/blogPage';
 import WrapDesctopBlogPage from 'shared/WrapDesctopBlogPage/WrapDesctopBlogPage';
 
-import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { sprite } from 'shared/icons';
 import { scrollOnOpenPage } from 'shared/helpers/scroll';
+import { useBlogs } from 'hooks/useBlogs';
 
 const BlogPage = () => {
-  const [article, setArticle] = useState(null);
+  const location = useLocation();
   const { blogId } = useParams();
 
-  const navigate = useNavigate();
-  function goBack() {
-    navigate(-1);
-  }
+  const { blogs } = useBlogs();
+
+  const article = blogs.find((el) => el._id === blogId);
 
   useEffect(() => {
     scrollOnOpenPage();
   }, []);
 
-  useEffect(() => {
-    const selectedArticle = articlesData.find((article) =>
-      article.id.includes(blogId)
-    );
-
-    if (selectedArticle) {
-      setArticle(selectedArticle);
-    }
-  }, [blogId]);
-
   return (
     <>
       <WrapDesctopBlogPage>
         <NavLink
-          to="#"
-          onClick={goBack}
+          to={location.state?.from ?? '/'}
           style={{ display: 'flex', alignItems: 'center', color: 'black' }}
         >
           <svg width="24" height="24" style={{ marginRight: '5px' }}>
@@ -44,7 +31,7 @@ const BlogPage = () => {
           </svg>
           Повернутися назад
         </NavLink>
-        <div>{article && <ContentList article={article} />}</div>
+        {article && <ContentList items={article.items} />}
       </WrapDesctopBlogPage>
 
       <BlogLastArticles />

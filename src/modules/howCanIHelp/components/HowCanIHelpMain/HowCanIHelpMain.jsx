@@ -1,41 +1,10 @@
-import { useEffect, useState } from 'react';
 import { Container, Section } from 'shared/components';
-import { servicesAPI } from 'shared/helpers/servicesAPI';
 import { SwiperContainer } from 'shared/components/Swiper';
 import HowCanIHelpItem from '../HowCanIHelpItem/HowCanIHelpItem';
-import * as images from '../../images';
 import s from './HowCanIHelpMain.module.scss';
 import HowCanIHelpBack from '../HowCanIHelpBack/HowCanIHelpBack';
 
-const HowCanIHelpMain = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    async function getArticles() {
-      try {
-        const result = await servicesAPI.fetchServices();
-
-        setData(
-          result.map((item) => {
-            return {
-              ...item,
-              urlMobile: images[item.urlMobile],
-              urlMobile2x: images[item.urlMobile2x],
-              urlTablet: images[item.urlTablet],
-              urlTablet2x: images[item.urlTablet2x],
-              urlDesktop: images[item.urlDesktop],
-              urlDesktop2x: images[item.urlDesktop2x],
-            };
-          })
-        );
-      } catch (err) {
-        alert(err);
-      }
-    }
-
-    getArticles();
-  }, []);
-
+const HowCanIHelpMain = ({ list }) => {
   return (
     <Section className={s.section} id="services">
       <Container>
@@ -49,7 +18,7 @@ const HowCanIHelpMain = () => {
           разом визначити найкращий шлях до вашого саморозвитку та благополуччя
         </p>
         <SwiperContainer
-          data={data}
+          data={list}
           component={HowCanIHelpItem}
           buttonsClass={s.sliderNavBar}
         />

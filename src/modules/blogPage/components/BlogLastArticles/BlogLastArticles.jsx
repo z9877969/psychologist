@@ -5,28 +5,21 @@ import {
   Button,
   BlogList,
 } from 'shared/components';
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import { useMediaQuery } from 'hooks/index';
-import { blogAPI } from 'shared/helpers/blogAPI';
 
 import s from './BlogLastArticles.module.scss';
+import { useBlogs } from 'hooks/useBlogs';
+import { filterBlogs } from 'shared/helpers';
 
 const BlogLastArticles = () => {
-  const [articles, setArticles] = useState([]);
+  const { blogs } = useBlogs();
   const media = useMediaQuery();
 
-  useEffect(() => {
-    async function getLastArticles() {
-      try {
-        const result = await blogAPI.fetchLatestArticles(3);
-        setArticles(result);
-      } catch (err) {
-        alert(err);
-      }
-    }
-
-    getLastArticles();
-  }, []);
+  const articles = useMemo(() => {
+    const { data } = filterBlogs({ articles: blogs });
+    return data?.slice(0, 3);
+  }, [blogs]);
 
   const header = 'Останні статті';
   const visibleArticles = media.isDesktop ? articles : articles.slice(0, 2);

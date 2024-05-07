@@ -7,7 +7,8 @@ import ErrorSpan from '../ErrorSpan/ErrorSpan';
 import clsx from 'clsx';
 import { useModal } from 'context/ModalProvider';
 import { useCallback, useState } from 'react';
-import { telegremApi as tgApi } from 'services';
+import { ownApi } from 'services';
+import { toastify } from 'shared/helpers';
 
 const KEY = 'formconsultation';
 
@@ -17,7 +18,13 @@ const FeedbackSchema = Yup.object().shape({
     .max(16, '3-16 символів!')
     .required('Це поле обовʼязкове'),
   phone: Yup.string().required('Це поле обовʼязкове'),
-  message: Yup.string().min(0).max(512, 'До 512 символів!'),
+  message: Yup.string()
+    .min(0)
+    .max(512, 'До 512 символів!')
+    .matches(
+      /^[0-9А-ЯЇІЄҐЬЙа-яїієґьй\s,.'"\-()!?]*$/,
+      'Цифри, літери та знаки ,.-()!?'
+    ),
 });
 
 const FormConsultation = () => {
@@ -37,14 +44,12 @@ const FormConsultation = () => {
       return;
     }
 
-    tgApi
-      .sendMessageTg({ formData: values, formType: 'consultation' })
+    ownApi
+      .sendTgMessage({ formData: values, formType: 'consultation' })
       .then(() => {
-        // eslint-disable-next-line
-        console.log('SEND MESSAGE SUCCESS');
+        toastify.success('Успішно відправлено!');
       })
-      // eslint-disable-next-line
-      .catch((err) => console.log(err.message))
+      .catch(() => toastify.error('Щось пішло не так. Спробуйте ще раз.'))
       .finally(() => {
         closeModal();
         localStorage.removeItem(KEY);

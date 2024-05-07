@@ -9,3 +9,4 @@ export { default as ModalBackdrop } from './ModalBackdrop/ModalBackdrop';
 export { default as BlogListHeader } from './BlogListHeader/BlogListHeader';
 export { default as BlogList } from './BlogList/BlogList';
 export { default as BlogItem } from './BlogItem/BlogItem';
+export { default as Loader } from './Loader/Loader';

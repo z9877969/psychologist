@@ -12,7 +12,7 @@ export const Quote = ({ content, accent, author }) => {
         </div>
         <div className={s.wrapContent}>
           <p className={s.content}>
-            <span className={s.accent}>{accent}</span>
+            {accent && <span className={s.accent}>{accent} </span>}
             {content}
           </p>
         </div>

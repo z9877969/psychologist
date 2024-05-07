@@ -4,12 +4,12 @@ import s from './Slide.module.scss';
 import { useModal } from 'context/ModalProvider';
 import Modal from '../Modal/Modal';
 
-export default function Slide({ text, ...props }) {
+export default function Slide({ text, imageUrl, ...props }) {
   const setModal = useModal();
 
   const handleClick = useCallback(
-    () => setModal(<Modal {...props} />),
-    [setModal, props]
+    () => setModal(<Modal imageUrl={imageUrl} />),
+    [imageUrl, setModal]
   );
 
   return (
@@ -19,6 +19,7 @@ export default function Slide({ text, ...props }) {
           {...props}
           className={s.picture}
           pictureClassName={s.pictureWrapper}
+          defaultImage={imageUrl}
         />
       </div>
       <button className={s.sliderText}>{text}</button>

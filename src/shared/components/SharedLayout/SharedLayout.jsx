@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ScrollUpButton } from '..';
 import HeaderSection from 'modules/header.3/components/HeaderSection/HeaderSection';
+import Toastify from '../Toastify/Toastify';
 
 const SharedLayout = () => {
   return (
@@ -16,6 +17,7 @@ const SharedLayout = () => {
       </div>
       <ScrollUpButton />
       <Footer />
+      <Toastify />
     </>
   );
 };

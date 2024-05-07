@@ -60,7 +60,7 @@ const HeaderSection = () => {
         )}
       </Container>
 
-      <Backdrop show={isMobileMenuOpen} onClick={{ closeMobileMenu }} />
+      <Backdrop show={isMobileMenuOpen} onClick={closeMobileMenu} />
     </header>
   );
 };

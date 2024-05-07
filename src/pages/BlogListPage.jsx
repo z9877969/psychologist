@@ -1,4 +1,4 @@
-import { BlogListMain } from 'modules/blogListSection';
+import { BlogListMain } from 'modules/blogListPage';
 import { BlogConsultation } from 'modules/blogConsultation';
 import { useEffect } from 'react';
 import { scrollOnOpenPage } from 'shared/helpers/scroll';

@@ -5,13 +5,14 @@ const Picture = ({
   urlTablet2x,
   urlMobile,
   urlMobile2x,
+  defaultImage,
   alt = '',
   width = '',
   height = '',
   pictureClassName,
   ...props
 }) => {
-  return (
+  return !defaultImage ? (
     <picture className={pictureClassName}>
       <source
         media="(min-width: 1440px)"
@@ -25,7 +26,7 @@ const Picture = ({
       />
       <img
         srcSet={`${urlMobile} 1x, ${urlMobile2x} 2x`}
-        src={`${urlMobile}`}
+        src={`${urlMobile || defaultImage}`}
         alt={alt}
         width={width}
         height={height}
@@ -33,6 +34,15 @@ const Picture = ({
         {...props}
       />
     </picture>
+  ) : (
+    <img
+      src={`${defaultImage}`}
+      alt={alt}
+      width={width}
+      height={height}
+      loading="lazy"
+      {...props}
+    />
   );
 };
 export default Picture;
