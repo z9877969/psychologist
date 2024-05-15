@@ -44,11 +44,7 @@ const BlogListMain = () => {
 
   const { blogs, categories, isLoading } = useBlogs();
 
-  const {
-    data: articles,
-    // total,
-    totalPages,
-  } = useMemo(() => {
+  const { data: articles, totalPages } = useMemo(() => {
     return filterBlogs({
       articles: blogs,
       page,

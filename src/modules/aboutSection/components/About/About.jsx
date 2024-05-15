@@ -1,36 +1,39 @@
 import s from './About.module.scss';
-import { Container, Picture } from 'shared/components';
+import { Container, Picture, SectionDescription } from 'shared/components';
 
 import * as images from '../../img';
 import aboutData from '../../data/aboutData.json';
+import { pasteAccentPhrase } from 'shared/helpers';
 
-export default function About() {
+export default function About({ accent, descr, title }) {
+  const renderedTitle = pasteAccentPhrase(title, accent).map(
+    ({ type, value }, i) =>
+      type === 'accent' ? (
+        <span key={i} className={s.accent}>
+          {value.split('\n').map((el, i, arr) => (
+            <>
+              {el}
+              {i < arr.length - 1 && <br />}
+            </>
+          ))}
+        </span>
+      ) : (
+        value.split('\n').map((el, i, arr) => (
+          <>
+            {el}
+            {i < arr.length - 1 && <br />}
+          </>
+        ))
+      )
+  );
+
   return (
     <section id="about" className={s.section}>
       <Container className={s.container}>
         <div className={s.aboutWrapper}>
           <div className={s.textWrapper}>
-            <h2 className={s.title}>
-              Ірина Прудько
-              <br />
-              <span className={s.accent}> психолог</span> - консультант
-            </h2>
-            <p className={s.topText}>
-              Активно продовжую професійне навчання, зокрема у напрямку
-              психоконсультування. Мій підхід інтегрує елементи
-              когнітивно-поведінкової терапії, основи психоаналізу та техніки
-              позитивної психології. Це дозволяє мені створювати гнучкі та
-              ефективні стратегії для роботи з різноманітними психологічними
-              запитами.
-            </p>
-
-            <p className={s.bottomText}>
-              Моя мета – сприяти вашому саморозвитку та допомогти вирішити
-              проблему з якою ви звернулися. Працюючи зі мною, ви віднайдете
-              свою внутрішню силу та вийдете на новий рівень самоусвідомлення. А
-              також отримаєте індивідуальні підказки та відповіді на важливі
-              запитання.
-            </p>
+            <h2 className={s.title}>{renderedTitle}</h2>
+            <SectionDescription descr={descr} />
           </div>
 
           <div className={s.pictureWrapper}>

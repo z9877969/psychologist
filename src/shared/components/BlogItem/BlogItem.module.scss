@@ -8,7 +8,6 @@
   transition:
     border #{$animation-duration} #{$animation-time-function},
     box-shadow #{$animation-duration} #{$animation-time-function};
-  // padding $animation-duration $animation-time-function;
 
   background-color: $white;
   display: flex;
@@ -124,7 +123,6 @@
     @include font(16, 24);
     letter-spacing: -0.02em;
     display: inline-block;
-    // cursor: pointer;
 
     transition: font-weight $animation-duration $animation-time-function;
   }

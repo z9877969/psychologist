@@ -35,31 +35,6 @@
   }
 }
 
-.topText,
-.bottomText {
-  color: #414343;
-  @include font(16, 24);
-  letter-spacing: -0.02em;
-}
-
-.topText {
-  margin-top: 16px;
-  margin-bottom: 8px;
-
-  @include media(desktop) {
-    margin-top: 24px;
-    margin-bottom: 16px;
-  }
-}
-
-.bottomText {
-  margin-bottom: 16px;
-
-  @include media(tablet) {
-    margin-bottom: 24px;
-  }
-}
-
 .pictureWrapper {
   @include media(tablet) {
     width: 688px;

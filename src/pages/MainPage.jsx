@@ -11,9 +11,8 @@ import { Hero } from 'modules/hero';
 import { scrollOnOpenPage } from 'shared/helpers/scroll';
 import { HowCanIHelpMain } from 'modules/howCanIHelp';
 import { Quote } from 'modules/quotes/components/Quote';
-import quotes1 from '../modules/quotes/data/quotes1.json';
-import quotes2 from '../modules/quotes/data/quotes2.json';
 import { useMainPage } from 'hooks/useMainPage';
+import { Container } from 'shared/components';
 
 const MainPage = () => {
   const page = useMainPage();
@@ -40,12 +39,16 @@ const MainPage = () => {
       <VideoSection {...videoSection} />
       <About {...aboutSection} />
       <Education {...sertificateSection} />
-      <Quote data={quotes1} {...quote1Section} />
+      <Container>
+        <Quote {...quote1Section} />
+      </Container>
       <HowCanIHelpMain {...myHelpSection} />
       <Consultation {...problemSection} />
       <BookConsultation {...reserveSection} />
       <Testimonials />
-      <Quote data={quotes2} {...quote2Section} />
+      <Container>
+        <Quote {...quote2Section} />
+      </Container>
       <BlogSection {...blogSection} />
       <FrequentlyAskedQuestions {...fAQSection} />
     </>
