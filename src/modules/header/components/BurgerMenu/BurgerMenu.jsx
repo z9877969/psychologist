@@ -10,8 +10,8 @@ const BurgerMenu = ({ onClick, isOpen }) => {
           </svg>
         </div>
       ) : (
-        <svg width="40" height="40">
-          <use xlinkHref={`${sprite}#icon-menu`}></use>
+        <svg className={s.burgerIcon} width="26" height="14">
+          <use xlinkHref={`${sprite}#icon-burger`}></use>
         </svg>
       )}
     </button>

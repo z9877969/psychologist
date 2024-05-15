@@ -6,7 +6,7 @@ import {
   BlogList,
 } from 'shared/components';
 import { useMemo } from 'react';
-import { useMediaQuery } from 'hooks/index';
+import { useMedia } from 'hooks';
 
 import s from './BlogLastArticles.module.scss';
 import { useBlogs } from 'hooks/useBlogs';
@@ -14,7 +14,7 @@ import { filterBlogs } from 'shared/helpers';
 
 const BlogLastArticles = () => {
   const { blogs } = useBlogs();
-  const media = useMediaQuery();
+  const media = useMedia();
 
   const articles = useMemo(() => {
     const { data } = filterBlogs({ articles: blogs });

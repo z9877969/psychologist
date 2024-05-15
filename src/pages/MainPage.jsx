@@ -11,31 +11,46 @@ import { Hero } from 'modules/hero';
 import { scrollOnOpenPage } from 'shared/helpers/scroll';
 import { HowCanIHelpMain } from 'modules/howCanIHelp';
 import { Quote } from 'modules/quotes/components/Quote';
-import quotes1 from '../modules/quotes/data/quotes1.json';
-import quotes2 from '../modules/quotes/data/quotes2.json';
 import { useMainPage } from 'hooks/useMainPage';
+import { Container } from 'shared/components';
 
 const MainPage = () => {
   const page = useMainPage();
-  const { myHelpSection, sertificateSection, videoSection } = page || {};
+  const {
+    myHelpSection,
+    sertificateSection,
+    videoSection,
+    aboutSection,
+    blogSection,
+    fAQSection,
+    heroSection,
+    problemSection,
+    quote1Section,
+    quote2Section,
+    reserveSection,
+  } = page || {};
   useEffect(() => {
     scrollOnOpenPage();
   }, []);
 
   return (
     <>
-      <Hero />
+      <Hero {...heroSection} />
       <VideoSection {...videoSection} />
-      <About />
+      <About {...aboutSection} />
       <Education {...sertificateSection} />
-      <Quote data={quotes1} />
+      <Container>
+        <Quote {...quote1Section} />
+      </Container>
       <HowCanIHelpMain {...myHelpSection} />
-      <Consultation />
-      <BookConsultation />
+      <Consultation {...problemSection} />
+      <BookConsultation {...reserveSection} />
       <Testimonials />
-      <Quote data={quotes2} />
-      <BlogSection />
-      <FrequentlyAskedQuestions />
+      <Container>
+        <Quote {...quote2Section} />
+      </Container>
+      <BlogSection {...blogSection} />
+      <FrequentlyAskedQuestions {...fAQSection} />
     </>
   );
 };

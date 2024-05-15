@@ -18,9 +18,7 @@ const Loader = () => {
     >
       <ThreeDots
         color="#1E5B2A"
-        // width={LOADER_SIZE[currentMedia]}
         width={'10vh'}
-        // wrapperClass={s.loaderWrapper}
         ariaLabel="three-dots-loading"
       />
     </div>,

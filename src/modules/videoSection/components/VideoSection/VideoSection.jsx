@@ -3,11 +3,11 @@ import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import s from './VideoSection.module.scss';
 import { Container } from 'shared/components';
 
-export default function VideoSection({ videoUrl }) {
+export default function VideoSection({ videoUrl, title }) {
   return (
     <section className={s.section}>
       <Container>
-        <h2 className={s.title}>Відео презентація</h2>
+        <h2 className={s.title}>{title}</h2>
         <VideoPlayer videoUrl={videoUrl} />
         <BackgroundImage />
       </Container>

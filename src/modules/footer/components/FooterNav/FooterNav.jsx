@@ -2,7 +2,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import s from './FooterNav.module.scss';
 import clsx from 'clsx';
 import LogoImg from 'shared/components/LogoImg/LogoImg';
-import scrollToSection from 'modules/header.3/helpers';
+import scrollToSection from 'modules/header/helpers';
 
 const FooterNav = () => {
   const navigate = useNavigate();

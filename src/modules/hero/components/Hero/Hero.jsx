@@ -7,15 +7,15 @@ import ButtonSmall from '../ButtonSmall/ButtonSmall';
 import s from './Hero.module.scss';
 import BackgroundImage from '../BackgroundImage/BackgroundImage';
 
-const Hero = () => {
+const Hero = ({ title, descr }) => {
   return (
     <section className={s.hero}>
       <Container>
         <div className={s.heroWrap}>
           <MainPicture />
           <div className={s.heroInfo}>
-            <Tittle />
-            <TextContent />
+            <Tittle title={title} />
+            <TextContent descr={descr} />
             <div className={s.buttonBox}>
               <ButtonBig />
               <ButtonSmall />

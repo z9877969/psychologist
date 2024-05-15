@@ -1,12 +1,12 @@
 import s from './Phone.module.scss';
-const Phone = () => {
+const Phone = ({ factPhone, displayingPhone }) => {
   return (
     <div className={s.phoneContact}>
-      <a className={s.phoneLink} href="tel:+380938093906">
+      <a className={s.phoneLink} href={`tel:${factPhone}`}>
         <div className={s.imageContainer}></div>
       </a>
-      <a className={s.numberForDesk} href="tel:+380938093906">
-        <p>+38 (093) 809-39-06</p>
+      <a className={s.numberForDesk} href={`tel:${factPhone}`}>
+        <p>{displayingPhone}</p>
       </a>
     </div>
   );

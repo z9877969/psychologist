@@ -1,37 +1,31 @@
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import s from './Navigation.module.scss';
-import { useEffect } from 'react';
 import clsx from 'clsx';
+import scrollToSection from 'modules/header/helpers';
+import s from './Navigation.module.scss';
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.headerListLink, isActive && s.active);
 };
 const Navigation = () => {
   const navigate = useNavigate();
-  const handleRedirect = () => {
-    navigate('/');
-  };
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
-  useEffect(() => {
-    scrollToSection();
-  }, []);
-
+  const handleMenuItemClick = async (sectionId) => {
+    await navigate('/');
+    setTimeout(() => {
+      scrollToSection(sectionId);
+    }, 300);
+  };
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
     });
   };
+
   return (
     <nav className={s.navigation}>
       <ul className={s.navigationList}>
-        <li className={s.headerListItem}>
+        <li className={s.headerListItem} style={{ minWidth: '66px' }}>
           <NavLink
             exact="true"
             className={buildLinkClass}
@@ -41,42 +35,50 @@ const Navigation = () => {
             Головна
           </NavLink>
         </li>
-        <li className={s.headerListItem}>
-          <a
+        <li className={s.headerListItem} style={{ minWidth: '75px' }}>
+          <button
             className={s.headerListLink}
-            href="#about"
-            onClick={handleRedirect}
+            onClick={() => {
+              handleMenuItemClick('about');
+            }}
           >
             Про мене
-          </a>
+          </button>
         </li>
-        <li className={s.headerListItem}>
-          <a
+        <li className={s.headerListItem} style={{ minWidth: '65px' }}>
+          <button
             className={s.headerListLink}
-            href="#services"
-            onClick={handleRedirect}
+            onClick={() => {
+              handleMenuItemClick('services');
+            }}
           >
             Послуги
-          </a>
+          </button>
         </li>
-        <li className={s.headerListItem}>
-          <a
+        <li className={s.headerListItem} style={{ minWidth: '59px' }}>
+          <button
             className={s.headerListLink}
-            href="#reviews"
-            onClick={handleRedirect}
+            onClick={() => {
+              handleMenuItemClick('reviews');
+            }}
           >
             Відгуки
-          </a>
+          </button>
         </li>
-        <li className={s.headerListItem}>
+        <li className={s.headerListItem} style={{ minWidth: '36px' }}>
           <NavLink className={buildLinkClass} to="/blog" onClick={scrollToTop}>
             Блог
           </NavLink>
         </li>
-        <li className={s.headerListItem}>
-          <a className={s.headerListLink} href="#faq" onClick={handleRedirect}>
+        <li className={s.headerListItem} style={{ minWidth: '32px' }}>
+          <button
+            className={s.headerListLink}
+            onClick={() => {
+              handleMenuItemClick('faq');
+            }}
+          >
             FAQ
-          </a>
+          </button>
         </li>
       </ul>
     </nav>

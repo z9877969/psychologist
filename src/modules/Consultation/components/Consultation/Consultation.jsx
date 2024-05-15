@@ -1,13 +1,16 @@
-import { Container } from 'shared/components';
+import { Container, PictureContent } from 'shared/components';
 import s from './Consultation.module.scss';
-import ConsultationInfo from '../ConsultationInfo/ConsultationInfo';
 import Section from 'shared/components/Section/Section';
+import Content from '../Content/Content';
 
-const Consultation = () => {
+const Consultation = ({ list, title, descr }) => {
   return (
     <Section className={s.section}>
       <Container>
-        <ConsultationInfo />
+        <div className={s.consultationInfo}>
+          <PictureContent />
+          <Content list={list} title={title} descr={descr} />
+        </div>
       </Container>
     </Section>
   );

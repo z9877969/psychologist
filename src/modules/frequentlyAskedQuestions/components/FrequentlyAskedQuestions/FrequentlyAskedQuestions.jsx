@@ -9,7 +9,7 @@ import imgDesk2x from '../../img/photoFAQdesk2x.jpg';
 import FAQList from '../FAQList/FAQList';
 import CustomScrollBar from 'shared/components/CustemScrollBar/CustomScrollBar';
 
-const FrequentlyAskedQuestions = () => {
+const FrequentlyAskedQuestions = ({ title, list }) => {
   return (
     <section className={s.section} id="faq">
       <Container>
@@ -28,9 +28,9 @@ const FrequentlyAskedQuestions = () => {
           </div>
 
           <div>
-            <h2 className={s.title}>FAQ</h2>
+            <h2 className={s.title}>{title}</h2>
             <CustomScrollBar className={s.scroll}>
-              <FAQList />
+              <FAQList list={list} />
             </CustomScrollBar>
           </div>
         </div>

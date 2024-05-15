@@ -1,7 +1,7 @@
 import { Picture } from 'shared/components';
 import { Paragraph } from '../Paragraph/Paragraph';
 import { PrimaryTitle } from '../PrimaryTitle/PrimaryTitle';
-import { Quote } from '../Quote/Quote';
+import { BlogQuote } from '../BlogQuote/BlogQuote';
 
 import s from './ContentList.module.scss'; // Підключення файлу стилів
 
@@ -32,9 +32,9 @@ const ContentList = ({ items }) => {
             );
           case 'quote':
             return (
-              <Quote
+              <BlogQuote
                 key={index}
-                content={item.content}
+                text={item.content ?? item.text}
                 accent={item.accent}
                 author={item.author}
               />

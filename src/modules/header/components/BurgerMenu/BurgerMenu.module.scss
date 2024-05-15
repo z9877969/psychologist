@@ -5,11 +5,16 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 40px;
+  height: 40px;
 }
 @include media(desktop) {
   .burgerMenu {
     display: none;
   }
+}
+.burgerIcon {
+  stroke: #414343;
 }
 .iconClose {
   stroke: #979797;
@@ -18,6 +23,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
 }

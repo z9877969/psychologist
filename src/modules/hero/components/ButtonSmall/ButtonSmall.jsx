@@ -1,5 +1,5 @@
 import s from './ButtonSmall.module.scss';
-import scrollToSection from 'modules/header.3/helpers';
+import scrollToSection from 'modules/header/helpers';
 
 const ButtonSmall = () => {
   const handleMenuItemClick = (sectionId) => {
