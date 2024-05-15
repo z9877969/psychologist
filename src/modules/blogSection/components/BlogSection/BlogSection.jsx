@@ -5,7 +5,7 @@ import {
   Section,
   BlogListHeader,
 } from 'shared/components';
-import { useMediaQuery } from 'hooks';
+import { useMedia } from 'hooks';
 import { useBlogs } from 'hooks/useBlogs';
 import BackgroundImage from 'shared/components/BackgroundImeg/BackgroundImage';
 import s from './BlogSection.module.scss';
@@ -14,7 +14,7 @@ import { shuffleArray } from 'shared/helpers';
 
 const BlogSection = () => {
   const { blogs = [] } = useBlogs();
-  const media = useMediaQuery();
+  const media = useMedia();
 
   const visibleArticles = useMemo(() => {
     if (blogs.length === 0) return [];

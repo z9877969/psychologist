@@ -17,25 +17,37 @@ import { useMainPage } from 'hooks/useMainPage';
 
 const MainPage = () => {
   const page = useMainPage();
-  const { myHelpSection, sertificateSection, videoSection } = page || {};
+  const {
+    myHelpSection,
+    sertificateSection,
+    videoSection,
+    aboutSection,
+    blogSection,
+    fAQSection,
+    heroSection,
+    problemSection,
+    quote1Section,
+    quote2Section,
+    reserveSection,
+  } = page || {};
   useEffect(() => {
     scrollOnOpenPage();
   }, []);
 
   return (
     <>
-      <Hero />
+      <Hero {...heroSection} />
       <VideoSection {...videoSection} />
-      <About />
+      <About {...aboutSection} />
       <Education {...sertificateSection} />
-      <Quote data={quotes1} />
+      <Quote data={quotes1} {...quote1Section} />
       <HowCanIHelpMain {...myHelpSection} />
-      <Consultation />
-      <BookConsultation />
+      <Consultation {...problemSection} />
+      <BookConsultation {...reserveSection} />
       <Testimonials />
-      <Quote data={quotes2} />
-      <BlogSection />
-      <FrequentlyAskedQuestions />
+      <Quote data={quotes2} {...quote2Section} />
+      <BlogSection {...blogSection} />
+      <FrequentlyAskedQuestions {...fAQSection} />
     </>
   );
 };

@@ -11,7 +11,7 @@ import {
   NoArticlesFound,
 } from 'modules/blogListPage';
 import s from './BlogListMain.module.scss';
-import { useMediaQuery } from 'hooks/index';
+import { useMedia } from 'hooks';
 
 import '../BlogListFilters/theme-select.scss';
 import { useSearchParams } from 'react-router-dom';
@@ -37,7 +37,7 @@ const BlogListMain = () => {
   const [page, setPage] = useState(1);
   const [category, setCategory] = useState(searchParams.get('category') || '');
   const [query, setQuery] = useState(searchParams.get('query') || '');
-  const media = useMediaQuery();
+  const media = useMedia();
   const [currentMedia, setCurrentMedia] = useState(
     media.isDesktop ? 'isDesktop' : media.isTablet ? 'isTablet' : 'isMobile'
   );

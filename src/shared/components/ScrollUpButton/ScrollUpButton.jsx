@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import s from './ScrollUpButton.module.scss';
-import { sprite } from 'shared/icons';
-import clsx from 'clsx';
 import { useMediaQuery } from 'react-responsive';
+import clsx from 'clsx';
+import { sprite } from 'shared/icons';
+import s from './ScrollUpButton.module.scss';
 
 const ScrollUpButton = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,10 +1,10 @@
 import { useRef } from 'react';
+import clsx from 'clsx';
 import { SliderNavButtons } from '../SliderNavButtons/SliderNavButtons';
 import Slider from '../Slider/Slider';
-import s from './SwiperContainer.module.scss';
-import clsx from 'clsx';
 import SliderPagination from '../SliderPagination/SliderPagination';
-import { useMediaQuery } from 'react-responsive';
+import { useMedia } from 'hooks';
+import s from './SwiperContainer.module.scss';
 
 export default function SwiperContainer({
   data,
@@ -15,7 +15,7 @@ export default function SwiperContainer({
   isPagination = false,
 }) {
   const swiperRef = useRef(null);
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const { isMobile } = useMedia();
   const showButton = isPagination && isMobile;
   return (
     <div className={clsx(s.wrapper, containerClass)}>
