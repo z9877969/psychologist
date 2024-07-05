@@ -59,7 +59,6 @@ const BlogListFilters = ({ onChange, isLoading, categories }) => {
     <div className={s.container}>
       {(categories.length === 0 || initialCategory.current === null) && (
         <Select
-          // defaultValue={defaultValue}
           onChange={handleSelect}
           isDisabled={isLoading}
           options={options}
@@ -67,7 +66,6 @@ const BlogListFilters = ({ onChange, isLoading, categories }) => {
           placeholder="Оберіть тему"
           className="theme-select-container"
           classNamePrefix="theme-select"
-          // menuIsOpen={true}
         />
       )}
       {categories.length > 0 && initialCategory.current !== null && (
@@ -80,7 +78,6 @@ const BlogListFilters = ({ onChange, isLoading, categories }) => {
           placeholder="Оберіть тему"
           className="theme-select-container"
           classNamePrefix="theme-select"
-          // menuIsOpen={true}
         />
       )}
 

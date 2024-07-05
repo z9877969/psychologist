@@ -1,0 +1,25 @@
+.descrWrapper {
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  @include media(tablet) {
+    margin-bottom: 24px;
+  }
+  @include media(desktop) {
+    margin-top: 24px;
+  }
+}
+
+.descr {
+  color: #414343;
+  @include font(16, 24);
+  letter-spacing: -0.02em;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+
+    @include media(desktop) {
+      margin-bottom: 16px;
+    }
+  }
+}

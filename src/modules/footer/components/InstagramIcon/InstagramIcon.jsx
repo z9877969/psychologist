@@ -1,13 +1,9 @@
 import { sprite } from 'shared/icons';
 import s from './InstagramIcon.module.scss';
 
-const InstagramIcon = () => {
+const InstagramIcon = ({ href }) => {
   return (
-    <a
-      className={s.instagram}
-      target="_blank"
-      href="https://www.instagram.com/ira_voytovych?igsh=Z3NnZzJ5b2ZyazRo&utm_source=qr"
-    >
+    <a className={s.instagram} target="_blank" href={href}>
       <svg
         className={s.icon}
         xmlns="http://www.w3.org/2000/svg"

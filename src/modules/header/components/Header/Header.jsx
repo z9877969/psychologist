@@ -1,22 +1,31 @@
+import { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { Container } from 'shared/components';
 import Navigation from '../Navigation/Navigation';
 import Logo from '../Logo/Logo';
-import { Link } from 'react-router-dom';
-import s from './Header.module.scss';
-import { useState, useEffect } from 'react';
 import Phone from '../Phone/Phone';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import MobileMenu from '../MobileMenu/MobileMenu';
+import Backdrop from '../Backdrop/Backdrop';
+import { useMedia, useMainPage } from 'hooks';
+import s from './Header.module.scss';
 
-const Header = () => {
+const HeaderSection = () => {
+  const media = useMedia();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const page = useMainPage();
+
+  const { headerSection } = page || {};
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-  const closeMobileMenu = () => {
+  const closeMobileMenu = useCallback(() => {
     setIsMobileMenuOpen(false);
-  };
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
@@ -31,6 +40,7 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -38,7 +48,7 @@ const Header = () => {
   };
   return (
     <header>
-      <Container>
+      <Container className={s.container}>
         <div
           className={`${s.headerWrapper} ${isScrolled ? s.headerSrolled : ''}`}
         >
@@ -47,12 +57,19 @@ const Header = () => {
             <Logo />
           </Link>
           <Navigation />
-          <Phone />
+          <Phone
+            factPhone={headerSection?.factPhone ?? ''}
+            displayingPhone={headerSection?.displayingPhone ?? ''}
+          />
         </div>
+        {!media.isDesktop && (
+          <MobileMenu isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
+        )}
       </Container>
-      <MobileMenu isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
+
+      <Backdrop show={isMobileMenuOpen} onClick={closeMobileMenu} />
     </header>
   );
 };
 
-export default Header;
+export default HeaderSection;

@@ -1,7 +1,7 @@
-import clsx from 'clsx';
-import s from './SliderPagination.module.scss';
-import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState } from 'react';
+import clsx from 'clsx';
+import { useMedia } from 'hooks';
+import s from './SliderPagination.module.scss';
 
 const SliderPagination = ({ data, swiperRef, classname }) => {
   const [swiperIndex, setSwiperIndex] = useState(0);
@@ -14,7 +14,7 @@ const SliderPagination = ({ data, swiperRef, classname }) => {
     }
   }, [swiperRef]);
 
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const { isMobile } = useMedia();
 
   let numberOfBullet = isMobile ? data.length : data.length - 1;
   if (numberOfBullet < 0) numberOfBullet = 0;

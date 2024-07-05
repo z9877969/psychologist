@@ -1,13 +1,17 @@
 import Section from 'shared/components/Section/Section';
-import s from './BookConsultation.module.scss';
 import { Container } from 'shared/components';
-import ConsultationContent from './ConsultationContent/ConsultationContent';
+import s from './BookConsultation.module.scss';
+import Content from './Content/Content';
+import PictureContent from './PictureContent/PictureContent';
 
-const BookConsultation = () => {
+const BookConsultation = (props) => {
   return (
     <Section className={s.section}>
       <Container>
-        <ConsultationContent />
+        <div className={s.consultationContent}>
+          <Content {...props} />
+          <PictureContent />
+        </div>
       </Container>
     </Section>
   );

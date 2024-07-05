@@ -59,7 +59,6 @@ const BlogListPagination = ({ page, totalPages, onChange, media }) => {
     <>
       <ReactPaginate
         onPageChange={handlePageChange}
-        // initialPage={page - 1}
         forcePage={Math.max(0, page - 1)}
         pageRangeDisplayed={pageRange}
         marginPagesDisplayed={marginPages}

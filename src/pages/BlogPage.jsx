@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { NavLink, useLocation, useParams } from 'react-router-dom';
-import { BlogLastArticles, ContentList } from 'modules/blogPage';
-import WrapDesctopBlogPage from 'shared/WrapDesctopBlogPage/WrapDesctopBlogPage';
+import {
+  BlogLastArticles,
+  ContentList,
+  WrapDesctopBlogPage,
+} from 'modules/blogPage';
 
 import { sprite } from 'shared/icons';
 import { scrollOnOpenPage } from 'shared/helpers/scroll';

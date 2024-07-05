@@ -1,0 +1,6 @@
+.qouteWrapper {
+  @include media(desktop) {
+    width: 836px;
+    margin-left: calc((836px - 720px) / -2);
+  }
+}

@@ -1,22 +1,30 @@
-import { NavLink } from 'react-router-dom';
-import s from './MobileMenu.module.scss';
-import Backdrop from '../Backdrop/Backdrop';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import scrollToSection from 'modules/header/helpers';
+import s from './MobileMenu.module.scss';
+
 const MobileMenu = ({ isOpen, onClose }) => {
-  const navigate = useNavigate();
-  const handleRedirect = () => {
-    navigate('/');
-  };
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const location = useLocation();
+  const { pathname } = location;
   useEffect(() => {
-    scrollToSection();
-  }, []);
+    onClose();
+  }, [onClose]);
+
+  useEffect(() => {
+    if (isOpen) {
+      onClose();
+    }
+    // eslint-disable-next-line
+  }, [location, pathname]);
+  const navigate = useNavigate();
+
+  const handleMenuItemClick = async (sectionId) => {
+    onClose();
+    await navigate('/');
+    setTimeout(() => {
+      scrollToSection(sectionId);
+    }, 300);
+  };
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -25,89 +33,76 @@ const MobileMenu = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className={s.mainBox}>
-      {isOpen && (
-        <div className={`${s.mobileMenuContainer} ${isOpen ? s.open : ''}`}>
-          <nav className={s.navigation}>
-            <ul className={s.navigationList}>
-              <li className={s.headerListItem}>
-                <NavLink
-                  className={s.headerListLink}
-                  to="/"
-                  onClick={() => {
-                    onClose();
-                    scrollToTop();
-                  }}
-                  exact="true"
-                >
-                  Головна
-                </NavLink>
-              </li>
-              <li className={s.headerListItem}>
-                <a
-                  className={s.headerListLink}
-                  href="#about"
-                  onClick={() => {
-                    onClose();
-                    handleRedirect();
-                  }}
-                >
-                  Про мене
-                </a>
-              </li>
-              <li className={s.headerListItem}>
-                <a
-                  className={s.headerListLink}
-                  href="#services"
-                  onClick={() => {
-                    onClose();
-                    handleRedirect();
-                  }}
-                >
-                  Послуги
-                </a>
-              </li>
-              <li className={s.headerListItem}>
-                <a
-                  className={s.headerListLink}
-                  href="#reviews"
-                  onClick={() => {
-                    onClose();
-                    handleRedirect();
-                  }}
-                >
-                  Відгуки
-                </a>
-              </li>
-              <li className={s.headerListItem}>
-                <NavLink
-                  className={s.headerListLink}
-                  to="/blog"
-                  onClick={() => {
-                    onClose();
-                    scrollToTop();
-                  }}
-                >
-                  Блог
-                </NavLink>
-              </li>
-              <li className={s.headerListItem}>
-                <a
-                  className={s.headerListLink}
-                  href="#faq"
-                  onClick={() => {
-                    onClose();
-                    handleRedirect();
-                  }}
-                >
-                  FAQ
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      )}
-      <Backdrop show={isOpen} onClick={onClose} />
+    <div className={`${s.mobileMenuContainer} ${isOpen ? s.open : ''}`}>
+      <nav className={s.navigation}>
+        <ul className={s.navigationList}>
+          <li className={s.headerListItem}>
+            <NavLink
+              className={s.headerListLink}
+              to="/"
+              onClick={() => {
+                onClose();
+                scrollToTop();
+              }}
+              exact="true"
+            >
+              Головна
+            </NavLink>
+          </li>
+          <li className={s.headerListItem}>
+            <button
+              className={s.headerListLink}
+              onClick={() => {
+                handleMenuItemClick('about');
+              }}
+            >
+              Про мене
+            </button>
+          </li>
+          <li className={s.headerListItem}>
+            <button
+              className={s.headerListLink}
+              onClick={() => {
+                handleMenuItemClick('services');
+              }}
+            >
+              Послуги
+            </button>
+          </li>
+          <li className={s.headerListItem}>
+            <button
+              className={s.headerListLink}
+              onClick={() => {
+                handleMenuItemClick('reviews');
+              }}
+            >
+              Відгуки
+            </button>
+          </li>
+          <li className={s.headerListItem}>
+            <NavLink
+              className={s.headerListLink}
+              to="/blog"
+              onClick={() => {
+                onClose();
+                scrollToTop();
+              }}
+            >
+              Блог
+            </NavLink>
+          </li>
+          <li className={s.headerListItem}>
+            <button
+              className={s.headerListLink}
+              onClick={() => {
+                handleMenuItemClick('faq');
+              }}
+            >
+              FAQ
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };

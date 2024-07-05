@@ -1,9 +1,8 @@
 import s from './FAQList.module.scss';
-import text from '../../data/textQuestions.json';
 import FAQItem from '../FAQItem/FAQItem';
 import { useState } from 'react';
 
-const FAQList = () => {
+const FAQList = ({ list }) => {
   const [indexActive, setIndex] = useState('');
   const toggleIndex = (id) => {
     if (indexActive === id) {
@@ -13,7 +12,7 @@ const FAQList = () => {
 
   return (
     <ul className={s.list}>
-      {text.map((item, index) => (
+      {list.map((item, index) => (
         <li key={item.id} onClick={() => toggleIndex(item.id)}>
           <FAQItem
             id={item.id}
